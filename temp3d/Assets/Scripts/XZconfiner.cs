@@ -4,7 +4,12 @@ using Cinemachine;
 public class XZconfiner : CinemachineExtension
 {
     [Tooltip("Lock the camera's Y position to this value")]
-    private readonly float fixedYPosition = 2;
+    private float fixedYPosition;
+
+    private void Start()
+    {
+        fixedYPosition = transform.position.y;
+    }
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,

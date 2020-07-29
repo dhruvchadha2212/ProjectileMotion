@@ -1365,7 +1365,7 @@ Transform:
   m_Children:
   - {fileID: 1947777520}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418279625
 GameObject:
@@ -1830,12 +1830,12 @@ PrefabInstance:
     - target: {fileID: 2830582842158225833, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842158225833, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842158225833, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
@@ -1846,11 +1846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 634489788}
+      objectReference: {fileID: 534669906}
     - target: {fileID: 2830582842158225833, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_interactable
+      value: SetCameraMovementWithBall
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842158225833, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
@@ -1995,12 +1995,12 @@ PrefabInstance:
     - target: {fileID: 2830582842270257390, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842270257390, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842270257390, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
@@ -2011,26 +2011,41 @@ PrefabInstance:
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 79868147}
+      objectReference: {fileID: 534669906}
     - target: {fileID: 2830582842270257390, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_interactable
+      value: SetCameraMovementHorizontal
       objectReference: {fileID: 0}
     - target: {fileID: 2830582842270257390, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2830582843064806812, guid: bc970a179bd0b724b97c02b3583c4a2b,
+        type: 3}
+      propertyPath: m_Text
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830582843590662436, guid: bc970a179bd0b724b97c02b3583c4a2b,
+        type: 3}
+      propertyPath: m_Text
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830582843609592445, guid: bc970a179bd0b724b97c02b3583c4a2b,
+        type: 3}
+      propertyPath: m_Text
+      value: With Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 2830582843896776070, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582843896776070, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830582843896776070, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
@@ -2041,11 +2056,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 311650899}
+      objectReference: {fileID: 534669906}
     - target: {fileID: 2830582843896776070, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_interactable
+      value: SetCameraMovementVertical
       objectReference: {fileID: 0}
     - target: {fileID: 2830582843896776070, guid: bc970a179bd0b724b97c02b3583c4a2b,
         type: 3}
@@ -2185,7 +2200,7 @@ Transform:
   m_Children:
   - {fileID: 1482761782}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1705779757
 MonoBehaviour:
