@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        bottomPanel.SetActive(false);
         quizPanel.SetActive(false);
         quizPanelController = quizPanel.GetComponent<QuizPanelController>();
         quantitiesPanelController = quantitiesPanel.GetComponent<QuantitiesPanelController>();

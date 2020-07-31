@@ -12,7 +12,6 @@ public class Direction : MonoBehaviour
 
     void Start()
     {
-        sphere.SetActive(false);
         audioSource = GetComponent<AudioSource>();
         StartCoroutine("StartGameNarrative");
     }
@@ -22,14 +21,14 @@ public class Direction : MonoBehaviour
         //replace with new menu scene
         //yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetMiscAudioClip("introduction")));
         //yield return new WaitForSeconds(8.0f);//gap before first question
-        yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //yield return StartCoroutine(GiveTask1()); //Horizontal camera
         //yield return StartCoroutine(AskQuestion("anythingUnique"));
         //yield return StartCoroutine(AskQuestion("anythingUnique"));
         //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
-        //yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
         //yield return StartCoroutine(AskQuestion("concetsOf1DApplicable"));
 
         //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
