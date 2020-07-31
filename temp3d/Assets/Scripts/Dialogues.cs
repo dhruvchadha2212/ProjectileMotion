@@ -26,8 +26,6 @@ public class Dialogues : MonoBehaviour
 
     [SerializeField] private AudioClip[] appreciations;
 
-    [SerializeField] private AudioClip[] taskAudios;
-
     private void Start()
     {
         miscAudioClips = new Dictionary<string, AudioClip>
@@ -161,10 +159,5 @@ public class Dialogues : MonoBehaviour
     public AudioClip GetRandomAppreciation()
     {
         return appreciations[new System.Random(System.DateTime.Now.Millisecond).Next(appreciations.Length)];
-    }
-
-    public AudioClip GetTaskAudio(int index)
-    {
-        return taskAudios[index];
     }
 }

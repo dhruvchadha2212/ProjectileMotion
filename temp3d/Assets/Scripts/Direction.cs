@@ -8,7 +8,6 @@ public class Direction : MonoBehaviour
     [SerializeField] private GameObject cameraControls;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Dialogues dialogues;
-    [SerializeField] private GameObject labSnaps;
 
     public bool startButtonClicked { get; set; } = false;
     public bool verticalCameraButtonClicked { get; set; } = false;
@@ -92,19 +91,5 @@ public class Direction : MonoBehaviour
         startGame.SetActive(false);
         sphere.SetActive(true);
         cameraControls.SetActive(true);
-    }
-
-    public void HideLab()
-    {
-        for (int i = 0; i < labSnaps.transform.childCount; i++)
-        {
-            GameObject snapSet = labSnaps.transform.GetChild(i).gameObject;
-            for (int j = 0; j < snapSet.transform.childCount; j++)
-            {
-                GameObject snap = snapSet.transform.GetChild(j).gameObject;
-                MeshRenderer meshRenderer = snap.GetComponent<MeshRenderer>();
-                meshRenderer.enabled = !meshRenderer.enabled;
-            }
-        }
     }
 }

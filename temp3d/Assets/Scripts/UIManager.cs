@@ -4,6 +4,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private GameObject quantitiesPanel;
+    [SerializeField] private GameObject bottomPanel;
 
     public static string mostRecentlyClickedButton;
 
@@ -14,10 +15,16 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        bottomPanel.SetActive(false);
         quizPanel.SetActive(false);
         quizPanelController = quizPanel.GetComponent<QuizPanelController>();
         quantitiesPanelController = quantitiesPanel.GetComponent<QuantitiesPanelController>();
         mostRecentlyClickedButton = string.Empty;
+    }
+
+    public void InitialiseUI()
+    {
+        bottomPanel.SetActive(true);
     }
 
     public void DisplayQuestion(Question question)
