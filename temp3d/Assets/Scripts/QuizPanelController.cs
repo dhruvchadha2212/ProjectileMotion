@@ -22,7 +22,7 @@ public class QuizPanelController : MonoBehaviour
         {
             GameObject optionButton = Instantiate(buttonPrefab);
             int currentIndex = index; //required for lambda to take current index value on next line
-            optionButton.GetComponent<Button>().onClick.AddListener(() => CheckAnswer(currentIndex));
+            optionButton.GetComponent<Lean.Gui.LeanButton>().OnClick.AddListener(() => CheckAnswer(currentIndex));
             optionButton.GetComponentInChildren<Text>().text = options[index];
             optionButton.transform.SetParent(optionsBox.transform, false);
             PositionButton(optionButton, index, numOfOptions);

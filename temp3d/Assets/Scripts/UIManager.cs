@@ -22,11 +22,6 @@ public class UIManager : MonoBehaviour
         mostRecentlyClickedButton = string.Empty;
     }
 
-    public void InitialiseUI()
-    {
-        bottomPanel.SetActive(true);
-    }
-
     public void DisplayQuestion(Question question)
     {
         currentQuestion = question;

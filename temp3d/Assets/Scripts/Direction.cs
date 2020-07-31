@@ -4,33 +4,25 @@ using UnityEngine;
 public class Direction : MonoBehaviour
 {
     [SerializeField] private GameObject sphere;
-    [SerializeField] private GameObject startGame;
-    [SerializeField] private GameObject cameraControls;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Dialogues dialogues;
 
-    public bool startButtonClicked { get; set; } = false;
     public bool verticalCameraButtonClicked { get; set; } = false;
     private AudioSource audioSource;
 
     void Start()
     {
         sphere.SetActive(false);
-        startGame.SetActive(false);
-        cameraControls.SetActive(false);
         audioSource = GetComponent<AudioSource>();
         StartCoroutine("StartGameNarrative");
     }
 
     private IEnumerator StartGameNarrative()
     {
-        yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetMiscAudioClip("introduction")));
-        startGame.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitUntil(() => startButtonClicked);
-        InitialiseGame();
+        //replace with new menu scene
+        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetMiscAudioClip("introduction")));
         //yield return new WaitForSeconds(8.0f);//gap before first question
-        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        yield return StartCoroutine(AskQuestion("whatTrajectory"));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //yield return StartCoroutine(GiveTask1()); //Horizontal camera
@@ -84,12 +76,5 @@ public class Direction : MonoBehaviour
         yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
         yield return new WaitForSeconds(1);
-    }
-
-    private void InitialiseGame() //replace with new menu scene
-    {
-        startGame.SetActive(false);
-        sphere.SetActive(true);
-        cameraControls.SetActive(true);
     }
 }
