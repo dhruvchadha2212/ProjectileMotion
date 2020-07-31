@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System;
 
 public class BallController : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private LineRenderer initialVelocityLine;
+    [SerializeField] private LineController lineController;
     private Rigidbody rb;
     private Vector3 initialVelocity;
+    private float velocityThreshold = 10;
     private double initialAngle;
-    private float velocityMagnifier = 10;
+    
     private bool isJustLaunched = false;
     public static bool hasBouncedOnce = false;
+    private bool lineBeingRendered = false;
 
     void Start()
     {
@@ -22,30 +22,28 @@ public class BallController : MonoBehaviour
     {
         if (rb.velocity == new Vector3(0, 0, 0))
         {
-            initialVelocityLine.positionCount = 2;
-            initialVelocityLine.SetPosition(0, rb.transform.position);
-            initialVelocityLine.SetPosition(1, rb.transform.position);
+            lineController.InitiliseLine(rb.transform.position);
+            lineBeingRendered = true;
         }
     }
 
     void OnMouseDrag() 
     {
-        if (rb.velocity == new Vector3(0, 0, 0) && initialVelocityLine.positionCount == 2)
+        if (rb.velocity == new Vector3(0, 0, 0) && lineBeingRendered)
         {
-            Vector3 mousePositionInWorld = GameUtil.GetMousePositionInWorld(Input.mousePosition, rb.transform.position);
-            initialVelocityLine.SetPosition(1, mousePositionInWorld);
-            initialVelocity = velocityMagnifier * (initialVelocityLine.GetPosition(1) - initialVelocityLine.GetPosition(0));
-            initialAngle = PhysicsUtil.GetInitialAngleInDegrees(initialVelocity.y, initialVelocity.x);
+            lineController.UpdateEndPoint(Input.mousePosition, rb.transform.position);
+            initialVelocity = lineController.GetInitialVelocity();
+            initialAngle = lineController.GetInitialAngle();
             uiManager.DisplayVelocityAndAngle(initialVelocity.magnitude, initialAngle);
         }
     }
 
     private void OnMouseUp()
     {
-        if (rb.velocity == new Vector3(0, 0, 0) && initialVelocityLine.positionCount == 2)
+        if (rb.velocity == new Vector3(0, 0, 0) && lineBeingRendered)
         {
-            initialVelocityLine.positionCount = 0;
-            if(initialVelocity.magnitude > velocityMagnifier)
+            lineController.RemoveLineEndPoints();
+            if(initialVelocity.magnitude > velocityThreshold)
             {
                 isJustLaunched = true;
                 rb.velocity = initialVelocity;
