@@ -443,9 +443,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -653,7 +651,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -7.9088973e-28, y: -2.6436401e-24, z: 0.000000026451794, w: 1}
+  m_LocalRotation: {x: -1.5495109e-27, y: 1.0279389e-23, z: 0.000000047264585, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1452,7 +1450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -7.154493e-30, y: -1.564575e-23, z: 1.7343993e-10, w: 1}
+  m_LocalRotation: {x: -6.0378867e-30, y: 3.0712106e-24, z: 1.7343993e-10, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1582,8 +1580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfbd38cac04db94fac856f9844c0466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
-  initialVelocityLine: {fileID: 480748808}
+  uiManager: {fileID: 1011968542}
+  lineController: {fileID: 480748810}
 --- !u!1 &1482761781
 GameObject:
   m_ObjectHideFlags: 3
