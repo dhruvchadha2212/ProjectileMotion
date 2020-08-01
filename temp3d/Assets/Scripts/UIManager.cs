@@ -3,13 +3,13 @@
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject quizPanel;
-    [SerializeField] private GameObject quantitiesPanel;
+    [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
 
     public static string mostRecentlyClickedButton;
 
     private QuizPanelController quizPanelController;
-    private QuantitiesPanelController quantitiesPanelController;
+    private MetricsPanelController metricsPanelController;
 
     private Question currentQuestion;
 
@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     {
         quizPanel.SetActive(false);
         quizPanelController = quizPanel.GetComponent<QuizPanelController>();
-        quantitiesPanelController = quantitiesPanel.GetComponent<QuantitiesPanelController>();
+        metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
         mostRecentlyClickedButton = string.Empty;
     }
 
@@ -47,13 +47,13 @@ public class UIManager : MonoBehaviour
 
     public void DisplayVelocityAndAngle(double initialVelocity, double initialAngle)
     {
-        quantitiesPanelController.DisplayInitialVelocity("Initial Velocity: " + initialVelocity.ToString("F1") + " m/s");
-        quantitiesPanelController.DisplayInitialAngle("Initial Angle: " + initialAngle.ToString("F1") + " deg");
+        metricsPanelController.DisplayInitialVelocity("Initial Velocity: " + initialVelocity.ToString("F1") + " m/s");
+        metricsPanelController.DisplayInitialAngle("Initial Angle: " + initialAngle.ToString("F1") + " deg");
     }
 
     public void DisplayRangeAndMaxHeight(double range, double maxHeight)
     {
-        quantitiesPanelController.DisplayRange("Range: " + range.ToString("F1") + " m");
-        quantitiesPanelController.DisplayMaxHeight("MaxHeight: " + maxHeight.ToString("F1") + " m");
+        metricsPanelController.DisplayRange("Range: " + range.ToString("F1") + " m");
+        metricsPanelController.DisplayMaxHeight("MaxHeight: " + maxHeight.ToString("F1") + " m");
     }
 }

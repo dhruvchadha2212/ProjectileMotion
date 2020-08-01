@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class QuantitiesPanelController : MonoBehaviour
+public class MetricsPanelController : MonoBehaviour
 {
     [SerializeField] private Text initialVelocityText;
     [SerializeField] private Text initialAngleText;
