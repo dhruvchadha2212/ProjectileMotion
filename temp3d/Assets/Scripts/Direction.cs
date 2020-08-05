@@ -6,22 +6,19 @@ public class Direction : MonoBehaviour
     [SerializeField] private GameObject sphere;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Dialogues dialogues;
-
-    public bool verticalCameraButtonClicked { get; set; } = false;
-    private AudioSource audioSource;
+    [SerializeField] private AudioManager audioManager;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         StartCoroutine("StartGameNarrative");
     }
 
     private IEnumerator StartGameNarrative()
     {
         //TODO replace with new menu scene
-        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetMiscAudioClip("introduction")));
-        //yield return new WaitForSeconds(8.0f);//gap before first question
-        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
+        yield return StartCoroutine(GiveLaunchBallTask());
+        yield return StartCoroutine(AskQuestion("whatTrajectory"));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //yield return StartCoroutine(GiveTask1()); //Horizontal camera
@@ -39,40 +36,40 @@ public class Direction : MonoBehaviour
     {
         Question currentQuestion = dialogues.GetQuestion(questionKey);
         uiManager.DisplayQuestion(currentQuestion);
-        AudioManager.PlayInterruptible(audioSource, currentQuestion.QuestionAudio);
+        audioManager.PlayInterruptible(currentQuestion.QuestionAudio);
         yield return new WaitUntil(() => currentQuestion.IsAnsweredCorrectly);
-        yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetRandomAppreciation()));
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetRandomAppreciation()));
     }
 
     private IEnumerator GiveTask2()
     {
         yield return StartCoroutine(GiveButtonPressTask("clickVerticalCamera"));
         yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
-        yield return StartCoroutine(GiveLaunchBallTask("launchBall"));
+        yield return StartCoroutine(GiveLaunchBallTask());
     }
 
     private IEnumerator GiveTask1()
     {
         yield return StartCoroutine(GiveButtonPressTask("coolPressHorizontalCam"));
-        yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, dialogues.GetMiscAudioClip("nowWeMoveSideways")));
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
         yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(GiveLaunchBallTask("launchBall"));
+        yield return StartCoroutine(GiveLaunchBallTask());
         yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
-        yield return StartCoroutine(GiveLaunchBallTask("launchBall"));
+        yield return StartCoroutine(GiveLaunchBallTask());
     }
 
     private IEnumerator GiveButtonPressTask(string taskKey)
     {
         Task task = dialogues.GetTask(taskKey);
-        yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, task.TaskAudio));
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
         UIManager.mostRecentlyClickedButton = string.Empty;
         yield return new WaitUntil(task.IsCompleted);
     }
 
-    private IEnumerator GiveLaunchBallTask(string taskKey)
+    private IEnumerator GiveLaunchBallTask()
     {
-        Task task = dialogues.GetTask(taskKey);
-        yield return StartCoroutine(AudioManager.PlayAndWaitFor(audioSource, task.TaskAudio));
+        Task task = dialogues.GetTask("launchBall");
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
         yield return new WaitForSeconds(1);
     }

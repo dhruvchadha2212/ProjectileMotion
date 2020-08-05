@@ -1,17 +1,23 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager
+public class AudioManager : MonoBehaviour
 {
-    public static IEnumerator PlayAndWaitFor(AudioSource audioSource, AudioClip audioClip)
+    private AudioSource audioSource;
+
+    void Start()
     {
-        audioSource.Stop();
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public IEnumerator PlayAndWaitFor(AudioClip audioClip)
+    {
+        PlayInterruptible(audioClip);
         yield return new WaitWhile(() => audioSource.isPlaying);
     }
 
-    public static void PlayInterruptible(AudioSource audioSource, AudioClip audioClip)
+    public void PlayInterruptible(AudioClip audioClip)
     {
         audioSource.Stop();
         audioSource.clip = audioClip;
