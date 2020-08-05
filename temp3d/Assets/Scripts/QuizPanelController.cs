@@ -29,17 +29,17 @@ public class QuizPanelController : MonoBehaviour
         }
     }
 
+    public void DisplayTip(string tip)
+    {
+        tipText.text = tip;
+    }
+
     private void RemoveOldButtons()
     {
         for (int i = 0; i < optionsBox.transform.childCount; i++)
         {
             Destroy(optionsBox.transform.GetChild(i).gameObject);
         }
-    }
-
-    public void DisplayTip(string tip)
-    {
-        tipText.text = tip;
     }
 
     private void PositionButton(GameObject optionButton, int index, int numOfOptions)
