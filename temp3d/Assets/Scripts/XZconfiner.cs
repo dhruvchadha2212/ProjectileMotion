@@ -4,7 +4,7 @@ using Cinemachine;
 public class XZconfiner : CinemachineExtension
 {
     [Tooltip("Lock the camera's Y position to this value")]
-    private float fixedYPosition = 0.5f;
+    private float fixedYPosition = 0.1f;
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,

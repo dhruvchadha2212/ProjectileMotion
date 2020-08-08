@@ -11,7 +11,7 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private AudioClip howManyAxes;
     [SerializeField] private AudioClip anythingUnique;
     [SerializeField] private AudioClip relativeYZeroClear;
-    [SerializeField] private AudioClip concetsOf1DApplicable;
+    [SerializeField] private AudioClip conceptsOf1DApplicable;
     [SerializeField] private AudioClip onlyVerticalObservable;
     [Header("Tasks")]
     [SerializeField] private AudioClip coolPressHorizontalCam;
@@ -39,7 +39,7 @@ public class Dialogues : MonoBehaviour
             { "whatTrajectory", new Question
                 {
                     QuestionAudio = whatTrajectory,
-                    QuestionString = "What was the trajectory of the ball?",
+                    QuestionString = "What was the trajectory of the ball (till the first bounce) ?",
                     Options = new[] { "Straight Line", "Circular", "Curved but not circular" },
                     CorrectOptionIndex = 2,
                     OptionTips = new[] { "No", "No", "Yes" },
@@ -86,9 +86,9 @@ public class Dialogues : MonoBehaviour
                     IsAnsweredCorrectly = false
                 }
             },
-            { "concetsOf1DApplicable", new Question
+            { "conceptsOf1DApplicable", new Question
                 {
-                    QuestionAudio = concetsOf1DApplicable,
+                    QuestionAudio = conceptsOf1DApplicable,
                     QuestionString = "Since we are observing only a one dimensional motion right now, can't we apply the concepts of 1-D motion?",
                     Options = new[] { "Oh yeah!", "No" },
                     CorrectOptionIndex = 0,
@@ -114,7 +114,7 @@ public class Dialogues : MonoBehaviour
                 {
                     TaskAudio = coolPressHorizontalCam,
                     TaskString = "Cool. Let me show you something. Press the horizontal camera button.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "MoveCameraHorizontalOnly"
+                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Horizontal"
                 }
             },
             { "launchBall", new Task
@@ -128,14 +128,14 @@ public class Dialogues : MonoBehaviour
                 {
                     TaskAudio = pressToggleBackground,
                     TaskString = "I want you to observe something interesting about the movement of the ball. Go ahead and press the toggle background button.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "ToggleBackground"
+                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Toggle Background"
                 }
             },
             { "clickVerticalCamera", new Task
                 {
                     TaskAudio = clickVerticalCamera,
                     TaskString = "Now go ahead and click the vertical camera button, so that we are moving upwards along with the ball,l and not sideways.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "MoveCameraVerticalOnly"
+                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Vertical"
                 }
             }
         };

@@ -17,16 +17,17 @@ public class Direction : MonoBehaviour
     {
         //TODO replace with new menu scene
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
-        yield return StartCoroutine(GiveLaunchBallTask());
-        yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        //launch the ball a couple of times to get comfortable
+        //yield return StartCoroutine(GiveLaunchBallTask());
+        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
-        //yield return StartCoroutine(GiveTask1()); //Horizontal camera
-        //yield return StartCoroutine(AskQuestion("anythingUnique"));
-        //yield return StartCoroutine(AskQuestion("anythingUnique"));
-        //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
-        yield return new WaitForSeconds(1);
-        //yield return StartCoroutine(AskQuestion("concetsOf1DApplicable"));
+        //good job ! you are an intuitive person.
+        //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
+        yield return StartCoroutine(AskQuestion("anythingUnique"));
+        yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
+        //now show explanation card
+        //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
 
         //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
         //yield return StartCoroutine(GiveTask2()); //Vertical Camera
@@ -39,6 +40,7 @@ public class Direction : MonoBehaviour
         audioManager.PlayInterruptible(currentQuestion.QuestionAudio);
         yield return new WaitUntil(() => currentQuestion.IsAnsweredCorrectly);
         yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetRandomAppreciation()));
+        yield return new WaitForSeconds(0.5f);
     }
 
     private IEnumerator GiveTask2()
@@ -48,12 +50,12 @@ public class Direction : MonoBehaviour
         yield return StartCoroutine(GiveLaunchBallTask());
     }
 
-    private IEnumerator GiveTask1()
+    private IEnumerator VisualiseVerticalComponentOfVelocity()
     {
-        yield return StartCoroutine(GiveButtonPressTask("coolPressHorizontalCam"));
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
-        yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(GiveLaunchBallTask());
+        //yield return StartCoroutine(GiveButtonPressTask("coolPressHorizontalCam"));
+        //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
+        //yield return new WaitForSeconds(0.5f);
+        //yield return StartCoroutine(GiveLaunchBallTask());
         yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
         yield return StartCoroutine(GiveLaunchBallTask());
     }

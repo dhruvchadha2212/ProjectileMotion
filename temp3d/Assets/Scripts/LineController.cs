@@ -5,7 +5,7 @@ using UnityEngine;
 public class LineController : MonoBehaviour
 {
     private LineRenderer line;
-    private float velocityMagnifier = 10;
+    private float velocityMagnifier = 20;
     private void Start()
     {
         line = GetComponent<LineRenderer>();

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class UIManager : MonoBehaviour
     private MetricsPanelController metricsPanelController;
 
     private Question currentQuestion;
+
+    public void setMostRecentlyClickedButton(Text clickedButtonText)
+    {
+        mostRecentlyClickedButton = clickedButtonText.text;
+    }
 
     private void Start()
     {

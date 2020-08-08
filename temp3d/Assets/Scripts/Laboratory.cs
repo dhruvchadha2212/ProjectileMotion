@@ -8,14 +8,18 @@ public class Laboratory : MonoBehaviour
 
     public void ToggleLabVisibility()
     {
-        for (int i = 0; i < labSnaps.transform.childCount; i++)
+        foreach (Transform snapsCategory in transform) //complete laboratory structure
         {
-            GameObject snapSet = labSnaps.transform.GetChild(i).gameObject;
-            for (int j = 0; j < snapSet.transform.childCount; j++)
+            foreach (Transform snapSet in snapsCategory) //floor or wall or ceiling
             {
-                GameObject snap = snapSet.transform.GetChild(j).gameObject;
-                MeshRenderer meshRenderer = snap.GetComponent<MeshRenderer>();
-                meshRenderer.enabled = !meshRenderer.enabled;
+                if (snapSet.transform.childCount > 0) //set of snaps and not collider gameobject
+                {
+                    foreach (Transform snap in snapSet) //each individual snap unit
+                    {
+                        MeshRenderer meshRenderer = snap.gameObject.GetComponent<MeshRenderer>();
+                        meshRenderer.enabled = !meshRenderer.enabled;
+                    }
+                }
             }
         }
     }
