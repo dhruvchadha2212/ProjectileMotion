@@ -2,8 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * This class is responsible only for the display of the questions/options/tips and the visibility of the components.
+ */
 public class QuizPanelController : MonoBehaviour
 {
+    [SerializeField] private GameObject resumeButton;
+    [SerializeField] private GameObject flashCard;
     [SerializeField] private Text questionText;
     [SerializeField] private GameObject optionsBox;
     [SerializeField] private Text tipText;
@@ -52,5 +57,15 @@ public class QuizPanelController : MonoBehaviour
             (optionsBoxWidth / numOfOptions - buttonWidth) / 2; 
 
         optionButton.transform.localPosition = new Vector3(buttonPositionX, 0, 0);
+    }
+
+    public void SetFlashCardActive(bool isActive)
+    {
+        flashCard.GetComponent<Lean.Gui.LeanWindow>().TurnOff();
+    }
+
+    public void SetResumeButtonActive(bool isActive)
+    {
+        resumeButton.SetActive(isActive);
     }
 }

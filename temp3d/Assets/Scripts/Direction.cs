@@ -24,7 +24,7 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        //yield return StartCoroutine(AskQuestion("anythingUnique"));
+        yield return StartCoroutine(AskQuestion("anythingUnique"));
         //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
 
         //now show explanation card instead of next question
