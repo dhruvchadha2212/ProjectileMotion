@@ -24,16 +24,17 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(AskQuestion("anythingUnique"));
+        //yield return StartCoroutine(AskQuestion("anythingUnique"));
         //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
 
         //now show explanation card instead of next question
         //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
 
         //let user read themself. If required, they can play.
-        yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
+        //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
 
         yield return StartCoroutine(GiveTask2()); //Vertical Camera
+        //add another panel for task audios too. Long task audios need to be written too.
     }
 
     private IEnumerator AskQuestion(string questionKey)
@@ -48,14 +49,14 @@ public class Direction : MonoBehaviour
 
     private IEnumerator GiveTask2()
     {
-        yield return StartCoroutine(GiveButtonPressTask("clickVerticalCamera"));
+        yield return StartCoroutine(GiveButtonPressTask("clickVerticalCamera")); //say vertical "observer" or something like that
         yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
         yield return StartCoroutine(GiveLaunchBallTask());
     }
 
     private IEnumerator VisualiseVerticalComponentOfVelocity()
     {
-        //yield return StartCoroutine(GiveButtonPressTask("coolPressHorizontalCam"));
+        //yield return StartCoroutine(GiveButtonPressTask("coolPressHorizontalCam")); //Instead of camera, use word "observer"
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
         //yield return new WaitForSeconds(0.5f);
         //yield return StartCoroutine(GiveLaunchBallTask());

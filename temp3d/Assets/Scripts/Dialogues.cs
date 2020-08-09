@@ -42,7 +42,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "What was the trajectory of the ball (till the first bounce) ?",
                     Options = new[] { "Straight Line", "Circular", "Curved but not circular" },
                     CorrectOptionIndex = 2,
-                    OptionTips = new[] { "No", "No", "Yes" },
+                    OptionTips = new[] { "No", "No", "Correct !" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -53,7 +53,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "Why do you think the trajectory was curved?",
                     Options = new[] { "Ball's Elasticity", "Earth's Magnetic Force", "Earth's Gravity" },
                     CorrectOptionIndex = 2,
-                    OptionTips = new[] { "No", "No", "Yes" },
+                    OptionTips = new[] { "No", "No", "Correct !" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -64,7 +64,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "So, if the path is curved, along how many axes is the ball moving in?",
                     Options = new[] { "1 (Horizontal Only)", "2 (Horizontal and Vertical)", "1 (Vertical Only)" },
                     CorrectOptionIndex = 1,
-                    OptionTips = new[] { "No", "Yes", "No" },
+                    OptionTips = new[] { "No", "Correct !", "No" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -75,7 +75,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "Since we are moving along with the ball sideways, do you notice anything unique about the ball's movement?",
                     Options = new[] { "Nah, same old 2D motion", "Oh, the ball is moving only vertically" },
                     CorrectOptionIndex = 1,
-                    OptionTips = new[] { "No", "Yes" },
+                    OptionTips = new[] { "", "Correct !" },
                     IsPausable = true,
                     IsAnsweredCorrectly = false
                 }
@@ -86,7 +86,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "I hope you can see that we have made the relative Y velocity of the ball zero, with respect to us.",
                     Options = new[] { "Yeah, simple!", "What?" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Yes", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -97,7 +97,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "Since we are observing only a one dimensional motion right now, can't we apply the concepts of 1-D motion?",
                     Options = new[] { "Oh yeah!", "No" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Yes", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -108,7 +108,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "In reality, the ball is still moving in two dimensions. But since we are moving sideways with the ball, its relative velocity with respect to us, in the horizontal direction, is zero. Hence, we as an observer, only see the vertical motion of the ball right now.",
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Yes", "The ball moves in X and Y direction. But since our X velocity is same as ball's X velocity, we can only observe the Y velocity of the ball." },
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our X velocity is same as ball's X velocity, we can only observe the Y velocity of the ball." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }

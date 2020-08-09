@@ -3,7 +3,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * This class is responsible only for the display of the questions/options/tips and the visibility of the components.
+ * This class is responsible only for the display of the 'text' of questions/options/tips and the visibility of the components.
+ */
+
+/* 
+ * Types of quiz panels -
+ * pure question
+ * pausable question (to reconfirm whether player understood)
+ * pure explanation (not ending in a question mark) (probably use explanation card sort of thing, with cartoons) (also pausible)
+ * 
+ * for pure explanation scenario, change question mark on top to a exclamation mark or magnifying glass.
  */
 public class QuizPanelController : MonoBehaviour
 {
