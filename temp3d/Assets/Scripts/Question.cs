@@ -6,5 +6,6 @@ public class Question
     public string[] Options { get; set; }
     public int CorrectOptionIndex { get; set; }
     public string[] OptionTips { get; set; }
-    public bool IsAnsweredCorrectly;
+    public bool IsPausable { get; set; }
+    public bool IsAnsweredCorrectly { get; set; }
 }

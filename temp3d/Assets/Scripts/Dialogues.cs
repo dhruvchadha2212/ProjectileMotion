@@ -43,6 +43,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Straight Line", "Circular", "Curved but not circular" },
                     CorrectOptionIndex = 2,
                     OptionTips = new[] { "No", "No", "Yes" },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -53,6 +54,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Ball's Elasticity", "Earth's Magnetic Force", "Earth's Gravity" },
                     CorrectOptionIndex = 2,
                     OptionTips = new[] { "No", "No", "Yes" },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -63,6 +65,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "1 (Horizontal Only)", "2 (Horizontal and Vertical)", "1 (Vertical Only)" },
                     CorrectOptionIndex = 1,
                     OptionTips = new[] { "No", "Yes", "No" },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -73,6 +76,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Nah, same old 2D motion", "Oh, the ball is moving only vertically" },
                     CorrectOptionIndex = 1,
                     OptionTips = new[] { "No", "Yes" },
+                    IsPausable = true,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -83,6 +87,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Yeah, simple!", "What?" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Yes", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -93,6 +98,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Oh yeah!", "No" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Yes", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -103,6 +109,7 @@ public class Dialogues : MonoBehaviour
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Yes", "The ball moves in X and Y direction. But since our X velocity is same as ball's X velocity, we can only observe the Y velocity of the ball." },
+                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             }

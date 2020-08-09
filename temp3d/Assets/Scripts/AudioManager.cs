@@ -23,4 +23,9 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = audioClip;
         audioSource.Play();
     }
+
+    public void StopPlayingAudio()
+    {
+        audioSource.Stop();
+    }
 }

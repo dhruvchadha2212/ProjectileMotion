@@ -43,6 +43,14 @@ public class UIManager : MonoBehaviour
         {
             currentQuestion.IsAnsweredCorrectly = true;
             quizPanel.SetActive(false);
+        } else
+        {
+            if (currentQuestion.IsPausable)
+            {
+                quizPanel.transform.Find("FlashCard").gameObject.SetActive(false);
+                quizPanel.transform.Find("ResumeQuestionButton").gameObject.SetActive(true);
+                transform.parent.GetComponent<Direction>().audioManager.StopPlayingAudio();
+            }
         }
     }
 

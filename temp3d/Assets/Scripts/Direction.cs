@@ -6,7 +6,7 @@ public class Direction : MonoBehaviour
     [SerializeField] private GameObject sphere;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Dialogues dialogues;
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] public AudioManager audioManager;
 
     void Start()
     {
@@ -24,13 +24,16 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(AskQuestion("anythingUnique"));
-        yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
-        //now show explanation card
+        //yield return StartCoroutine(AskQuestion("anythingUnique"));
+        //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
+
+        //now show explanation card instead of next question
         //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
 
-        //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
-        //yield return StartCoroutine(GiveTask2()); //Vertical Camera
+        //let user read themself. If required, they can play.
+        yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
+
+        yield return StartCoroutine(GiveTask2()); //Vertical Camera
     }
 
     private IEnumerator AskQuestion(string questionKey)
@@ -63,8 +66,8 @@ public class Direction : MonoBehaviour
     private IEnumerator GiveButtonPressTask(string taskKey)
     {
         Task task = dialogues.GetTask(taskKey);
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
         UIManager.mostRecentlyClickedButton = string.Empty;
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
     }
 
