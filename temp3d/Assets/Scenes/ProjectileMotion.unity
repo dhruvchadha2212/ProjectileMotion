@@ -11597,7 +11597,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 9.651145e-25, y: 1.17056845e-23, z: -0.0000015822326, w: -1}
+  m_LocalRotation: {x: -9.327821e-24, y: 1.1564655e-23, z: -0.0000015822326, w: -1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29792,7 +29792,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -2.9572273e-24, y: 8.504501e-24, z: -0, w: -1}
+  m_LocalRotation: {x: -2.9572293e-24, y: 8.5045075e-24, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33771,8 +33771,11 @@ MonoBehaviour:
   howManyAxes: {fileID: 8300000, guid: 4f28edf58b774154ea64c084b1756efd, type: 3}
   anythingUnique: {fileID: 8300000, guid: 12229988ac2ca754e8106a80977b6877, type: 3}
   relativeYZeroClear: {fileID: 8300000, guid: d0e6ee056a972f0489d0ffc05a05350f, type: 3}
-  conceptsOf1DApplicable: {fileID: 0}
+  conceptsOf1DApplicable: {fileID: 8300000, guid: 2513272fc07a66248a4b04ef09a17aa8,
+    type: 3}
   onlyVerticalObservable: {fileID: 8300000, guid: edb907ad8fdaf4a44aaf590d20aa4f27,
+    type: 3}
+  onlyHorizontalObservable: {fileID: 8300000, guid: 4ea2b2c7dbdb996499e588776c69c088,
     type: 3}
   coolPressHorizontalCam: {fileID: 8300000, guid: 1f21af49edb6cd642a55b87958c0c874,
     type: 3}
