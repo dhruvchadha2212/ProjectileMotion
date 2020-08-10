@@ -33,8 +33,9 @@ public class Direction : MonoBehaviour
         //let user read themself. If required, they can play.
         //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
 
-        yield return StartCoroutine(GiveTask2()); //Vertical Camera
+        //yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
         //add another panel for task audios too. Long task audios need to be written too.
+        yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
     }
 
     private IEnumerator AskQuestion(string questionKey)
@@ -47,11 +48,13 @@ public class Direction : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    private IEnumerator GiveTask2()
+    private IEnumerator VisualiseHorizontalComponentOfVelocity()
     {
-        yield return StartCoroutine(GiveButtonPressTask("clickVerticalCamera")); //say vertical "observer" or something like that
-        yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
-        yield return StartCoroutine(GiveLaunchBallTask());
+        yield return StartCoroutine(WaitForButtonPress("clickVerticalCamera")); //say vertical "observer" or something like that, or "follow" the ball vertically
+        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveUpwards")));
+        yield return StartCoroutine(WaitForBallLaunch());
+        yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
+        yield return StartCoroutine(WaitForBallLaunch());
     }
 
     private IEnumerator VisualiseVerticalComponentOfVelocity()
@@ -60,11 +63,11 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
         //yield return new WaitForSeconds(0.5f);
         //yield return StartCoroutine(GiveLaunchBallTask());
-        yield return StartCoroutine(GiveButtonPressTask("pressToggleBackground"));
-        yield return StartCoroutine(GiveLaunchBallTask());
+        yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
+        yield return StartCoroutine(WaitForBallLaunch());
     }
 
-    private IEnumerator GiveButtonPressTask(string taskKey)
+    private IEnumerator WaitForButtonPress(string taskKey)
     {
         Task task = dialogues.GetTask(taskKey);
         UIManager.mostRecentlyClickedButton = string.Empty;
@@ -72,7 +75,7 @@ public class Direction : MonoBehaviour
         yield return new WaitUntil(task.IsCompleted);
     }
 
-    private IEnumerator GiveLaunchBallTask()
+    private IEnumerator WaitForBallLaunch()
     {
         Task task = dialogues.GetTask("launchBall");
         yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));

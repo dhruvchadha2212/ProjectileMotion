@@ -13,12 +13,15 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private AudioClip relativeYZeroClear;
     [SerializeField] private AudioClip conceptsOf1DApplicable;
     [SerializeField] private AudioClip onlyVerticalObservable;
+    [SerializeField] private AudioClip onlyHorizontalObservable;
     [Header("Tasks")]
     [SerializeField] private AudioClip coolPressHorizontalCam;
-    [SerializeField] private AudioClip nowWeMoveSideways;
     [SerializeField] private AudioClip launchBall;
     [SerializeField] private AudioClip pressToggleBackground;
     [SerializeField] private AudioClip clickVerticalCamera;
+    [Header("Statements")]
+    [SerializeField] private AudioClip nowWeMoveSideways;
+    [SerializeField] private AudioClip nowWeMoveUpwards;
 
     private Dictionary<string, AudioClip> miscAudioClips;
     private Dictionary<string, Question> questions;
@@ -32,6 +35,7 @@ public class Dialogues : MonoBehaviour
         {
             { "introduction", introduction },
             { "nowWeMoveSideways", nowWeMoveSideways },
+            { "nowWeMoveUpwards", nowWeMoveUpwards}
         };
 
         questions = new Dictionary<string, Question>
@@ -112,6 +116,17 @@ public class Dialogues : MonoBehaviour
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
+            },
+            { "onlyHorizontalObservable", new Question
+                {
+                    QuestionAudio = onlyHorizontalObservable,
+                    QuestionString = "As you can see, only the horizontal motion of the ball is now observable.",
+                    Options = new[] { "Got it!", "What?" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
             }
         };
 
@@ -141,7 +156,7 @@ public class Dialogues : MonoBehaviour
             { "clickVerticalCamera", new Task
                 {
                     TaskAudio = clickVerticalCamera,
-                    TaskString = "Now go ahead and click the vertical camera button, so that we are moving upwards along with the ball,l and not sideways.",
+                    TaskString = "Now go ahead and click the vertical camera button.",
                     IsCompleted = () => UIManager.mostRecentlyClickedButton == "Vertical"
                 }
             }
