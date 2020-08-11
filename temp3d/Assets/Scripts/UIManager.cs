@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
+    [SerializeField] private GameObject notificationPanel;
 
     public static string mostRecentlyClickedButton;
 
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     private MetricsPanelController metricsPanelController;
 
     private Question currentQuestion;
+    private Text notificationTextBox;
 
     public void setMostRecentlyClickedButton(Text clickedButtonText)
     {
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
         quizPanelController = quizPanel.GetComponent<QuizPanelController>();
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
         mostRecentlyClickedButton = string.Empty;
+        notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
     public void DisplayQuestion(Question question)
@@ -69,5 +72,11 @@ public class UIManager : MonoBehaviour
     {
         metricsPanelController.DisplayRange("Range: " + range.ToString("F1") + " m");
         metricsPanelController.DisplayMaxHeight("MaxHeight: " + maxHeight.ToString("F1") + " m");
+    }
+
+    public void ShowNotification(string notificationText)
+    {
+        notificationTextBox.text = notificationText;
+        notificationPanel.GetComponent<Lean.Gui.LeanPulse>().Pulse();
     }
 }
