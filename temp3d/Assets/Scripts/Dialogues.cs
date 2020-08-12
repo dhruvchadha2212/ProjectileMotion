@@ -9,10 +9,8 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private AudioClip whatTrajectory;
     [SerializeField] private AudioClip whyCurved;
     [SerializeField] private AudioClip howManyAxes;
-    [SerializeField] private AudioClip anythingUnique;
-    [SerializeField] private AudioClip relativeYZeroClear;
+    [SerializeField] private AudioClip noticeOnlyVerticalMotion;
     [SerializeField] private AudioClip conceptsOf1DApplicable;
-    [SerializeField] private AudioClip onlyVerticalObservable;
     [SerializeField] private AudioClip onlyHorizontalObservable;
     [Header("Tasks")]
     [SerializeField] private AudioClip coolPressHorizontalCam;
@@ -73,25 +71,13 @@ public class Dialogues : MonoBehaviour
                     IsAnsweredCorrectly = false
                 }
             },
-            { "anythingUnique", new Question
+            { "noticeOnlyVerticalMotion", new Question
                 {
-                    QuestionAudio = anythingUnique,
-                    QuestionString = "Since we are moving along with the ball sideways, do you notice anything unique about the ball's movement?",
-                    Options = new[] { "Nah, same old 2D motion", "Oh, the ball is moving only vertically" },
+                    QuestionAudio = noticeOnlyVerticalMotion,
+                    QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball is moving only vertically?",
+                    Options = new[] { "Nah, let me try again", "Oh wow ! I see it !" },
                     CorrectOptionIndex = 1,
-                    OptionTips = new[] { "", "Correct !" },
                     IsPausable = true,
-                    IsAnsweredCorrectly = false
-                }
-            },
-            { "relativeYZeroClear", new Question
-                {
-                    QuestionAudio = relativeYZeroClear,
-                    QuestionString = "I hope you can see that we have made the relative Y velocity of the ball zero, with respect to us.",
-                    Options = new[] { "Yeah, simple!", "What?" },
-                    CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
-                    IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -108,8 +94,7 @@ public class Dialogues : MonoBehaviour
             },
             { "onlyVerticalObservable", new Question
                 {
-                    QuestionAudio = onlyVerticalObservable,
-                    QuestionString = "In reality, the ball is still moving in two dimensions. But since we are moving sideways with the ball, its relative velocity with respect to us, in the horizontal direction, is zero. Hence, we as an observer, only see the vertical motion of the ball right now.",
+                    QuestionString = "Actually, the ball is still moving in two dimensions. But since we are moving sideways along with the ball, its relative horizontal velocity with respect to us is zero. Hence, we can only notice the vertical motion of the ball.",
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our X velocity is same as ball's X velocity, we can only observe the Y velocity of the ball." },

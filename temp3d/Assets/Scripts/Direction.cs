@@ -24,14 +24,14 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        //yield return StartCoroutine(AskQuestion("anythingUnique"));
-        //yield return StartCoroutine(AskQuestion("relativeYZeroClear"));
+        //yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
 
         //now show explanation card instead of next question
-        //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
+        //then let user save the card for later
+        yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
 
         //let user read themself. If required, they can play.
-        //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
+        yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
 
         //yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
         //add another panel for task audios too. Long task audios need to be written too.
