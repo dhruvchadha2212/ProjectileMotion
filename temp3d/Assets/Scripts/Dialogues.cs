@@ -77,6 +77,7 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball is moving only vertically?",
                     Options = new[] { "Nah, let me try again", "Oh wow ! I see it !" },
                     CorrectOptionIndex = 1,
+                    OptionTips = new[] { "", "", "" },
                     IsPausable = true,
                     IsAnsweredCorrectly = false
                 }

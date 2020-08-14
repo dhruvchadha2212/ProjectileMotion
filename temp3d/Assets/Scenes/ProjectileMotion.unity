@@ -11597,7 +11597,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 5.0701116e-24, y: -7.786657e-24, z: -0.0000015822326, w: -1}
+  m_LocalRotation: {x: -7.55913e-24, y: 2.8292165e-24, z: 0.0000015822326, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29793,7 +29793,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: 8.0067836e-24, y: -1.0212262e-23, z: -0, w: -1}
+  m_LocalRotation: {x: 8.0068396e-24, y: 8.5047126e-24, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30763,7 +30763,7 @@ Rigidbody:
   m_GameObject: {fileID: 1418279625}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.1
   m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -33773,8 +33773,6 @@ MonoBehaviour:
   noticeOnlyVerticalMotion: {fileID: 8300000, guid: 129f2f057ce586b4fae77b394ebf6ee9,
     type: 3}
   conceptsOf1DApplicable: {fileID: 8300000, guid: 2513272fc07a66248a4b04ef09a17aa8,
-    type: 3}
-  onlyVerticalObservable: {fileID: 8300000, guid: edb907ad8fdaf4a44aaf590d20aa4f27,
     type: 3}
   onlyHorizontalObservable: {fileID: 8300000, guid: 4ea2b2c7dbdb996499e588776c69c088,
     type: 3}
