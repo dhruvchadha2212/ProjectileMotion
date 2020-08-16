@@ -11689,7 +11689,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 9.123429e-25, y: -1.9326587e-24, z: -0.0000015822326, w: -1}
+  m_LocalRotation: {x: -2.0396003e-24, y: 4.4641654e-24, z: -0.0000015822326, w: -1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29885,7 +29885,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -2.9577034e-24, y: -1.02116956e-23, z: -0, w: -1}
+  m_LocalRotation: {x: -2.9576474e-24, y: 8.505279e-24, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30860,7 +30860,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 56
   m_CollisionDetection: 1
 --- !u!114 &1418279631
 MonoBehaviour:
@@ -33864,8 +33864,7 @@ MonoBehaviour:
   howManyAxes: {fileID: 8300000, guid: 4f28edf58b774154ea64c084b1756efd, type: 3}
   noticeOnlyVerticalMotion: {fileID: 8300000, guid: 129f2f057ce586b4fae77b394ebf6ee9,
     type: 3}
-  conceptsOf1DApplicable: {fileID: 8300000, guid: 2513272fc07a66248a4b04ef09a17aa8,
-    type: 3}
+  verticalIsIndependent: {fileID: 0}
   onlyHorizontalObservable: {fileID: 8300000, guid: 4ea2b2c7dbdb996499e588776c69c088,
     type: 3}
   coolPressHorizontalCam: {fileID: 8300000, guid: 1f21af49edb6cd642a55b87958c0c874,

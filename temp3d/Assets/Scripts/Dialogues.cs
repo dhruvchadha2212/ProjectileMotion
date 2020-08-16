@@ -10,7 +10,17 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private AudioClip whyCurved;
     [SerializeField] private AudioClip howManyAxes;
     [SerializeField] private AudioClip noticeOnlyVerticalMotion;
-    [SerializeField] private AudioClip conceptsOf1DApplicable;
+    [SerializeField] private AudioClip verticalIsIndependent;
+    [SerializeField] private AudioClip apply1DToVertical;
+    [SerializeField] private AudioClip verticalComponentFormula;
+    [SerializeField] private AudioClip timeOfFlightCanBeFound;
+    [SerializeField] private AudioClip whichEquationTimeOfFlight;
+    [SerializeField] private AudioClip noticeOnlyHorizontalMotion;
+    [SerializeField] private AudioClip anyHorizontalForce;
+    [SerializeField] private AudioClip isHorizontalVelocityAffected;
+    [SerializeField] private AudioClip horizontalComponentFormula;
+    [SerializeField] private AudioClip rangeCanBeFound;
+    [SerializeField] private AudioClip rangeFormula;
     [SerializeField] private AudioClip onlyHorizontalObservable;
     [Header("Tasks")]
     [SerializeField] private AudioClip coolPressHorizontalCam;
@@ -74,7 +84,7 @@ public class Dialogues : MonoBehaviour
             { "noticeOnlyVerticalMotion", new Question
                 {
                     QuestionAudio = noticeOnlyVerticalMotion,
-                    QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball is moving only vertically?",
+                    QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball seems to be moving only vertically?",
                     Options = new[] { "Nah, let me try again", "Oh wow ! I see it !" },
                     CorrectOptionIndex = 1,
                     OptionTips = new[] { "", "", "" },
@@ -82,10 +92,20 @@ public class Dialogues : MonoBehaviour
                     IsAnsweredCorrectly = false
                 }
             },
-            { "conceptsOf1DApplicable", new Question
+            { "onlyVerticalObservable", new Question
                 {
-                    QuestionAudio = conceptsOf1DApplicable,
-                    QuestionString = "Since we are observing only a one dimensional motion right now, can't we apply the concepts of 1-D motion?",
+                    QuestionString = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
+                    Options = new[] { "Got it!", "Give me some time to visualise" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "", "", "" },
+                    IsPausable = true,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "verticalIsIndependent", new Question
+                {
+                    QuestionAudio = verticalIsIndependent,
+                    QuestionString = "This means that the vertical motion of the ball is just a simple 1-D motion, and is not affected by the horizontal motion of the ball.",
                     Options = new[] { "Oh yeah!", "No" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
@@ -93,12 +113,57 @@ public class Dialogues : MonoBehaviour
                     IsAnsweredCorrectly = false
                 }
             },
-            { "onlyVerticalObservable", new Question
+            { "apply1DToVertical", new Question
                 {
-                    QuestionString = "Actually, the ball is still moving in two dimensions. But since we are moving sideways along with the ball, its relative horizontal velocity with respect to us is zero. Hence, we can only notice the vertical motion of the ball.",
+                    QuestionAudio = apply1DToVertical,
+                    QuestionString = "This means that we can apply equations of 1-D motion independently, to only the vertical motion of the ball.",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "verticalComponentFormula", new Question
+                {
+                    QuestionAudio = verticalComponentFormula,
+                    QuestionString = "Lets say that the ball was launched with an initial velocity of 'u' at an angle 'theta'. What would have been the vertical component of its initial velocity?",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "timeOfFlightCanBeFound", new Question
+                {
+                    QuestionAudio = timeOfFlightCanBeFound,
+                    QuestionString = "Which of the following can we calculate from analysing just the vertical motion of the ball?",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "whichEquationTimeOfFlight", new Question
+                {
+                    QuestionAudio = whichEquationTimeOfFlight,
+                    QuestionString = "Let's see if you remember. Which equation can be used to find the time of flight of the ball? (remember Vx = VcosTheta)",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "noticeOnlyHorizontalMotion", new Question
+                {
+                    QuestionAudio = noticeOnlyHorizontalMotion,
+                    QuestionString = "As you can see, the ball seems to be moving only horizontally",
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our X velocity is same as ball's X velocity, we can only observe the Y velocity of the ball." },
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -106,10 +171,65 @@ public class Dialogues : MonoBehaviour
             { "onlyHorizontalObservable", new Question
                 {
                     QuestionAudio = onlyHorizontalObservable,
-                    QuestionString = "As you can see, only the horizontal motion of the ball is now observable.",
+                    QuestionString = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "anyHorizontalForce", new Question
+                {
+                    QuestionAudio = anyHorizontalForce,
+                    QuestionString = "Assuming there is no air resistance, is there any other force applicable on the ball in the horizontal direction?",
+                    Options = new[] { "Got it!", "What?" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "isHorizontalVelocityAffected", new Question
+                {
+                    QuestionAudio = isHorizontalVelocityAffected,
+                    QuestionString = "If there is no force on the ball in horizontal direction, what will happen to its initial velocity ?",
+                    Options = new[] { "Got it!", "What?" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "horizontalComponentFormula", new Question
+                {
+                    QuestionAudio = horizontalComponentFormula,
+                    QuestionString = "Again, if the ball is launched with an initial velocity of 'u' at an angle 'theta', what will be the horizontal component of its initial velocity ?",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "rangeCanBeFound", new Question
+                {
+                    QuestionAudio = rangeCanBeFound,
+                    QuestionString = "Which of the following can we calculate from analysing just the horizontal motion of the ball ?",
+                    Options = new[] { "Range of the ball (till first bounce)", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    IsPausable = false,
+                    IsAnsweredCorrectly = false
+                }
+            },
+            { "rangeFormula", new Question
+                {
+                    QuestionAudio = rangeFormula,
+                    QuestionString = "Here's the final question. Performing which of the following operations will give you the range covered by the ball (up until the first bounce) ?",
+                    Options = new[] { "Oh yeah!", "No" },
+                    CorrectOptionIndex = 0,
+                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
