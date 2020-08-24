@@ -48,11 +48,11 @@ public class Direction : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    //private IEnumerator ShowExplanation(string explanationKey)
-    //{
-    //    Explanation currentExplanation = dialogues.GetExplanation(explanationKey);
-
-    //}
+    private void ShowExplanation(string explanationKey)
+    {
+        Explanation currentExplanation = dialogues.GetExplanation(explanationKey);
+        uiManager.DisplayExplanation(currentExplanation);
+    }
 
     private IEnumerator VisualiseHorizontalComponentOfVelocity()
     {
