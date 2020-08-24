@@ -48,6 +48,12 @@ public class Direction : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
+    //private IEnumerator ShowExplanation(string explanationKey)
+    //{
+    //    Explanation currentExplanation = dialogues.GetExplanation(explanationKey);
+
+    //}
+
     private IEnumerator VisualiseHorizontalComponentOfVelocity()
     {
         yield return StartCoroutine(WaitForButtonPress("clickVerticalCamera")); //say vertical "observer" or something like that, or "follow" the ball vertically

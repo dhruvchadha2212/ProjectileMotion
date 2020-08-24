@@ -23,7 +23,7 @@ public class QuizPanelController : MonoBehaviour
     [SerializeField] private Text tipText;
     [SerializeField] private GameObject buttonPrefab;
     
-    public void DisplayQuestion(string question)
+    public void DisplayQuestionText(string question)
     {
         questionText.text = question;
     }

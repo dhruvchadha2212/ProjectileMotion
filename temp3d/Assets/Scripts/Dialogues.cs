@@ -21,7 +21,9 @@ public class Dialogues : MonoBehaviour
     [SerializeField] private AudioClip horizontalComponentFormula;
     [SerializeField] private AudioClip rangeCanBeFound;
     [SerializeField] private AudioClip rangeFormula;
-    [SerializeField] private AudioClip onlyHorizontalObservable;
+    [Header("Explanation Images")]
+    [SerializeField] private GameObject onlyVerticalObservable;
+    [SerializeField] private GameObject onlyHorizontalObservable;
     [Header("Tasks")]
     [SerializeField] private AudioClip coolPressHorizontalCam;
     [SerializeField] private AudioClip launchBall;
@@ -33,6 +35,7 @@ public class Dialogues : MonoBehaviour
 
     private Dictionary<string, AudioClip> miscAudioClips;
     private Dictionary<string, Question> questions;
+    private Dictionary<string, Explanation> explanations;
     private Dictionary<string, Task> tasks;
 
     [SerializeField] private AudioClip[] appreciations;
@@ -87,16 +90,6 @@ public class Dialogues : MonoBehaviour
                     QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball seems to be moving only vertically?",
                     Options = new[] { "Nah, let me try again", "Oh wow ! I see it !" },
                     CorrectOptionIndex = 1,
-                    OptionTips = new[] { "", "", "" },
-                    IsPausable = true,
-                    IsAnsweredCorrectly = false
-                }
-            },
-            { "onlyVerticalObservable", new Question
-                {
-                    QuestionString = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
-                    Options = new[] { "Got it!", "Give me some time to visualise" },
-                    CorrectOptionIndex = 0,
                     OptionTips = new[] { "", "", "" },
                     IsPausable = true,
                     IsAnsweredCorrectly = false
@@ -168,17 +161,6 @@ public class Dialogues : MonoBehaviour
                     IsAnsweredCorrectly = false
                 }
             },
-            { "onlyHorizontalObservable", new Question
-                {
-                    QuestionAudio = onlyHorizontalObservable,
-                    QuestionString = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
-                    Options = new[] { "Got it!", "What?" },
-                    CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
-                    IsPausable = false,
-                    IsAnsweredCorrectly = false
-                }
-            },
             { "anyHorizontalForce", new Question
                 {
                     QuestionAudio = anyHorizontalForce,
@@ -236,6 +218,22 @@ public class Dialogues : MonoBehaviour
             }
         };
 
+        explanations = new Dictionary<string, Explanation>
+        {
+            { "onlyVerticalObservable", new Explanation
+                {
+                    ExplanationText = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
+                    ExplanationImage = onlyVerticalObservable   
+                }
+            },
+            { "onlyHorizontalObservable", new Explanation
+                {
+                    ExplanationText = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
+                    ExplanationImage = onlyHorizontalObservable
+                }
+            }
+        };
+
         tasks = new Dictionary<string, Task>
         {
             { "coolPressHorizontalCam", new Task
@@ -277,6 +275,11 @@ public class Dialogues : MonoBehaviour
     public Task GetTask(string taskKey)
     {
         return tasks[taskKey];
+    }
+
+    public Explanation GetExplanation(string explanationKey)
+    {
+        return explanations[explanationKey];
     }
 
     public AudioClip GetMiscAudioClip(string clipKey)

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject quizPanel;
+    [SerializeField] private GameObject explanationPanel;
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
 
     private QuizPanelController quizPanelController;
     private MetricsPanelController metricsPanelController;
+    private ExplanationPanelController explanationPanelController;
 
     private Question currentQuestion;
     private Text notificationTextBox;
@@ -35,8 +37,15 @@ public class UIManager : MonoBehaviour
         currentQuestion = question;
         quizPanel.SetActive(true);
         quizPanelController.DisplayTip("");
-        quizPanelController.DisplayQuestion(question.QuestionString);
+        quizPanelController.DisplayQuestionText(question.QuestionString);
         quizPanelController.DisplayOptions(question.Options, CheckAnswer);
+    }
+
+    public void DisplayExplanation(Explanation explanation)
+    {
+        explanationPanel.SetActive(true);
+        explanationPanelController.DisplayExplanationImage(explanation.ExplanationImage);
+        explanationPanelController.DisplayExplanationText(explanation.ExplanationText);
     }
 
     private void CheckAnswer(int index)
