@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     private ExplanationPanelController explanationPanelController;
 
     private Question currentQuestion;
+    private Explanation currentExplanation;
     private Text notificationTextBox;
 
     public void setMostRecentlyClickedButton(Text clickedButtonText)
@@ -46,6 +47,11 @@ public class UIManager : MonoBehaviour
         explanationPanel.SetActive(true);
         explanationPanelController.DisplayExplanationImage(explanation.ExplanationImage);
         explanationPanelController.DisplayExplanationText(explanation.ExplanationText);
+    }
+
+    public void MarkCurrentExplanationUnderstood()
+    {
+        currentExplanation.IsUnderstood = true;
     }
 
     private void CheckAnswer(int index)

@@ -24,7 +24,7 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         ////good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
+        yield return StartCoroutine(ShowExplanation("onlyHorizontalObservable"));
 
         ////now show explanation card instead of next question
         ////then let user save the card for later
@@ -48,10 +48,11 @@ public class Direction : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    private void ShowExplanation(string explanationKey)
+    private IEnumerator ShowExplanation(string explanationKey)
     {
         Explanation currentExplanation = dialogues.GetExplanation(explanationKey);
         uiManager.DisplayExplanation(currentExplanation);
+        yield return new WaitUntil(() => currentExplanation.IsUnderstood);
     }
 
     private IEnumerator VisualiseHorizontalComponentOfVelocity()

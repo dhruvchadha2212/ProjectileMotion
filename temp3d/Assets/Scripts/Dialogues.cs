@@ -223,13 +223,15 @@ public class Dialogues : MonoBehaviour
             { "onlyVerticalObservable", new Explanation
                 {
                     ExplanationText = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
-                    ExplanationImage = onlyVerticalObservable   
+                    ExplanationImage = onlyVerticalObservable,
+                    IsUnderstood = false
                 }
             },
             { "onlyHorizontalObservable", new Explanation
                 {
                     ExplanationText = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
-                    ExplanationImage = onlyHorizontalObservable
+                    ExplanationImage = onlyHorizontalObservable,
+                    IsUnderstood = false
                 }
             }
         };
