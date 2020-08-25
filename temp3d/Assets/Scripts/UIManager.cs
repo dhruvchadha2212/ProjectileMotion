@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         quizPanel.SetActive(false);
         quizPanelController = quizPanel.GetComponent<QuizPanelController>();
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
+        explanationPanelController = explanationPanel.GetComponent<ExplanationPanelController>();
         mostRecentlyClickedButton = string.Empty;
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
@@ -45,6 +46,7 @@ public class UIManager : MonoBehaviour
     public void DisplayExplanation(Explanation explanation)
     {
         explanationPanel.SetActive(true);
+        currentExplanation = explanation;
         explanationPanelController.DisplayExplanationImage(explanation.ExplanationImage);
         explanationPanelController.DisplayExplanationText(explanation.ExplanationText);
     }

@@ -13,8 +13,8 @@ public class ExplanationPanelController : MonoBehaviour
         explanationText.text = text;
     }
 
-    public void DisplayExplanationImage(GameObject image)
+    public void DisplayExplanationImage(GameObject imagePrefab)
     {
-        image.transform.parent = imagePanel.transform;
+        Instantiate(imagePrefab, imagePanel.transform);
     }
 }
