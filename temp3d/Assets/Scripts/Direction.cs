@@ -23,8 +23,8 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         ////good job ! you are an intuitive person.
-        //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(ShowExplanation("onlyHorizontalObservable"));
+        yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
+        yield return StartCoroutine(ShowExplanation("onlyVerticalObservable"));
 
         ////now show explanation card instead of next question
         ////then let user save the card for later
@@ -62,6 +62,7 @@ public class Direction : MonoBehaviour
         yield return StartCoroutine(WaitForBallLaunch());
         yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
         yield return StartCoroutine(WaitForBallLaunch());
+        
     }
 
     private IEnumerator VisualiseVerticalComponentOfVelocity()
@@ -72,6 +73,7 @@ public class Direction : MonoBehaviour
         yield return StartCoroutine(WaitForBallLaunch());
         yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
         yield return StartCoroutine(WaitForBallLaunch());
+        yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
     }
 
     private IEnumerator WaitForButtonPress(string taskKey)
