@@ -33,9 +33,12 @@ public class Direction : MonoBehaviour
         ////let user read themself. If required, they can play.
         //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
 
+
+        //Level 1 cleared -> the Time of flight of the ball is -
         yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
         //add another panel for task audios too.Long task audios need to be written too.
         yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
+        //Level 2 cleared -> the Range of the ball is -
     }
 
     private IEnumerator AskQuestion(string questionKey)

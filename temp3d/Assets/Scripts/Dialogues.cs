@@ -98,22 +98,22 @@ public class Dialogues : MonoBehaviour
             { "verticalIsIndependent", new Question
                 {
                     QuestionAudio = verticalIsIndependent,
-                    QuestionString = "This means that the vertical motion of the ball is just a simple 1-D motion, and is not affected by the horizontal motion of the ball.",
-                    Options = new[] { "Oh yeah!", "No" },
-                    CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
-                    IsPausable = false,
-                    IsAnsweredCorrectly = false
-                }
-            },
-            { "apply1DToVertical", new Question
-                {
-                    QuestionAudio = apply1DToVertical,
-                    QuestionString = "This means that we can apply equations of 1-D motion independently, to only the vertical motion of the ball.",
-                    Options = new[] { "Oh yeah!", "No" },
-                    CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
-                    IsPausable = false,
+                    QuestionString = "If the ball seems to be moving only vertically, which of the following is not true?",
+                    Options = new[]
+                    {
+                        "Gravity is the one and only external accelerator affecting the vertical velocity of the ball (ignore any air resistance).",
+                        "The horizontal motion interferes with the vertical motion of the ball, and affects its vertical speed and acceleration.",
+                        "We can apply equations of 1-D motion on only the vertical motion of the ball (that is, on the vertical speed and vertical acceleration)."
+
+                    },
+                    CorrectOptionIndex = 1,
+                    OptionTips = new[]
+                    {
+                        "No, this statement is true. There is no other accelerator apart from gravity.",
+                        "Correct! The ball's horizontal motion has nothing to do with the vertical motion. They are in their own inpendent axes!",
+                        "No, this statement is true. The 3 equations of motion can be applied of the vertical motion of the ball."
+                    },
+                    IsPausable = true,
                     IsAnsweredCorrectly = false
                 }
             },
@@ -121,9 +121,8 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = verticalComponentFormula,
                     QuestionString = "Lets say that the ball was launched with an initial velocity of 'u' at an angle 'theta'. What would have been the vertical component of its initial velocity?",
-                    Options = new[] { "Oh yeah!", "No" },
+                    Options = new[] { "Sample", "Sample" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -132,7 +131,12 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = timeOfFlightCanBeFound,
                     QuestionString = "Which of the following can we calculate from analysing just the vertical motion of the ball?",
-                    Options = new[] { "Oh yeah!", "No" },
+                    Options = new[] {
+                        "It's Range (How far the ball goes before it hits the ground.",
+                        "It's Rotational speed (Angular velocity).",
+                        "It's Time of Flight. (How long it remains in the air before hitting the ground.",
+                        "The final angle between the ball's velocity vector and the ground, when it hits the ground."
+                    },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
@@ -143,17 +147,17 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = whichEquationTimeOfFlight,
                     QuestionString = "Let's see if you remember. Which equation can be used to find the time of flight of the ball? (remember Vx = VcosTheta)",
-                    Options = new[] { "Oh yeah!", "No" },
+                    Options = new[] { "Sample", "Sample" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             },
+            //level 1 cleared, time of flight formula is ->
             { "noticeOnlyHorizontalMotion", new Question
                 {
                     QuestionAudio = noticeOnlyHorizontalMotion,
-                    QuestionString = "As you can see, the ball seems to be moving only horizontally",
+                    QuestionString = "As you can see, only the horizontal motion of the ball is now observable.",
                     Options = new[] { "Got it!", "What?" },
                     CorrectOptionIndex = 0,
                     OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
@@ -164,10 +168,15 @@ public class Dialogues : MonoBehaviour
             { "anyHorizontalForce", new Question
                 {
                     QuestionAudio = anyHorizontalForce,
-                    QuestionString = "Assuming there is no air resistance, is there any other force applicable on the ball in the horizontal direction?",
-                    Options = new[] { "Got it!", "What?" },
+                    QuestionString = "Assuming there is no air resistance, is there any other force affecting the horizontal speed of the ball, while it is in the air?",
+                    Options = new[] { "Yes, gravity", "Floor's friction", "No force affects the horizontal motion" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    OptionTips = new[]
+                    {
+                        "Gravity doesn't affect the horizontal speed, only the vertical speed.",
+                        "Floor's friction cannot affect the ball's movement, unless it is in contact with the floor.",
+                        "Correct!"
+                    },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -176,9 +185,14 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = isHorizontalVelocityAffected,
                     QuestionString = "If there is no force on the ball in horizontal direction, what will happen to its initial velocity ?",
-                    Options = new[] { "Got it!", "What?" },
+                    Options = new[] { "It will decelerate naturally", "It will maintain constant speed", "It will accelerate due to gravity" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
+                    OptionTips = new[]
+                    {
+                        "Nope, no force on the ball. No change in speed (Newton's second law of motion)",
+                        "Correct! No force on the ball. No change in speed (Newton's second law of motion)",
+                        "Nope, no force on the ball. No change in speed (Newton's second law of motion)",
+                    },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -187,9 +201,9 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = horizontalComponentFormula,
                     QuestionString = "Again, if the ball is launched with an initial velocity of 'u' at an angle 'theta', what will be the horizontal component of its initial velocity ?",
-                    Options = new[] { "Oh yeah!", "No" },
+                    Options = new[] { "Sample", "Sample" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    OptionTips = new[] { "", "" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -197,10 +211,16 @@ public class Dialogues : MonoBehaviour
             { "rangeCanBeFound", new Question
                 {
                     QuestionAudio = rangeCanBeFound,
-                    QuestionString = "Which of the following can we calculate from analysing just the horizontal motion of the ball ?",
-                    Options = new[] { "Range of the ball (till first bounce)", "No" },
+                    QuestionString = "Which of the following can we calculate from analysing just the horizontal motion of the ball (given that we know the time of flight from analysing the vertical motion)?",
+                    Options = new[]
+                    {
+                        "It's Range (How far the ball goes before it hits the ground.",
+                        "It's Rotational speed (Angular velocity).",
+                        "It's Time of Flight. (How long it remains in the air before hitting the ground.",
+                        "The final angle between the ball's velocity vector and the ground, when it hits the ground."
+                    },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    OptionTips = new[] { "" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
@@ -209,15 +229,15 @@ public class Dialogues : MonoBehaviour
                 {
                     QuestionAudio = rangeFormula,
                     QuestionString = "Here's the final question. Performing which of the following operations will give you the range covered by the ball (up until the first bounce) ?",
-                    Options = new[] { "Oh yeah!", "No" },
+                    Options = new[] { "Sample", "Sample" },
                     CorrectOptionIndex = 0,
-                    OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
+                    OptionTips = new[] { "", "" },
                     IsPausable = false,
                     IsAnsweredCorrectly = false
                 }
             }
         };
-
+        //excellent, range of projectile is ->
         explanations = new Dictionary<string, Explanation>
         {
             { "onlyVerticalObservable", new Explanation

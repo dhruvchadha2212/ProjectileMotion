@@ -58,7 +58,10 @@ public class UIManager : MonoBehaviour
 
     private void CheckAnswer(int index)
     {
-        quizPanelController.DisplayTip(currentQuestion.OptionTips[index]);
+        if(currentQuestion.OptionTips != null)
+        {
+            quizPanelController.DisplayTip(currentQuestion.OptionTips[index]);
+        }
         if(currentQuestion.CorrectOptionIndex == index)
         {
             currentQuestion.IsAnsweredCorrectly = true;
