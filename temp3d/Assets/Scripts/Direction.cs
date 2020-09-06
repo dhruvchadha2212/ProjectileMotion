@@ -18,12 +18,12 @@ public class Direction : MonoBehaviour
         //TODO replace with new menu scene
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
         //launch the ball a couple of times to get comfortable
-        //yield return StartCoroutine(WaitForBallLaunch());
-        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        yield return StartCoroutine(WaitForBallLaunch());
+        yield return StartCoroutine(AskQuestion("whatTrajectory"));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         ////good job ! you are an intuitive person.
-        yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
+        //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
         yield return StartCoroutine(ShowExplanation("onlyVerticalObservable"));
 
         ////now show explanation card instead of next question
