@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
+    [SerializeField] private QuizPanelControllerNew quizPanelControllerNew;
 
     public static string mostRecentlyClickedButton;
 
@@ -36,8 +37,9 @@ public class UIManager : MonoBehaviour
 
     public void DisplayQuestion(Question question)
     {
+        quizPanelControllerNew.DisplaySimpleMCQ(question);
         currentQuestion = question;
-        quizPanel.SetActive(true);
+        //quizPanel.SetActive(true);
         quizPanelController.DisplayTip("");
         quizPanelController.DisplayQuestionText(question.QuestionString);
         quizPanelController.DisplayOptions(question.Options, CheckAnswer);

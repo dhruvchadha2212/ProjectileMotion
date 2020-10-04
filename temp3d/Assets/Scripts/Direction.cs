@@ -24,7 +24,7 @@ public class Direction : MonoBehaviour
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         ////good job ! you are an intuitive person.
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(ShowExplanation("onlyVerticalObservable"));
+        //yield return StartCoroutine(ShowExplanation("onlyVerticalObservable"));
 
         ////now show explanation card instead of next question
         ////then let user save the card for later
@@ -35,9 +35,9 @@ public class Direction : MonoBehaviour
 
 
         //Level 1 cleared -> the Time of flight of the ball is -
-        yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
+        //yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
         //add another panel for task audios too.Long task audios need to be written too.
-        yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
+        //yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
         //Level 2 cleared -> the Range of the ball is -
     }
 
