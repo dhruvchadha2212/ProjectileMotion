@@ -64,9 +64,9 @@ public class UIManager : MonoBehaviour
         {
             quizPanelController.DisplayTip(currentQuestion.OptionTips[index]);
         }
-        if(currentQuestion.CorrectOptionIndex == index)
+        if(currentQuestion.CorrectOptionNumber == index)
         {
-            currentQuestion.IsAnsweredCorrectly = true;
+            currentQuestion.HasBeenAnsweredCorrectly = true;
             quizPanel.SetActive(false);
         } else
         {
@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
             {
                 quizPanelController.SetFlashCardActive(false);
                 quizPanelController.SetResumeButtonActive(true);
-                transform.parent.GetComponent<Direction>().audioManager.StopPlayingAudio();
+                transform.parent.GetComponent<Director>().audioManager.StopPlayingAudio();
             }
         }
     }

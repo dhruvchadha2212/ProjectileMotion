@@ -8,19 +8,32 @@ public class QuizPanelControllerNew : MonoBehaviour
     [SerializeField] private GameObject imageExplanationPanel;
     [SerializeField] private GameObject simpleExplanationPanel;
 
+    private Question currentQuestion;
+    private GenericQuestionUIExposer currentPanelUIExposer;
+
     public void DisplaySimpleMCQ(Question question)
     {
+        currentQuestion = question;
         simpleMCQPanel.SetActive(true);
         DisplayQuestionOnPanel(question, simpleMCQPanel);
     }
 
     private void DisplayQuestionOnPanel(Question question, GameObject panel)
     {
-        GenericQuestionUIExposer panelUIExposer = panel.GetComponent<GenericQuestionUIExposer>();
-        panelUIExposer.SetQuestionText(question.QuestionString);
-        panelUIExposer.SetOption1Text(question.Options[0]);
-        panelUIExposer.SetOption2Text(question.Options[1]);
-        panelUIExposer.SetOption3Text(question.Options[2]);
-        panelUIExposer.SetOption4Text(question.Options[3]);
+        currentPanelUIExposer = panel.GetComponent<GenericQuestionUIExposer>();
+        currentPanelUIExposer.SetQuestionText(question.QuestionString);
+        currentPanelUIExposer.SetOption1Text(question.Options[0]);
+        currentPanelUIExposer.SetOption2Text(question.Options[1]);
+        currentPanelUIExposer.SetOption3Text(question.Options[2]);
+        currentPanelUIExposer.SetOption4Text(question.Options[3]);
+    }
+
+    public void CheckAnswer(int optionNumber)
+    {
+        if (optionNumber == currentQuestion.CorrectOptionNumber)
+        {
+            currentQuestion.HasBeenAnsweredCorrectly = true;
+        }
+        currentPanelUIExposer.SetHintText(currentQuestion.OptionTips[optionNumber - 1]);
     }
 }

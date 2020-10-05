@@ -7983,6 +7983,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 332203958}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &337474994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337474996}
+  - component: {fileID: 337474995}
+  m_Layer: 0
+  m_Name: Quiz Panel Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &337474995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337474994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 999b6bd9ab5e22b49be86bec601cd46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleMCQPanel: {fileID: 1592405529433565333}
+  imageMCQPanel: {fileID: 532305980365596803}
+  longOptionMCQPanel: {fileID: 6178565579090389088}
+  imageExplanationPanel: {fileID: 6178565578608577011}
+  simpleExplanationPanel: {fileID: 182258676}
+--- !u!4 &337474996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337474994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1011968543}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &337684868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12032,7 +12080,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 3e-45, y: -1e-45, z: 0.0000015822326, w: 1}
+  m_LocalRotation: {x: -3e-45, y: 1e-45, z: -0.0000015822326, w: -1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18393,7 +18441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -3.3760002, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -656}
+  m_AnchoredPosition: {x: 373.00006, y: 56}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790934892
@@ -22932,7 +22980,7 @@ MonoBehaviour:
   metricsPanel: {fileID: 1413070341}
   bottomPanel: {fileID: 831150811}
   notificationPanel: {fileID: 6923239234756421863}
-  quizPanelControllerNew: {fileID: 6178565578844207021}
+  quizPanelControllerNew: {fileID: 337474995}
 --- !u!4 &1011968543
 Transform:
   m_ObjectHideFlags: 0
@@ -22943,7 +22991,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 337474996}
   m_Father: {fileID: 1977485906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48927,7 +48976,7 @@ GameObject:
   - component: {fileID: 1592405527878306815}
   - component: {fileID: 1592405527878306812}
   m_Layer: 5
-  m_Name: B
+  m_Name: Option 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48975,7 +49024,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592405527878306815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337474995}
+        m_MethodName: CheckAnswer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1592405527878306813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49386,7 +49446,7 @@ GameObject:
   - component: {fileID: 1592405528789030350}
   - component: {fileID: 1592405528789030351}
   m_Layer: 5
-  m_Name: D
+  m_Name: Option 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49463,7 +49523,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592405528789030350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337474995}
+        m_MethodName: CheckAnswer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1592405529229518856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49945,7 +50016,7 @@ GameObject:
   - component: {fileID: 1592405529382412223}
   - component: {fileID: 1592405529382412220}
   m_Layer: 5
-  m_Name: A
+  m_Name: Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49993,7 +50064,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592405529382412223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337474995}
+        m_MethodName: CheckAnswer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1592405529382412221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50371,7 +50453,7 @@ GameObject:
   - component: {fileID: 1592405529908590737}
   - component: {fileID: 1592405529908590742}
   m_Layer: 5
-  m_Name: C
+  m_Name: Option 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50419,7 +50501,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1592405529908590737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337474995}
+        m_MethodName: CheckAnswer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1592405529908590743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54544,7 +54637,6 @@ GameObject:
   - component: {fileID: 6178565578844207009}
   - component: {fileID: 6178565578844207010}
   - component: {fileID: 6178565578844207008}
-  - component: {fileID: 6178565578844207021}
   m_Layer: 5
   m_Name: Quiz Panel
   m_TagString: Untagged
@@ -54552,23 +54644,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6178565578844207021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6178565578844207020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999b6bd9ab5e22b49be86bec601cd46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  simpleMCQPanel: {fileID: 1592405529433565333}
-  imageMCQPanel: {fileID: 532305980365596803}
-  longOptionMCQPanel: {fileID: 6178565579090389088}
-  imageExplanationPanel: {fileID: 6178565578608577011}
-  simpleExplanationPanel: {fileID: 182258676}
 --- !u!222 &6178565579038837913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55288,7 +55363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -3.3760002, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 373, y: -937}
+  m_AnchoredPosition: {x: 786, y: -99}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6178565579395256777
@@ -56303,7 +56378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -3.3760002, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344, y: -936.99994}
+  m_AnchoredPosition: {x: -595, y: -99}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6178565579770025006
@@ -56674,7 +56749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -3.3760002, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 369, y: -787}
+  m_AnchoredPosition: {x: 79.99997, y: -98.99994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6178565580171378802
@@ -56791,8 +56866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.27561, y: 57}
-  m_SizeDelta: {x: 1920, y: 2190}
+  m_AnchoredPosition: {x: -0.27561, y: -489}
+  m_SizeDelta: {x: 1920, y: 357.23242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6178565580295504109
 GameObject:
@@ -57139,7 +57214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -3.3760002, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344, y: -790}
+  m_AnchoredPosition: {x: -320, y: 56}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6178565580507594273

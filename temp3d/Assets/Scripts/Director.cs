@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Direction : MonoBehaviour
+public class Director : MonoBehaviour
 {
     [SerializeField] private GameObject sphere;
     [SerializeField] private UIManager uiManager;
@@ -46,7 +46,7 @@ public class Direction : MonoBehaviour
         Question currentQuestion = dialogues.GetQuestion(questionKey);
         uiManager.DisplayQuestion(currentQuestion);
         audioManager.PlayInterruptible(currentQuestion.QuestionAudio);
-        yield return new WaitUntil(() => currentQuestion.IsAnsweredCorrectly);
+        yield return new WaitUntil(() => currentQuestion.HasBeenAnsweredCorrectly);
         yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetRandomAppreciation()));
         yield return new WaitForSeconds(0.5f);
     }
