@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Lean.Gui;
 
 public class QuizPanelControllerNew : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class QuizPanelControllerNew : MonoBehaviour
     public void DisplaySimpleMCQ(Question question)
     {
         currentQuestion = question;
-        simpleMCQPanel.SetActive(true);
+        simpleMCQPanel.GetComponent<LeanWindow>().On = true;
         DisplayQuestionOnPanel(question, simpleMCQPanel);
     }
 
