@@ -56,7 +56,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = whatTrajectory,
                     QuestionString = "What was the trajectory of the ball (till the first bounce) ?",
                     Options = new[] { "Straight Line", "Circular", "Curved but not circular", "None of the above" },
-                    CorrectOptionNumber = 2,
+                    CorrectOptionNumber = 3,
                     OptionTips = new[] { "No", "No", "Correct !", "No" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -67,7 +67,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = whyCurved,
                     QuestionString = "Why do you think the trajectory was curved?",
                     Options = new[] { "Ball's Elasticity", "Earth's Magnetic Force", "Earth's Gravity" },
-                    CorrectOptionNumber = 2,
+                    CorrectOptionNumber = 3,
                     OptionTips = new[] { "No", "No", "Correct !" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -78,7 +78,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = howManyAxes,
                     QuestionString = "So, if the path is curved, along how many axes is the ball moving in?",
                     Options = new[] { "1 (Horizontal Only)", "2 (Horizontal and Vertical)", "1 (Vertical Only)" },
-                    CorrectOptionNumber = 1,
+                    CorrectOptionNumber = 2,
                     OptionTips = new[] { "No", "Correct !", "No" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -89,7 +89,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = noticeOnlyVerticalMotion,
                     QuestionString = "Since we are moving along with the ball sideways, can you notice that the ball seems to be moving only vertically?",
                     Options = new[] { "Nah, let me try again", "Oh wow ! I see it !" },
-                    CorrectOptionNumber = 1,
+                    CorrectOptionNumber = 2,
                     OptionTips = new[] { "", "", "" },
                     IsPausable = true,
                     HasBeenAnsweredCorrectly = false
@@ -106,7 +106,7 @@ public class Dialogues : MonoBehaviour
                         "We can apply equations of 1-D motion on only the vertical motion of the ball (that is, on the vertical speed and vertical acceleration)."
 
                     },
-                    CorrectOptionNumber = 1,
+                    CorrectOptionNumber = 2,
                     OptionTips = new[]
                     {
                         "No, this statement is true. There is no other accelerator apart from gravity.",
@@ -122,7 +122,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = verticalComponentFormula,
                     QuestionString = "Lets say that the ball was launched with an initial velocity of 'u' at an angle 'theta'. What would have been the vertical component of its initial velocity?",
                     Options = new[] { "Sample", "Sample" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
                 }
@@ -137,7 +137,7 @@ public class Dialogues : MonoBehaviour
                         "It's Time of Flight. (How long it remains in the air before hitting the ground.",
                         "The final angle between the ball's velocity vector and the ground, when it hits the ground."
                     },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[] { "Correct !", "We are independently observing the vertical motion of the ball. Since its a simple motion in 1 dimension, we can apply the concepts of 1-D motion." },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -148,7 +148,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = whichEquationTimeOfFlight,
                     QuestionString = "Let's see if you remember. Which equation can be used to find the time of flight of the ball? (remember Vx = VcosTheta)",
                     Options = new[] { "Sample", "Sample" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
                 }
@@ -159,7 +159,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = noticeOnlyHorizontalMotion,
                     QuestionString = "As you can see, only the horizontal motion of the ball is now observable.",
                     Options = new[] { "Got it!", "What?" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[] { "Correct !", "The ball moves in X and Y direction. But since our Y velocity is same as ball's Y velocity, we can only observe the X velocity of the ball." },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -170,7 +170,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = anyHorizontalForce,
                     QuestionString = "Assuming there is no air resistance, is there any other force affecting the horizontal speed of the ball, while it is in the air?",
                     Options = new[] { "Yes, gravity", "Floor's friction", "No force affects the horizontal motion" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[]
                     {
                         "Gravity doesn't affect the horizontal speed, only the vertical speed.",
@@ -186,7 +186,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = isHorizontalVelocityAffected,
                     QuestionString = "If there is no force on the ball in horizontal direction, what will happen to its initial velocity ?",
                     Options = new[] { "It will decelerate naturally", "It will maintain constant speed", "It will accelerate due to gravity" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[]
                     {
                         "Nope, no force on the ball. No change in speed (Newton's second law of motion)",
@@ -202,7 +202,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = horizontalComponentFormula,
                     QuestionString = "Again, if the ball is launched with an initial velocity of 'u' at an angle 'theta', what will be the horizontal component of its initial velocity ?",
                     Options = new[] { "Sample", "Sample" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[] { "", "" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -219,7 +219,7 @@ public class Dialogues : MonoBehaviour
                         "It's Time of Flight. (How long it remains in the air before hitting the ground.",
                         "The final angle between the ball's velocity vector and the ground, when it hits the ground."
                     },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[] { "" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false
@@ -230,7 +230,7 @@ public class Dialogues : MonoBehaviour
                     QuestionAudio = rangeFormula,
                     QuestionString = "Here's the final question. Performing which of the following operations will give you the range covered by the ball (up until the first bounce) ?",
                     Options = new[] { "Sample", "Sample" },
-                    CorrectOptionNumber = 0,
+                    CorrectOptionNumber = 1,
                     OptionTips = new[] { "", "" },
                     IsPausable = false,
                     HasBeenAnsweredCorrectly = false

@@ -6,6 +6,7 @@ public class Question
 {
     public AudioClip QuestionAudio { get; set; }
     public string QuestionString { get; set; }
+    public string ExplanationString { get; set; }
     public Image QuestionImage { get; set; }
     public string[] Options { get; set; }
     public int CorrectOptionNumber { get; set; }

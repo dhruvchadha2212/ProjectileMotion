@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+//remeber to use cartoon figures with questions/explanations etc
+//dynamic button functionality can be added. Currently 4 options need to be present.
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject quizPanel;
-    [SerializeField] private GameObject explanationPanel;
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
-    [SerializeField] private QuizPanelControllerNew quizPanelControllerNew;
+    [SerializeField] private QuizPanelController quizPanelControllerNew;
 
     public static string mostRecentlyClickedButton;
 
-    private QuizPanelController quizPanelController;
     private MetricsPanelController metricsPanelController;
     private ExplanationPanelController explanationPanelController;
 
@@ -27,10 +26,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        quizPanel.SetActive(false);
-        quizPanelController = quizPanel.GetComponent<QuizPanelController>();
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
-        explanationPanelController = explanationPanel.GetComponent<ExplanationPanelController>();
         mostRecentlyClickedButton = string.Empty;
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
@@ -38,16 +34,11 @@ public class UIManager : MonoBehaviour
     public void DisplayQuestion(Question question)
     {
         quizPanelControllerNew.DisplaySimpleMCQ(question);
-        currentQuestion = question;
-        //quizPanel.SetActive(true);
-        quizPanelController.DisplayTip("");
-        quizPanelController.DisplayQuestionText(question.QuestionString);
-        quizPanelController.DisplayOptions(question.Options, CheckAnswer);
     }
 
     public void DisplayExplanation(Explanation explanation)
     {
-        explanationPanel.SetActive(true);
+        //explanationPanel.SetActive(true);
         currentExplanation = explanation;
         explanationPanelController.DisplayExplanationImage(explanation.ExplanationImage);
         explanationPanelController.DisplayExplanationText(explanation.ExplanationText);
@@ -56,27 +47,6 @@ public class UIManager : MonoBehaviour
     public void MarkCurrentExplanationUnderstood()
     {
         currentExplanation.IsUnderstood = true;
-    }
-
-    private void CheckAnswer(int index)
-    {
-        if(currentQuestion.OptionTips != null)
-        {
-            quizPanelController.DisplayTip(currentQuestion.OptionTips[index]);
-        }
-        if(currentQuestion.CorrectOptionNumber == index)
-        {
-            currentQuestion.HasBeenAnsweredCorrectly = true;
-            quizPanel.SetActive(false);
-        } else
-        {
-            if (currentQuestion.IsPausable)
-            {
-                quizPanelController.SetFlashCardActive(false);
-                quizPanelController.SetResumeButtonActive(true);
-                transform.parent.GetComponent<Director>().audioManager.StopPlayingAudio();
-            }
-        }
     }
 
     public void IsClicked(GameObject button)
