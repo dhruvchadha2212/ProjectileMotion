@@ -5,16 +5,18 @@ public class Dialogues : MonoBehaviour
 {
     [Header("Introduction")]
     [SerializeField] private AudioClip introduction;
-    [Header("Questions")]
+    [Header("General Questions")]
     [SerializeField] private AudioClip whatTrajectory;
     [SerializeField] private AudioClip whyCurved;
     [SerializeField] private AudioClip howManyAxes;
+    [Header("Only Vertical Motion")]
     [SerializeField] private AudioClip noticeOnlyVerticalMotion;
     [SerializeField] private AudioClip verticalIsIndependent;
     [SerializeField] private AudioClip apply1DToVertical;
     [SerializeField] private AudioClip verticalComponentFormula;
     [SerializeField] private AudioClip timeOfFlightCanBeFound;
     [SerializeField] private AudioClip whichEquationTimeOfFlight;
+    [Header("Only Horizontal Motion")]
     [SerializeField] private AudioClip noticeOnlyHorizontalMotion;
     [SerializeField] private AudioClip anyHorizontalForce;
     [SerializeField] private AudioClip isHorizontalVelocityAffected;
