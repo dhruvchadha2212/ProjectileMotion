@@ -78,7 +78,7 @@ public class Dialogues : MonoBehaviour
             { "howManyAxes", new Question
                 {
                     QuestionAudio = howManyAxes,
-                    QuestionString = "So, if the path is curved, along how many axes is the ball moving in?",
+                    QuestionString = "So, if the path is curved, along how many (directions) axes is the ball moving in?",
                     Options = new[] { "1 (Horizontal Only)", "2 (Horizontal and Vertical)", "1 (Vertical Only)" },
                     CorrectOptionNumber = 2,
                     OptionTips = new[] { "No", "Correct !", "No" },

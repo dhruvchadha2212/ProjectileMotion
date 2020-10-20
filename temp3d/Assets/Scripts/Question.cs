@@ -4,6 +4,7 @@ using UnityEngine.UI;
 // Model object to hold all attributes related to a question
 public class Question
 {
+    public QuestionType QuestionType { get; set; }
     public AudioClip QuestionAudio { get; set; }
     public string QuestionString { get; set; }
     public string ExplanationString { get; set; }

@@ -1,0 +1,8 @@
+﻿public enum QuestionType
+{
+    SIMPLE_MCQ,
+    LONG_OPTION_MCQ,
+    IMAGE_BASED_MCQ,
+    SIMPLE_EXPLANATION,
+    IMAGE_BASED_EXPLANATION
+}
