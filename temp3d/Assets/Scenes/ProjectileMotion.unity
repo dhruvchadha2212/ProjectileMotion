@@ -33804,6 +33804,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1547541598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1551177873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551177875}
+  - component: {fileID: 1551177874}
+  m_Layer: 0
+  m_Name: Dialogues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1551177874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551177873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9900ced82d371824c8e837da513deae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - {fileID: 11400000, guid: dee8520f1f5029349b268de40577e32c, type: 2}
+  - {fileID: 11400000, guid: 069dc1ad5315a4c409aa42c15937b249, type: 2}
+  - {fileID: 11400000, guid: bbb4204310cf02648997265a9ee3ac91, type: 2}
+--- !u!4 &1551177875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551177873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1977485906}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1551190831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34199,7 +34246,7 @@ GameObject:
   - component: {fileID: 1560705160}
   - component: {fileID: 1560705159}
   m_Layer: 0
-  m_Name: Dialogues
+  m_Name: DialoguesOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42478,7 +42525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere: {fileID: 1418279625}
   uiManager: {fileID: 1011968542}
-  dialogues: {fileID: 1560705159}
+  dialoguesOld: {fileID: 1560705159}
+  dialogues: {fileID: 1551177874}
   audioManager: {fileID: 1495534374}
 --- !u!4 &1977485906
 Transform:
@@ -42494,6 +42542,7 @@ Transform:
   - {fileID: 1011968543}
   - {fileID: 1560705160}
   - {fileID: 1495534376}
+  - {fileID: 1551177875}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
