@@ -5,6 +5,7 @@ public class Director : MonoBehaviour
 {
     [SerializeField] private GameObject sphere;
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private DialoguesOld dialoguesOld;
     [SerializeField] private Dialogues dialogues;
     [SerializeField] public AudioManager audioManager;
 
@@ -43,17 +44,16 @@ public class Director : MonoBehaviour
 
     private IEnumerator AskQuestion(string questionKey)
     {
-        Question currentQuestion = dialogues.GetQuestion(questionKey);
-        uiManager.DisplayQuestion(currentQuestion);
-        audioManager.PlayInterruptible(currentQuestion.QuestionAudio);
-        yield return new WaitUntil(() => currentQuestion.HasBeenAnsweredCorrectly);
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetRandomAppreciation()));
+        uiManager.DisplayQuestion(questionKey);
+        AudioManager.PlayInterruptible(questionKey);
+        //yield return new WaitUntil(() => currentQuestion.HasBeenAnsweredCorrectly);
+        //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetRandomAppreciation()));
         yield return new WaitForSeconds(0.5f);
     }
 
     private IEnumerator ShowExplanation(string explanationKey)
     {
-        Explanation currentExplanation = dialogues.GetExplanation(explanationKey);
+        Explanation currentExplanation = dialoguesOld.GetExplanation(explanationKey);
         uiManager.DisplayExplanation(currentExplanation);
         yield return new WaitUntil(() => currentExplanation.IsUnderstood);
     }
@@ -61,7 +61,7 @@ public class Director : MonoBehaviour
     private IEnumerator VisualiseVerticalComponentOfVelocity()
     {
         yield return StartCoroutine(WaitForButtonPress("coolPressHorizontalCam")); //Instead of camera, use word "observer"
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveSideways")));
+        //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetMiscAudioClip("nowWeMoveSideways")));
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(WaitForBallLaunch());
         yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
@@ -72,7 +72,7 @@ public class Director : MonoBehaviour
     private IEnumerator VisualiseHorizontalComponentOfVelocity()
     {
         yield return StartCoroutine(WaitForButtonPress("clickVerticalCamera")); //say vertical "observer" or something like that, or "follow" the ball vertically
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("nowWeMoveUpwards")));
+        //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetMiscAudioClip("nowWeMoveUpwards")));
         yield return StartCoroutine(WaitForBallLaunch());
         yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
         yield return StartCoroutine(WaitForBallLaunch());
@@ -81,16 +81,16 @@ public class Director : MonoBehaviour
 
     private IEnumerator WaitForButtonPress(string taskKey)
     {
-        Task task = dialogues.GetTask(taskKey);
+        Task task = dialoguesOld.GetTask(taskKey);
         UIManager.mostRecentlyClickedButton = string.Empty;
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
+        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
     }
 
     private IEnumerator WaitForBallLaunch()
     {
-        Task task = dialogues.GetTask("launchBall");
-        yield return StartCoroutine(audioManager.PlayAndWaitFor(task.TaskAudio));
+        Task task = dialoguesOld.GetTask("launchBall");
+        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
         yield return new WaitForSeconds(1);
     }

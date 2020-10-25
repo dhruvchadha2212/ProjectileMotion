@@ -19,17 +19,17 @@ public class GenericQuestionUIExposer : MonoBehaviour
 
     public void ShowQuestion(Question question)
     {
-        mainTextContainer.text = question.QuestionString;
+        mainTextContainer.text = question.text;
         if (option1Container != null)
         {
-            option1Container.text = question.Options[0];
-            option2Container.text = question.Options[1];
-            option3Container.text = question.Options[2];
-            option4Container.text = question.Options[3];
+            //option1Container.text = question.Options[0];
+            //option2Container.text = question.Options[1];
+            //option3Container.text = question.Options[2];
+            //option4Container.text = question.Options[3];
         }
         if (imageContainer != null)
         {
-            question.QuestionImage.transform.SetParent(imageContainer.transform);
+            question.image.transform.SetParent(imageContainer.transform);
         }
     }
 

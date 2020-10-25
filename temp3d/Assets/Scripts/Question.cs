@@ -1,19 +1,27 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
 
 // Model object to hold all attributes related to a question
-public class Question
+[CreateAssetMenu(menuName = "Question", fileName = "New Question")]
+public class Question : ScriptableObject
 {
-    public QuestionType QuestionType { get; set; }
+    public string id;
+    public QuestionType type;
 
-    public AudioClip QuestionAudio { get; set; }
-    public string QuestionString { get; set; }
-    public string ExplanationString { get; set; }
-    public Image QuestionImage { get; set; }
+    [TextArea]
+    public string text;
+    public AudioClip audio;
+    public string explanation;
+    public GameObject image;
 
-    public string[] Options { get; set; }
-    public int CorrectOptionNumber { get; set; }
-    public string[] OptionTips { get; set; }
+    public Option[] options;
+}
 
-    public bool HasBeenAnsweredCorrectly { get; set; }
+[Serializable]
+public class Option
+{
+    public string text;
+    public GameObject image;
+    public bool isCorrect;
+    public string tip;
 }

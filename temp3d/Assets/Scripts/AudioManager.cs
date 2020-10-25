@@ -1,30 +1,31 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private static AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public IEnumerator PlayAndWaitFor(AudioClip audioClip)
+    public static IEnumerator PlayAndWaitFor(string questionKey)
     {
-        PlayInterruptible(audioClip);
+        audioSource.Stop();
+        audioSource.clip = Dialogues.GetQuestion(questionKey).audio;
+        audioSource.Play();
         yield return new WaitWhile(() => audioSource.isPlaying);
     }
 
-    public void PlayInterruptible(AudioClip audioClip)
+    public static void PlayInterruptible(string questionKey)
     {
         audioSource.Stop();
-        audioSource.clip = audioClip;
+        audioSource.clip = Dialogues.GetQuestion(questionKey).audio;
         audioSource.Play();
     }
 
-    public void StopPlayingAudio()
+    public static void StopPlayingAudio()
     {
         audioSource.Stop();
     }

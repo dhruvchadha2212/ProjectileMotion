@@ -31,9 +31,9 @@ public class UIManager : MonoBehaviour
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
-    public void DisplayQuestion(Question question)
+    public void DisplayQuestion(string questionKey)
     {
-        quizPanelControllerNew.DisplaySimpleMCQ(question);
+        quizPanelControllerNew.DisplaySimpleMCQ(questionKey);
     }
 
     public void DisplayExplanation(Explanation explanation)
