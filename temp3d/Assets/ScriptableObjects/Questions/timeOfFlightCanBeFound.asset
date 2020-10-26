@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
+  m_Name: timeOfFlightCanBeFound
+  m_EditorClassIdentifier: 
+  id: timeOfFlightCanBeFound
+  type: 1
+  text: Which of the following can we calculate from analysing just the vertical
+    motion of the ball?
+  audio: {fileID: 0}
+  explanation: 
+  image: {fileID: 0}
+  options:
+  - text: It's Range (How far the ball goes before it hits the ground).
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: 
+  - text: It's Rotational speed (Angular velocity).
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: 
+  - text: It's Time of Flight. (How long it remains in the air before hitting the
+      ground.
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: The final angle between the ball's velocity vector and the ground, when
+      it hits the ground.
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: 

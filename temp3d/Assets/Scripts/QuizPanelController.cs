@@ -17,10 +17,12 @@ public class QuizPanelController : MonoBehaviour
     private Question currentQuestion;
     private GameObject currentPanel;
     private GenericQuestionUIExposer currentPanelUIExposer;
+    public static bool currentQuestionHasBeenAnsweredCorrectly;
 
     public void DisplaySimpleMCQ(string questionKey)
     {
         currentQuestion = Dialogues.GetQuestion(questionKey);
+        currentQuestionHasBeenAnsweredCorrectly = false;
         currentPanel = simpleMCQPanel;
         currentPanel.GetComponent<LeanWindow>().TurnOn();
         pauseButton.SetActive(true);
@@ -28,16 +30,16 @@ public class QuizPanelController : MonoBehaviour
         currentPanelUIExposer.ShowQuestion(currentQuestion);
     }
 
-    //public void CheckAnswer(int optionNumber)
-    //{
-    //    if (optionNumber == currentQuestion.CorrectOptionNumber)
-    //    {
-    //        currentQuestion.HasBeenAnsweredCorrectly = true;
-    //        currentPanel.GetComponent<LeanWindow>().On = false;
-    //        pauseButton.SetActive(false);
-    //    }
-    //    currentPanelUIExposer.ShowSecondaryText(currentQuestion.OptionTips[optionNumber - 1]);
-    //}
+    public void CheckAnswer(int optionNumber)
+    {
+        if (currentQuestion.options[optionNumber-1].isCorrect)
+        {
+            currentQuestionHasBeenAnsweredCorrectly = true;
+            currentPanel.GetComponent<LeanWindow>().On = false;
+            pauseButton.SetActive(false);
+        }
+        currentPanelUIExposer.ShowSecondaryText(currentQuestion.options[optionNumber - 1].tip);
+    }
 
     public void PauseCurrentQuestion()
     {

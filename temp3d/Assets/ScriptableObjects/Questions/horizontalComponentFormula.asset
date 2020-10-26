@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
+  m_Name: horizontalComponentFormula
+  m_EditorClassIdentifier: 
+  id: horizontalComponentFormula
+  type: 0
+  text: Again, if the ball is launched with an initial velocity of 'u' at an angle
+    'theta', what will be the horizontal component of its initial velocity ?
+  audio: {fileID: 0}
+  explanation: 
+  image: {fileID: 0}
+  options: []

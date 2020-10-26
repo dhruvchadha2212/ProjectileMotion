@@ -46,7 +46,7 @@ public class Director : MonoBehaviour
     {
         uiManager.DisplayQuestion(questionKey);
         AudioManager.PlayInterruptible(questionKey);
-        //yield return new WaitUntil(() => currentQuestion.HasBeenAnsweredCorrectly);
+        yield return new WaitUntil(() => QuizPanelController.currentQuestionHasBeenAnsweredCorrectly);
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetRandomAppreciation()));
         yield return new WaitForSeconds(0.5f);
     }

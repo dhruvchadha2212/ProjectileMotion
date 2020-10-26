@@ -22,10 +22,10 @@ public class GenericQuestionUIExposer : MonoBehaviour
         mainTextContainer.text = question.text;
         if (option1Container != null)
         {
-            //option1Container.text = question.Options[0];
-            //option2Container.text = question.Options[1];
-            //option3Container.text = question.Options[2];
-            //option4Container.text = question.Options[3];
+            option1Container.text = question.options[0].text;
+            option2Container.text = question.options[1].text;
+            option3Container.text = question.options[2].text;
+            option4Container.text = question.options[3].text;
         }
         if (imageContainer != null)
         {

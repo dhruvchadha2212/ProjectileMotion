@@ -128,7 +128,7 @@ public class DialoguesOld : MonoBehaviour
             //        audio = timeOfFlightCanBeFound,
             //        text = "Which of the following can we calculate from analysing just the vertical motion of the ball?",
             //        Options = new[] {
-            //            "It's Range (How far the ball goes before it hits the ground.",
+            //            "It's Range (How far the ball goes before it hits the ground).",
             //            "It's Rotational speed (Angular velocity).",
             //            "It's Time of Flight. (How long it remains in the air before hitting the ground.",
             //            "The final angle between the ball's velocity vector and the ground, when it hits the ground."
