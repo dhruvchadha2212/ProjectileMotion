@@ -244,37 +244,37 @@ public class DialoguesOld : MonoBehaviour
             }
         };
 
-        tasks = new Dictionary<string, Task>
-        {
-            { "coolPressHorizontalCam", new Task
-                {
-                    TaskAudio = coolPressHorizontalCam,
-                    TaskString = "Cool. Let me show you something. Press the horizontal camera button.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Horizontal"
-                }
-            },
-            { "launchBall", new Task
-                {
-                    TaskAudio = launchBall,
-                    TaskString = "Now launch the ball again.",
-                    IsCompleted = () => BallController.hasBouncedOnce
-                }
-            },
-            { "pressToggleBackground", new Task
-                {
-                    TaskAudio = pressToggleBackground,
-                    TaskString = "I want you to observe something interesting about the movement of the ball. Go ahead and press the toggle background button.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Toggle Background"
-                }
-            },
-            { "clickVerticalCamera", new Task
-                {
-                    TaskAudio = clickVerticalCamera,
-                    TaskString = "Now go ahead and click the vertical camera button.",
-                    IsCompleted = () => UIManager.mostRecentlyClickedButton == "Vertical"
-                }
-            }
-        };
+        //    tasks = new Dictionary<string, Task>
+        //    {
+        //        { "coolPressHorizontalCam", new Task
+        //            {
+        //                TaskAudio = coolPressHorizontalCam,
+        //                TaskString = "Cool. Let me show you something. Press the horizontal camera button.",
+        //                IsCompleted = () => UIManager.mostRecentlyClickedButton == "Horizontal"
+        //            }
+        //        },
+        //        { "launchBall", new Task
+        //            {
+        //                TaskAudio = launchBall,
+        //                TaskString = "Now launch the ball again.",
+        //                IsCompleted = () => BallController.hasBouncedOnce
+        //            }
+        //        },
+        //        { "pressToggleBackground", new Task
+        //            {
+        //                TaskAudio = pressToggleBackground,
+        //                TaskString = "I want you to observe something interesting about the movement of the ball. Go ahead and press the toggle background button.",
+        //                IsCompleted = () => UIManager.mostRecentlyClickedButton == "Toggle Background"
+        //            }
+        //        },
+        //        { "clickVerticalCamera", new Task
+        //            {
+        //                TaskAudio = clickVerticalCamera,
+        //                TaskString = "Now go ahead and click the vertical camera button.",
+        //                IsCompleted = () => UIManager.mostRecentlyClickedButton == "Vertical"
+        //            }
+        //        }
+        //    };
     }
 
     public Question GetQuestion(string questionKey)

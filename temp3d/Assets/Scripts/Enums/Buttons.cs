@@ -1,0 +1,7 @@
+﻿public enum Buttons
+{
+    TOGGLE_BACKGROUND,
+    HORIZONTAL_CAMERA,
+    VERTICAL_CAMERA,
+    WITH_BALL_CAMERA
+}

@@ -1,8 +1,32 @@
-﻿using System;
-using UnityEngine;
-public class Task
+﻿using UnityEngine;
+
+public abstract class Task
 {
-    public AudioClip TaskAudio { get; set; }
-    public string TaskString { get; set; }
-    public Func<bool> IsCompleted;
+    protected AudioClip TaskAudio;
+    protected string TaskString;
+
+    public abstract bool IsCompleted();
+}
+
+public class ButtonPressTask : Task
+{
+    string requiredButton;
+
+    ButtonPressTask(Question task)
+    {
+        this.requiredButton = task.id;
+    }
+
+    public override bool IsCompleted()
+    {
+        return UIManager.mostRecentlyClickedButton == requiredButton;
+    }
+}
+
+public class BallLaunchTask : Task
+{
+    public override bool IsCompleted()
+    {
+        throw new System.NotImplementedException();
+    }
 }

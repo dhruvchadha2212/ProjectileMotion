@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
     [SerializeField] private QuizPanelController quizPanelControllerNew;
+    [SerializeField] private EnumLeanButtonDictionary buttonMap;
 
     public static string mostRecentlyClickedButton;
 

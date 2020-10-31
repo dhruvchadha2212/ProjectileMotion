@@ -24,8 +24,11 @@ public class Director : MonoBehaviour
         yield return StartCoroutine(AskQuestion("whyCurved"));
         yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
+        //yield return StartCoroutine(RunQuest("VisualiseVerticalComponent"));
         yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-        yield return StartCoroutine(ShowExplanation("onlyVerticalObservable"));
+
+
+        //yield return StartCoroutine(ShowExplanation("onlyVerticalObservable")); //deprecated
 
         //now show explanation card instead of next question
         //then let user save the card for later
