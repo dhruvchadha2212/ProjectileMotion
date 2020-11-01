@@ -1,5 +1,6 @@
-﻿public enum Buttons
+﻿public enum GameButton
 {
+    NONE,
     TOGGLE_BACKGROUND,
     HORIZONTAL_CAMERA,
     VERTICAL_CAMERA,

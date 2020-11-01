@@ -7,7 +7,7 @@ public class Director : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private DialoguesOld dialoguesOld;
     [SerializeField] private Dialogues dialogues;
-    [SerializeField] public AudioManager audioManager;
+    [SerializeField] private QuestManager questManager;
 
     void Start()
     {
@@ -19,30 +19,30 @@ public class Director : MonoBehaviour
         //TODO replace with new menu scene
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
         //launch the ball a couple of times to get comfortable
-        yield return StartCoroutine(WaitForBallLaunch());
-        yield return StartCoroutine(AskQuestion("whatTrajectory"));
-        yield return StartCoroutine(AskQuestion("whyCurved"));
-        yield return StartCoroutine(AskQuestion("howManyAxes"));
+        //yield return StartCoroutine(WaitForBallLaunch());
+        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        //yield return StartCoroutine(AskQuestion("whyCurved"));
+        //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
-        //yield return StartCoroutine(RunQuest("VisualiseVerticalComponent"));
-        yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
+        yield return StartCoroutine(questManager.BeginQuest("VisualiseVerticalComponentOfVelocity"));
+        //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
 
 
-        //yield return StartCoroutine(ShowExplanation("onlyVerticalObservable")); //deprecated
+        ////yield return StartCoroutine(ShowExplanation("onlyVerticalObservable")); //deprecated
 
-        //now show explanation card instead of next question
-        //then let user save the card for later
-        yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
+        ////now show explanation card instead of next question
+        ////then let user save the card for later
+        //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));
 
-        //let user read themself. If required, they can play.
-        yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
+        ////let user read themself. If required, they can play.
+        //yield return StartCoroutine(AskQuestion("onlyVerticalObservable"));
 
 
-        //Level 1 cleared -> the Time of flight of the ball is -
-        yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
-        //add another panel for task audios too.Long task audios need to be written too.
-        yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
-        //Level 2 cleared -> the Range of the ball is -
+        ////Level 1 cleared -> the Time of flight of the ball is -
+        //yield return StartCoroutine(VisualiseHorizontalComponentOfVelocity()); //Vertical Camera
+        ////add another panel for task audios too.Long task audios need to be written too.
+        //yield return StartCoroutine(AskQuestion("onlyHorizontalObservable"));
+        ////Level 2 cleared -> the Range of the ball is -
     }
 
     private IEnumerator AskQuestion(string questionKey)
@@ -85,7 +85,7 @@ public class Director : MonoBehaviour
     private IEnumerator WaitForButtonPress(string taskKey)
     {
         Task task = dialoguesOld.GetTask(taskKey);
-        UIManager.mostRecentlyClickedButton = string.Empty;
+        GameState.mostRecentlyClickedGameButton = GameButton.NONE;
         //yield return StartCoroutine(AudioManager.PlayAndWaitFor(task.TaskAudio));
         yield return new WaitUntil(task.IsCompleted);
     }

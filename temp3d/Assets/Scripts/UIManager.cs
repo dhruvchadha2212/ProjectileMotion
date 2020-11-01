@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Lean.Gui;
 
 //remeber to use cartoon figures with questions/explanations etc
 //dynamic button functionality can be added. Currently 4 options need to be present.
@@ -9,9 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
     [SerializeField] private QuizPanelController quizPanelControllerNew;
-    [SerializeField] private EnumLeanButtonDictionary buttonMap;
 
-    public static string mostRecentlyClickedButton;
+    private static EnumLeanButtonDictionary buttonMap = new EnumLeanButtonDictionary();
 
     private MetricsPanelController metricsPanelController;
     private ExplanationPanelController explanationPanelController;
@@ -20,15 +20,15 @@ public class UIManager : MonoBehaviour
     private Explanation currentExplanation;
     private Text notificationTextBox;
 
-    public void setMostRecentlyClickedButton(Text clickedButtonText)
+    public static void InsertKeyValueToButtonMap(GameButton gameButton, LeanButton leanButton)
     {
-        mostRecentlyClickedButton = clickedButtonText.text;
+        buttonMap.Add(gameButton, leanButton);
     }
 
     private void Start()
     {
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
-        mostRecentlyClickedButton = string.Empty;
+        GameState.mostRecentlyClickedGameButton = GameButton.NONE;
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
@@ -48,11 +48,6 @@ public class UIManager : MonoBehaviour
     public void MarkCurrentExplanationUnderstood()
     {
         currentExplanation.IsUnderstood = true;
-    }
-
-    public void IsClicked(GameObject button)
-    {
-        mostRecentlyClickedButton = button.name;
     }
 
     public void DisplayVelocityAndAngle(double initialVelocity, double initialAngle)

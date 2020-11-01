@@ -8,6 +8,8 @@ public class Dialogues : MonoBehaviour
 
     private static Dictionary<string, Question> questionIdToQuestionMap = new Dictionary<string, Question>();
 
+    private static Dictionary<string, Question> GameButtonToQuestionMap = new Dictionary<string, Question>();
+
     private void Start()
     {
         foreach (Question question in questions)
@@ -18,6 +20,11 @@ public class Dialogues : MonoBehaviour
 
     public static Question GetQuestion(string questionId)
     {
-        return questionIdToQuestionMap[questionId];
+        return questionIdToQuestionMap[questionId]; //change to enum question dictionary
+    }
+
+    public static Question GetTaskInfo(string questionId)
+    {
+        return GameButtonToQuestionMap[questionId]; //change to enum question dictionary
     }
 }

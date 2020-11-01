@@ -10,7 +10,22 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public static IEnumerator PlayAndWaitFor(string questionKey)
+    public static IEnumerator PlayAndWaitFor(AudioClip audioClip)
+    {
+        audioSource.Stop();
+        audioSource.clip = audioClip;
+        audioSource.Play();
+        yield return new WaitWhile(() => audioSource.isPlaying);
+    }
+
+    public static void PlayInterruptible(AudioClip audioClip)
+    {
+        audioSource.Stop();
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
+
+    public static IEnumerator PlayAndWaitFor(string questionKey) //remove these methods, should play audioclip only, shouldnt need to search
     {
         audioSource.Stop();
         audioSource.clip = Dialogues.GetQuestion(questionKey).audio;

@@ -2,24 +2,36 @@
 
 public abstract class Task
 {
-    protected AudioClip TaskAudio;
-    protected string TaskString;
+    protected AudioClip taskAudio;
+    protected string taskString;
 
     public abstract bool IsCompleted();
+
+    public AudioClip GetTaskAudio()
+    {
+        return taskAudio;
+    }
+    public string GetTaskString()
+    {
+        return taskString;
+    }
 }
 
 public class ButtonPressTask : Task
 {
-    string requiredButton;
+    private GameButton requiredButton;
 
-    ButtonPressTask(Question task)
+    public ButtonPressTask(GameButton gameButton)
     {
-        this.requiredButton = task.id;
+        requiredButton = gameButton;
+        Question taskInfo = Dialogues.GetTaskInfo(gameButton.ToString());
+        taskString = taskInfo.text;
+        taskAudio = taskInfo.audio;
     }
 
     public override bool IsCompleted()
     {
-        return UIManager.mostRecentlyClickedButton == requiredButton;
+        return GameState.mostRecentlyClickedGameButton == requiredButton;
     }
 }
 
