@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject notificationPanel;
     [SerializeField] private QuizPanelController quizPanelControllerNew;
 
-    private static EnumLeanButtonDictionary buttonMap = new EnumLeanButtonDictionary();
+    private static GameButtonToLeanButtonDictionary buttonMap = new GameButtonToLeanButtonDictionary();
 
     private MetricsPanelController metricsPanelController;
     private ExplanationPanelController explanationPanelController;
@@ -32,9 +32,9 @@ public class UIManager : MonoBehaviour
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
-    public void DisplayQuestion(string questionKey)
+    public void DisplayCurrentQuestion()
     {
-        quizPanelControllerNew.DisplaySimpleMCQ(questionKey);
+        quizPanelControllerNew.DisplaySimpleMCQ();
     }
 
     public void DisplayExplanation(Explanation explanation)

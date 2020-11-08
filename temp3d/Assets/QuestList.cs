@@ -7,8 +7,8 @@ public class QuestList
         {
             "VisualiseVerticalComponentOfVelocity", new Quest
             (
-                new ButtonPressTask(GameButton.TOGGLE_BACKGROUND),
-                new ButtonPressTask(GameButton.TOGGLE_BACKGROUND)
+                new ButtonPressTask(GameButton.HORIZONTAL_CAMERA),
+                new BallLaunchTask()
             )
         }
     };

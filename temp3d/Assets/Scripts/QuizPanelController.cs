@@ -19,9 +19,9 @@ public class QuizPanelController : MonoBehaviour
     private GenericQuestionUIExposer currentPanelUIExposer;
     public static bool currentQuestionHasBeenAnsweredCorrectly;
 
-    public void DisplaySimpleMCQ(string questionKey)
+    public void DisplaySimpleMCQ()
     {
-        currentQuestion = Dialogues.GetQuestion(questionKey);
+        currentQuestion = Dialogues.GetQuestion(GameState.currentQuestionName);
         currentQuestionHasBeenAnsweredCorrectly = false;
         currentPanel = simpleMCQPanel;
         currentPanel.GetComponent<LeanWindow>().TurnOn();

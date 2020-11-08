@@ -24,7 +24,7 @@ public class ButtonPressTask : Task
     public ButtonPressTask(GameButton gameButton)
     {
         requiredButton = gameButton;
-        Question taskInfo = Dialogues.GetTaskInfo(gameButton.ToString());
+        Question taskInfo = Dialogues.GetButtonPressTaskInfo(gameButton);
         taskString = taskInfo.text;
         taskAudio = taskInfo.audio;
     }
@@ -37,8 +37,15 @@ public class ButtonPressTask : Task
 
 public class BallLaunchTask : Task
 {
+    public BallLaunchTask()
+    {
+        Question taskInfo = Dialogues.GetBallLaunchTaskInfo();
+        taskString = taskInfo.text;
+        taskAudio = taskInfo.audio;
+    }
+
     public override bool IsCompleted()
     {
-        throw new System.NotImplementedException();
+        return GameState.ballHasBouncedOnce == true;
     }
 }

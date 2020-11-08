@@ -18,9 +18,8 @@ public class Quest
             if (task.GetType() == typeof(ButtonPressTask)) {
                 GameState.mostRecentlyClickedGameButton = GameButton.NONE;
                 //add code to disable all other buttons
-                AudioManager.PlayInterruptible(task.GetTaskAudio());
-                Debug.Log(task.ToString());
             }
+            AudioManager.PlayInterruptible(task.GetTaskAudio());
             yield return new WaitUntil(task.IsCompleted);
         }
     }

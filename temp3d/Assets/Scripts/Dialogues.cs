@@ -1,30 +1,35 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Dialogues : MonoBehaviour
 {
-    [Header("Questions (NOT IN ORDER)")]
-    [SerializeField] private List<Question> questions;
+    [SerializeField] private QuestionNameToQuestionDictionary questionNameToQuestionMap;
+    private static QuestionNameToQuestionDictionary questionNameToQuestionMapStatic;
 
-    private static Dictionary<string, Question> questionIdToQuestionMap = new Dictionary<string, Question>();
+    [SerializeField] private GameButtonToQuestionDictionary gameButtonToTaskInfoMap;
+    private static GameButtonToQuestionDictionary gameButtonToTaskInfoMapStatic;
 
-    private static Dictionary<string, Question> GameButtonToQuestionMap = new Dictionary<string, Question>();
+    [SerializeField] private Question ballLaunchTaskInfo;
+    private static Question ballLaunchTaskInfoStatic;
 
     private void Start()
     {
-        foreach (Question question in questions)
-        {
-            questionIdToQuestionMap.Add(question.id, question);
-        }
+        gameButtonToTaskInfoMapStatic = gameButtonToTaskInfoMap;
+        questionNameToQuestionMapStatic = questionNameToQuestionMap;
+        ballLaunchTaskInfoStatic = ballLaunchTaskInfo;
     }
 
-    public static Question GetQuestion(string questionId)
+    public static Question GetQuestion(QuestionName questionName)
     {
-        return questionIdToQuestionMap[questionId]; //change to enum question dictionary
+        return questionNameToQuestionMapStatic[questionName];
     }
 
-    public static Question GetTaskInfo(string questionId)
+    public static Question GetButtonPressTaskInfo(GameButton gameButton)
     {
-        return GameButtonToQuestionMap[questionId]; //change to enum question dictionary
+        return gameButtonToTaskInfoMapStatic[gameButton];
+    }
+
+    public static Question GetBallLaunchTaskInfo()
+    {
+        return ballLaunchTaskInfoStatic;
     }
 }

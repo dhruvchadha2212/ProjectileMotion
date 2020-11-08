@@ -20,7 +20,7 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
         //launch the ball a couple of times to get comfortable
         //yield return StartCoroutine(WaitForBallLaunch());
-        //yield return StartCoroutine(AskQuestion("whatTrajectory"));
+        yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.
@@ -45,10 +45,11 @@ public class Director : MonoBehaviour
         ////Level 2 cleared -> the Range of the ball is -
     }
 
-    private IEnumerator AskQuestion(string questionKey)
+    private IEnumerator AskQuestion(QuestionName questionName)
     {
-        uiManager.DisplayQuestion(questionKey);
-        AudioManager.PlayInterruptible(questionKey);
+        GameState.currentQuestionName = questionName;
+        uiManager.DisplayCurrentQuestion();
+        AudioManager.PlayInterruptible(questionName);
         yield return new WaitUntil(() => QuizPanelController.currentQuestionHasBeenAnsweredCorrectly);
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetRandomAppreciation()));
         yield return new WaitForSeconds(0.5f);
@@ -69,7 +70,7 @@ public class Director : MonoBehaviour
         yield return StartCoroutine(WaitForBallLaunch());
         yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
         yield return StartCoroutine(WaitForBallLaunch());
-        yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
+        //yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
     }
 
     private IEnumerator VisualiseHorizontalComponentOfVelocity()
