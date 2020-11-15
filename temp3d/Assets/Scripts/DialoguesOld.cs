@@ -47,7 +47,7 @@ public class DialoguesOld : MonoBehaviour
         miscAudioClips = new Dictionary<string, AudioClip>
         {
             { "introduction", introduction },
-            { "nowWeMoveSideways", nowWeMoveSideways },
+            { "nowWeMoveSideways", nowWeMoveSideways }, //use question, also add explanation image
             { "nowWeMoveUpwards", nowWeMoveUpwards}
         };
 

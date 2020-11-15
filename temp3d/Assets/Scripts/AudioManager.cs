@@ -33,10 +33,10 @@ public class AudioManager : MonoBehaviour
         yield return new WaitWhile(() => audioSource.isPlaying);
     }
 
-    public static void PlayInterruptible(QuestionName questionName)
+    public static void PlayCurrentQuestionInterruptible()
     {
         audioSource.Stop();
-        audioSource.clip = Dialogues.GetQuestion(questionName).audio;
+        audioSource.clip = Dialogues.GetQuestion(GameState.currentQuestionName).audio;
         audioSource.Play();
     }
 

@@ -15,11 +15,7 @@ public class Quest
     {
         foreach (Task task in tasks)
         {
-            if (task.GetType() == typeof(ButtonPressTask)) {
-                GameState.mostRecentlyClickedGameButton = GameButton.NONE;
-                //add code to disable all other buttons
-            }
-            AudioManager.PlayInterruptible(task.GetTaskAudio());
+            task.setUp();
             yield return new WaitUntil(task.IsCompleted);
         }
     }

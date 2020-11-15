@@ -4,6 +4,7 @@ public class GameState : MonoBehaviour
 {
     public static GameButton mostRecentlyClickedGameButton;
     public static QuestionName currentQuestionName;
+    public static bool currentQuestionHasBeenAnsweredCorrectly;
     public static bool ballIsJustLaunched = false;
     public static bool ballHasBouncedOnce = false;
 

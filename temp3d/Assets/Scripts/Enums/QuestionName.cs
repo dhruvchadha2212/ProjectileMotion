@@ -1,4 +1,5 @@
 ﻿public enum QuestionName
 {
-    WHAT_TRAJECTORY
+    WHAT_TRAJECTORY,
+    NOW_WE_MOVE_SIDEWAYS
 }

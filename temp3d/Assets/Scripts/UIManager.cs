@@ -2,14 +2,15 @@
 using UnityEngine.UI;
 using Lean.Gui;
 
-//remeber to use cartoon figures with questions/explanations etc
+//remember to use cartoon figures with questions/explanations etc
 //dynamic button functionality can be added. Currently 4 options need to be present.
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
     [SerializeField] private GameObject notificationPanel;
-    [SerializeField] private QuizPanelController quizPanelControllerNew;
+    [SerializeField] private QuizPanelController quizPanelController;
+    private static QuizPanelController quizPanelControllerStatic;
 
     private static GameButtonToLeanButtonDictionary buttonMap = new GameButtonToLeanButtonDictionary();
 
@@ -27,14 +28,15 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        quizPanelControllerStatic = quizPanelController;
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
         GameState.mostRecentlyClickedGameButton = GameButton.NONE;
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
-    public void DisplayCurrentQuestion()
+    public static void DisplayCurrentQuestion()
     {
-        quizPanelControllerNew.DisplaySimpleMCQ();
+        quizPanelControllerStatic.DisplaySimpleMCQ();
     }
 
     public void DisplayExplanation(Explanation explanation)

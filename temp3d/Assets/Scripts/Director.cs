@@ -48,9 +48,9 @@ public class Director : MonoBehaviour
     private IEnumerator AskQuestion(QuestionName questionName)
     {
         GameState.currentQuestionName = questionName;
-        uiManager.DisplayCurrentQuestion();
-        AudioManager.PlayInterruptible(questionName);
-        yield return new WaitUntil(() => QuizPanelController.currentQuestionHasBeenAnsweredCorrectly);
+        UIManager.DisplayCurrentQuestion();
+        AudioManager.PlayCurrentQuestionInterruptible();
+        yield return new WaitUntil(() => GameState.currentQuestionHasBeenAnsweredCorrectly);
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetRandomAppreciation()));
         yield return new WaitForSeconds(0.5f);
     }
@@ -64,7 +64,7 @@ public class Director : MonoBehaviour
 
     private IEnumerator VisualiseVerticalComponentOfVelocity()
     {
-        yield return StartCoroutine(WaitForButtonPress("coolPressHorizontalCam")); //Instead of camera, use word "observer"
+        yield return StartCoroutine(WaitForButtonPress("coolPressHorizontalCam")); // TODO Instead of camera, use word "observer"
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetMiscAudioClip("nowWeMoveSideways")));
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(WaitForBallLaunch());

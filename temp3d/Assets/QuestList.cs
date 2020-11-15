@@ -8,6 +8,9 @@ public class QuestList
             "VisualiseVerticalComponentOfVelocity", new Quest
             (
                 new ButtonPressTask(GameButton.HORIZONTAL_CAMERA),
+                new QuestionTask(QuestionName.NOW_WE_MOVE_SIDEWAYS),
+                new BallLaunchTask(),
+                new ButtonPressTask(GameButton.TOGGLE_BACKGROUND),
                 new BallLaunchTask()
             )
         }

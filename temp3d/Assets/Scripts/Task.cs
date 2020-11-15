@@ -2,19 +2,8 @@
 
 public abstract class Task
 {
-    protected AudioClip taskAudio;
-    protected string taskString;
-
+    public abstract void setUp();
     public abstract bool IsCompleted();
-
-    public AudioClip GetTaskAudio()
-    {
-        return taskAudio;
-    }
-    public string GetTaskString()
-    {
-        return taskString;
-    }
 }
 
 public class ButtonPressTask : Task
@@ -24,9 +13,16 @@ public class ButtonPressTask : Task
     public ButtonPressTask(GameButton gameButton)
     {
         requiredButton = gameButton;
-        Question taskInfo = Dialogues.GetButtonPressTaskInfo(gameButton);
-        taskString = taskInfo.text;
-        taskAudio = taskInfo.audio;
+    }
+
+    public override void setUp()
+    {
+        // GameState changes
+        GameState.mostRecentlyClickedGameButton = GameButton.NONE;
+        // TODO add code to disable all other buttons
+        // Setup
+        Question taskInfo = Dialogues.GetButtonPressTaskInfo(requiredButton);
+        AudioManager.PlayInterruptible(taskInfo.audio);
     }
 
     public override bool IsCompleted()
@@ -37,15 +33,38 @@ public class ButtonPressTask : Task
 
 public class BallLaunchTask : Task
 {
-    public BallLaunchTask()
+    public override void setUp()
     {
         Question taskInfo = Dialogues.GetBallLaunchTaskInfo();
-        taskString = taskInfo.text;
-        taskAudio = taskInfo.audio;
+        AudioManager.PlayInterruptible(taskInfo.audio);
     }
 
     public override bool IsCompleted()
     {
         return GameState.ballHasBouncedOnce == true;
+    }
+}
+
+public class QuestionTask : Task
+{
+
+    private QuestionName requiredQuestion;
+
+    public QuestionTask(QuestionName questionName)
+    {
+        requiredQuestion = questionName;
+    }
+
+    public override void setUp()
+    {
+        GameState.currentQuestionName = requiredQuestion;
+        UIManager.DisplayCurrentQuestion();
+        AudioManager.PlayCurrentQuestionInterruptible();
+    }
+
+    public override bool IsCompleted()
+    {
+        return GameState.currentQuestionHasBeenAnsweredCorrectly;
+        // TODO figure out code for random appreciation
     }
 }

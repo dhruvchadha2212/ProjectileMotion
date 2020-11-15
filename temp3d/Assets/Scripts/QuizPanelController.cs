@@ -14,15 +14,14 @@ public class QuizPanelController : MonoBehaviour
     [SerializeField] private GameObject simpleExplanationPanel;
     [SerializeField] private GameObject resumeButton;
 
-    private Question currentQuestion;
+    private Question currentQuestion; //remove to use gamestate, currently uses Question class, need to use QuestionName class
     private GameObject currentPanel;
     private GenericQuestionUIExposer currentPanelUIExposer;
-    public static bool currentQuestionHasBeenAnsweredCorrectly;
 
     public void DisplaySimpleMCQ()
     {
         currentQuestion = Dialogues.GetQuestion(GameState.currentQuestionName);
-        currentQuestionHasBeenAnsweredCorrectly = false;
+        GameState.currentQuestionHasBeenAnsweredCorrectly = false;
         currentPanel = simpleMCQPanel;
         currentPanel.GetComponent<LeanWindow>().TurnOn();
         pauseButton.SetActive(true);
@@ -34,7 +33,7 @@ public class QuizPanelController : MonoBehaviour
     {
         if (currentQuestion.options[optionNumber-1].isCorrect)
         {
-            currentQuestionHasBeenAnsweredCorrectly = true;
+            GameState.currentQuestionHasBeenAnsweredCorrectly = true;
             currentPanel.GetComponent<LeanWindow>().On = false;
             pauseButton.SetActive(false);
         }

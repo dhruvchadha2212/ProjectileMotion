@@ -4486,7 +4486,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 2.75508e-40, w: -3.11e-43}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 1.0314e-41, w: 5.9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -11789,7 +11789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -3e-45, y: 1e-45, z: -0.0000015822326, w: -1}
+  m_LocalRotation: {x: -3e-45, y: -1e-45, z: 0.0000015822326, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22422,7 +22422,7 @@ MonoBehaviour:
   metricsPanel: {fileID: 1413070341}
   bottomPanel: {fileID: 831150811}
   notificationPanel: {fileID: 6923239234756421863}
-  quizPanelControllerNew: {fileID: 337474995}
+  quizPanelController: {fileID: 337474995}
 --- !u!4 &1011968543
 Transform:
   m_ObjectHideFlags: 0
@@ -22435,7 +22435,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 337474996}
-  - {fileID: 1048118661}
   m_Father: {fileID: 1977485906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22823,49 +22822,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1043605744}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1048118660
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1048118661}
-  - component: {fileID: 1048118662}
-  m_Layer: 0
-  m_Name: ButtonCatalog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1048118661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048118660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1011968543}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1048118662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048118660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0edb4cc67c3104a8aff960847a9aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1049279897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30048,7 +30004,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -3e-45, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: 6e-45, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33964,9 +33920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionNameToQuestionMap:
-    m_keys: 00000000
+    m_keys: 0000000001000000
     m_values:
     - {fileID: 11400000, guid: 069dc1ad5315a4c409aa42c15937b249, type: 2}
+    - {fileID: 11400000, guid: 4ab703766c494be4d96242687208df7f, type: 2}
   gameButtonToTaskInfoMap:
     m_keys: 02000000
     m_values:
@@ -49695,7 +49652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54579a4ddb1d17f438c276a802c9ff8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 3
+  gameButton: 3
 --- !u!114 &2830582842218048382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50649,7 +50606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54579a4ddb1d17f438c276a802c9ff8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 4
+  gameButton: 4
 --- !u!114 &2830582843704915790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51140,7 +51097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54579a4ddb1d17f438c276a802c9ff8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 2
+  gameButton: 2
 --- !u!114 &2830582843810594326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54886,7 +54843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54579a4ddb1d17f438c276a802c9ff8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 1
+  gameButton: 1
 --- !u!114 &8518501369755031038
 MonoBehaviour:
   m_ObjectHideFlags: 0

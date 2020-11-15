@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Question", fileName = "New Question")]
 public class Question : ScriptableObject
 {
-    public string id;
+    public QuestionName questionName;
     public QuestionType type;
 
     [TextArea]
