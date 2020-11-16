@@ -2,7 +2,7 @@
 
 public class GameState : MonoBehaviour
 {
-    public static GameButton mostRecentlyClickedGameButton;
+    public static GameButton mostRecentlyClickedGameButton = GameButton.NONE;
     public static QuestionName currentQuestionName;
     public static bool currentQuestionHasBeenAnsweredCorrectly;
     public static bool ballIsJustLaunched = false;

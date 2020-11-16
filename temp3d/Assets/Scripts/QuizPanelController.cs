@@ -14,30 +14,29 @@ public class QuizPanelController : MonoBehaviour
     [SerializeField] private GameObject simpleExplanationPanel;
     [SerializeField] private GameObject resumeButton;
 
-    private Question currentQuestion; //remove to use gamestate, currently uses Question class, need to use QuestionName class
+    //private Question currentQuestion; //remove to use gamestate, currently uses Question class, need to use QuestionName class
     private GameObject currentPanel;
     private GenericQuestionUIExposer currentPanelUIExposer;
 
-    public void DisplaySimpleMCQ()
+    public void DisplayCurrentQuestion()
     {
-        currentQuestion = Dialogues.GetQuestion(GameState.currentQuestionName);
-        GameState.currentQuestionHasBeenAnsweredCorrectly = false;
-        currentPanel = simpleMCQPanel;
+        currentPanel = GetPanelForQuestionType(Dialogues.GetQuestion(GameState.currentQuestionName).type);
         currentPanel.GetComponent<LeanWindow>().TurnOn();
         pauseButton.SetActive(true);
-        currentPanelUIExposer = simpleMCQPanel.GetComponent<GenericQuestionUIExposer>();
-        currentPanelUIExposer.ShowQuestion(currentQuestion);
+        currentPanelUIExposer = currentPanel.GetComponent<GenericQuestionUIExposer>();
+        currentPanelUIExposer.ShowCurrentQuestion();
     }
 
     public void CheckAnswer(int optionNumber)
     {
-        if (currentQuestion.options[optionNumber-1].isCorrect)
+        Option selectedOption = Dialogues.GetQuestion(GameState.currentQuestionName).options[optionNumber - 1];
+        if (selectedOption.isCorrect)
         {
             GameState.currentQuestionHasBeenAnsweredCorrectly = true;
             currentPanel.GetComponent<LeanWindow>().On = false;
             pauseButton.SetActive(false);
         }
-        currentPanelUIExposer.ShowSecondaryText(currentQuestion.options[optionNumber - 1].tip);
+        currentPanelUIExposer.ShowSecondaryText(selectedOption.tip);
     }
 
     public void PauseCurrentQuestion()
@@ -52,6 +51,13 @@ public class QuizPanelController : MonoBehaviour
         resumeButton.SetActive(false);
         pauseButton.SetActive(true);
         currentPanel.GetComponent<LeanWindow>().TurnOn();
+    }
+
+    private GameObject GetPanelForQuestionType(QuestionType questionType)
+    {
+        if (questionType == QuestionType.SIMPLE_MCQ) return simpleMCQPanel;
+        else if (questionType == QuestionType.LONG_OPTION_MCQ) return longOptionMCQPanel;
+        else return simpleExplanationPanel;
     }
 
     //// in case first question had 4 options and next had 3, the last option will still

@@ -11789,7 +11789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -3e-45, y: -1e-45, z: 0.0000015822326, w: 1}
+  m_LocalRotation: {x: 0, y: -1e-45, z: 0.0000015822326, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30004,7 +30004,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: 6e-45, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: -3e-45, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -54801,8 +54801,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1011968542}
-        m_MethodName: SetMostRecentlyClickedButton
+      - m_Target: {fileID: 1169480995}
+        m_MethodName: SetMostRecentlyClickedGameButton
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8518501369755031037}

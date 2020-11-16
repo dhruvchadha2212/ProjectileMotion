@@ -25,14 +25,6 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public static IEnumerator PlayAndWaitFor(QuestionName questionName) //remove these methods, should play audioclip only, shouldnt need to search
-    {
-        audioSource.Stop();
-        audioSource.clip = Dialogues.GetQuestion(questionName).audio;
-        audioSource.Play();
-        yield return new WaitWhile(() => audioSource.isPlaying);
-    }
-
     public static void PlayCurrentQuestionInterruptible()
     {
         audioSource.Stop();

@@ -17,8 +17,9 @@ public class GenericQuestionUIExposer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI secondaryTextContainer;
     [SerializeField] private GameObject imageContainer;
 
-    public void ShowQuestion(Question question)
+    public void ShowCurrentQuestion()
     {
+        Question question = Dialogues.GetQuestion(GameState.currentQuestionName);
         mainTextContainer.text = question.text;
         if (option1Container != null)
         {

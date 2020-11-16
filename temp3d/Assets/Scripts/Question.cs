@@ -16,12 +16,3 @@ public class Question : ScriptableObject
 
     public Option[] options;
 }
-
-[Serializable]
-public class Option
-{
-    public string text;
-    public GameObject image;
-    public bool isCorrect;
-    public string tip;
-}

@@ -38,7 +38,7 @@ public class DialoguesOld : MonoBehaviour
     private Dictionary<string, AudioClip> miscAudioClips;
     private Dictionary<string, Question> questions;
     private Dictionary<string, Explanation> explanations;
-    private Dictionary<string, Task> tasks;
+    private Dictionary<string, ITask> tasks;
 
     [SerializeField] private AudioClip[] appreciations;
 
@@ -282,7 +282,7 @@ public class DialoguesOld : MonoBehaviour
         return questions[questionKey];
     }
 
-    public Task GetTask(string taskKey)
+    public ITask GetTask(string taskKey)
     {
         return tasks[taskKey];
     }

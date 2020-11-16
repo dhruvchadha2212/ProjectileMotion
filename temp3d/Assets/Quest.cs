@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Quest
 {
-    private Task[] tasks;
+    private ITask[] tasks;
 
-    public Quest(params Task[] tasks)
+    public Quest(params ITask[] tasks)
     {
         this.tasks = tasks;
     }
 
     public IEnumerator BeginQuest()
     {
-        foreach (Task task in tasks)
+        foreach (ITask task in tasks)
         {
-            task.setUp();
+            task.SetUp();
             yield return new WaitUntil(task.IsCompleted);
         }
     }

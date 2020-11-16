@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     private Explanation currentExplanation;
     private Text notificationTextBox;
 
+    //Used by UI buttons on Start(), through the ButtonInfo object.
     public static void InsertKeyValueToButtonMap(GameButton gameButton, LeanButton leanButton)
     {
         buttonMap.Add(gameButton, leanButton);
@@ -30,26 +31,15 @@ public class UIManager : MonoBehaviour
     {
         quizPanelControllerStatic = quizPanelController;
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
-        GameState.mostRecentlyClickedGameButton = GameButton.NONE;
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
     }
 
+    /// <summary>
+    /// Delegates display question task to QuizPanelController
+    /// </summary>
     public static void DisplayCurrentQuestion()
     {
-        quizPanelControllerStatic.DisplaySimpleMCQ();
-    }
-
-    public void DisplayExplanation(Explanation explanation)
-    {
-        //explanationPanel.SetActive(true);
-        currentExplanation = explanation;
-        explanationPanelController.DisplayExplanationImage(explanation.ExplanationImage);
-        explanationPanelController.DisplayExplanationText(explanation.ExplanationText);
-    }
-
-    public void MarkCurrentExplanationUnderstood()
-    {
-        currentExplanation.IsUnderstood = true;
+        quizPanelControllerStatic.DisplayCurrentQuestion();
     }
 
     public void DisplayVelocityAndAngle(double initialVelocity, double initialAngle)

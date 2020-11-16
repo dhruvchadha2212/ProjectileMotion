@@ -55,47 +55,24 @@ public class Director : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    private IEnumerator ShowExplanation(string explanationKey)
-    {
-        Explanation currentExplanation = dialoguesOld.GetExplanation(explanationKey);
-        uiManager.DisplayExplanation(currentExplanation);
-        yield return new WaitUntil(() => currentExplanation.IsUnderstood);
-    }
-
     private IEnumerator VisualiseVerticalComponentOfVelocity()
     {
-        yield return StartCoroutine(WaitForButtonPress("coolPressHorizontalCam")); // TODO Instead of camera, use word "observer"
+        //yield return StartCoroutine(WaitForButtonPress("coolPressHorizontalCam")); // TODO Instead of camera, use word "observer"
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetMiscAudioClip("nowWeMoveSideways")));
         yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(WaitForBallLaunch());
-        yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
-        yield return StartCoroutine(WaitForBallLaunch());
+        //yield return StartCoroutine(WaitForBallLaunch());
+        //yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
+        //yield return StartCoroutine(WaitForBallLaunch());
         //yield return StartCoroutine(AskQuestion("noticeOnlyVerticalMotion"));
     }
 
     private IEnumerator VisualiseHorizontalComponentOfVelocity()
     {
-        yield return StartCoroutine(WaitForButtonPress("clickVerticalCamera")); //say vertical "observer" or something like that, or "follow" the ball vertically
+        //yield return StartCoroutine(WaitForButtonPress("clickVerticalCamera")); //say vertical "observer" or something like that, or "follow" the ball vertically
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialoguesOld.GetMiscAudioClip("nowWeMoveUpwards")));
-        yield return StartCoroutine(WaitForBallLaunch());
-        yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
-        yield return StartCoroutine(WaitForBallLaunch());
-        
-    }
-
-    private IEnumerator WaitForButtonPress(string taskKey)
-    {
-        Task task = dialoguesOld.GetTask(taskKey);
-        GameState.mostRecentlyClickedGameButton = GameButton.NONE;
-        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(task.TaskAudio));
-        yield return new WaitUntil(task.IsCompleted);
-    }
-
-    private IEnumerator WaitForBallLaunch()
-    {
-        Task task = dialoguesOld.GetTask("launchBall");
-        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(task.TaskAudio));
-        yield return new WaitUntil(task.IsCompleted);
-        yield return new WaitForSeconds(1);
+        //yield return StartCoroutine(WaitForBallLaunch());
+        //yield return StartCoroutine(WaitForButtonPress("pressToggleBackground"));
+        //yield return StartCoroutine(WaitForBallLaunch());
+        yield return new WaitForSeconds(0.5f);
     }
 }

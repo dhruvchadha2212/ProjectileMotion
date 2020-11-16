@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public abstract class Task
+public interface ITask
 {
-    public abstract void setUp();
-    public abstract bool IsCompleted();
+    void SetUp();
+    bool IsCompleted();
 }
 
-public class ButtonPressTask : Task
+public class ButtonPressTask : ITask
 {
     private GameButton requiredButton;
 
@@ -15,7 +15,7 @@ public class ButtonPressTask : Task
         requiredButton = gameButton;
     }
 
-    public override void setUp()
+    public void SetUp()
     {
         // GameState changes
         GameState.mostRecentlyClickedGameButton = GameButton.NONE;
@@ -25,29 +25,28 @@ public class ButtonPressTask : Task
         AudioManager.PlayInterruptible(taskInfo.audio);
     }
 
-    public override bool IsCompleted()
+    public bool IsCompleted()
     {
         return GameState.mostRecentlyClickedGameButton == requiredButton;
     }
 }
 
-public class BallLaunchTask : Task
+public class BallLaunchTask : ITask
 {
-    public override void setUp()
+    public void SetUp()
     {
         Question taskInfo = Dialogues.GetBallLaunchTaskInfo();
         AudioManager.PlayInterruptible(taskInfo.audio);
     }
 
-    public override bool IsCompleted()
+    public bool IsCompleted()
     {
         return GameState.ballHasBouncedOnce == true;
     }
 }
 
-public class QuestionTask : Task
+public class QuestionTask : ITask
 {
-
     private QuestionName requiredQuestion;
 
     public QuestionTask(QuestionName questionName)
@@ -55,16 +54,39 @@ public class QuestionTask : Task
         requiredQuestion = questionName;
     }
 
-    public override void setUp()
+    public void SetUp()
     {
         GameState.currentQuestionName = requiredQuestion;
+        GameState.currentQuestionHasBeenAnsweredCorrectly = false;
         UIManager.DisplayCurrentQuestion();
         AudioManager.PlayCurrentQuestionInterruptible();
     }
 
-    public override bool IsCompleted()
+    public bool IsCompleted()
     {
         return GameState.currentQuestionHasBeenAnsweredCorrectly;
         // TODO figure out code for random appreciation
+    }
+}
+
+public class WaitTask : ITask
+{
+    private float timeStamp;
+    private float secondsToWait;
+
+    public WaitTask (float seconds)
+    {
+        secondsToWait = seconds;
+    }
+
+    public void SetUp()
+    {
+        timeStamp = Time.time;
+    }
+
+    public bool IsCompleted()
+    {
+        if (Time.time - timeStamp > secondsToWait) return true;
+        return false;
     }
 }
