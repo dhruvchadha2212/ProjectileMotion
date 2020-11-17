@@ -86,7 +86,6 @@ public class WaitTask : ITask
 
     public bool IsCompleted()
     {
-        if (Time.time - timeStamp > secondsToWait) return true;
-        return false;
+        return Time.time - timeStamp > secondsToWait;
     }
 }
