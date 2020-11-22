@@ -8,10 +8,9 @@ public class Question : ScriptableObject
     public QuestionName questionName;
     public QuestionType type;
 
-    [TextArea]
-    public string text;
+    [TextArea] public string mainText;
     public AudioClip audio;
-    public string explanation;
+    [TextArea] public string explanation;
     public GameObject image;
 
     public Option[] options;

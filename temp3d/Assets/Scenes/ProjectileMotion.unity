@@ -4840,7 +4840,8 @@ MonoBehaviour:
   option2Container: {fileID: 0}
   option3Container: {fileID: 0}
   option4Container: {fileID: 0}
-  secondaryTextContainer: {fileID: 0}
+  explanationTextContainer: {fileID: 0}
+  tipTextContainer: {fileID: 0}
   imageContainer: {fileID: 0}
 --- !u!114 &182258678
 MonoBehaviour:
@@ -11789,7 +11790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: -1e-45, z: 0.0000015822326, w: 1}
+  m_LocalRotation: {x: 3e-45, y: 1e-45, z: -0.0000015822326, w: -1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30004,7 +30005,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -3e-45, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: 6e-45, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46383,7 +46384,8 @@ MonoBehaviour:
   option2Container: {fileID: 0}
   option3Container: {fileID: 0}
   option4Container: {fileID: 0}
-  secondaryTextContainer: {fileID: 0}
+  explanationTextContainer: {fileID: 0}
+  tipTextContainer: {fileID: 0}
   imageContainer: {fileID: 0}
 --- !u!114 &532305980365596805
 MonoBehaviour:
@@ -48989,7 +48991,8 @@ MonoBehaviour:
   option2Container: {fileID: 1592405529789230694}
   option3Container: {fileID: 1592405529229518856}
   option4Container: {fileID: 1592405528087123823}
-  secondaryTextContainer: {fileID: 1592405528698443124}
+  explanationTextContainer: {fileID: 0}
+  tipTextContainer: {fileID: 0}
   imageContainer: {fileID: 0}
 --- !u!114 &1592405529433565337
 MonoBehaviour:
@@ -51790,7 +51793,7 @@ RectTransform:
   m_GameObject: {fileID: 6178565578608577011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0.01, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6178565580507594275}
   - {fileID: 6178565579682302486}
@@ -51835,7 +51838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fd146527b61614a96da3a84e74ad78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  on: 1
   turnOffSiblings: 0
   onTransitions:
     speed: -1
@@ -51877,13 +51880,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5471db1844488534db7a9a87f654ef39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextContainer: {fileID: 0}
+  mainTextContainer: {fileID: 6178565579682302480}
   option1Container: {fileID: 0}
   option2Container: {fileID: 0}
   option3Container: {fileID: 0}
   option4Container: {fileID: 0}
-  secondaryTextContainer: {fileID: 0}
-  imageContainer: {fileID: 0}
+  explanationTextContainer: {fileID: 6178565579669103576}
+  tipTextContainer: {fileID: 0}
+  imageContainer: {fileID: 6178565580507594284}
 --- !u!222 &6178565578608577015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -52380,7 +52384,8 @@ MonoBehaviour:
   option2Container: {fileID: 0}
   option3Container: {fileID: 0}
   option4Container: {fileID: 0}
-  secondaryTextContainer: {fileID: 0}
+  explanationTextContainer: {fileID: 0}
+  tipTextContainer: {fileID: 0}
   imageContainer: {fileID: 0}
 --- !u!224 &6178565579090389095
 RectTransform:

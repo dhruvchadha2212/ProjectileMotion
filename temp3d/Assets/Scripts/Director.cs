@@ -20,7 +20,8 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(audioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
         //launch the ball a couple of times to get comfortable
         //yield return StartCoroutine(WaitForBallLaunch());
-        yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
+        //yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
+        yield return StartCoroutine(AskQuestion(QuestionName.NOW_WE_MOVE_SIDEWAYS));
         //yield return StartCoroutine(AskQuestion("whyCurved"));
         //yield return StartCoroutine(AskQuestion("howManyAxes"));
         //good job ! you are an intuitive person.

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: nowWeMoveSideways
   m_EditorClassIdentifier: 
   questionName: 1
-  type: 0
-  text: TODO
+  type: 4
+  mainText: Title (Remove)
   audio: {fileID: 8300000, guid: 626166d9c3df02047ac473178cce1d79, type: 3}
-  explanation: 
-  image: {fileID: 0}
+  explanation: Now we move sideways
+  image: {fileID: 3875141527203440554, guid: b072ee9af6733f445bb41186dcc2bb7f, type: 3}
   options:
   - text: ok
     image: {fileID: 0}

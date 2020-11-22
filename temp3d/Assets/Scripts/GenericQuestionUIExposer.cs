@@ -14,13 +14,14 @@ public class GenericQuestionUIExposer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option2Container;
     [SerializeField] private TextMeshProUGUI option3Container;
     [SerializeField] private TextMeshProUGUI option4Container;
-    [SerializeField] private TextMeshProUGUI secondaryTextContainer;
+    [SerializeField] private TextMeshProUGUI explanationTextContainer;
+    [SerializeField] private TextMeshProUGUI tipTextContainer;
     [SerializeField] private GameObject imageContainer;
 
     public void ShowCurrentQuestion()
     {
         Question question = Dialogues.GetQuestion(GameState.currentQuestionName);
-        mainTextContainer.text = question.text;
+        mainTextContainer.text = question.mainText;
         if (option1Container != null)
         {
             option1Container.text = question.options[0].text;
@@ -30,12 +31,17 @@ public class GenericQuestionUIExposer : MonoBehaviour
         }
         if (imageContainer != null)
         {
-            question.image.transform.SetParent(imageContainer.transform);
+            GameObject imageInstance = Instantiate(question.image, imageContainer.transform);
+            imageInstance.transform.SetParent(imageContainer.transform);
+        }
+        if (explanationTextContainer != null)
+        {
+            explanationTextContainer.text = question.explanation;
         }
     }
 
-    public void ShowSecondaryText(string secondaryText)
+    public void ShowTipText(string tipText)
     {
-        secondaryTextContainer.text = secondaryText;
+        tipTextContainer.text = tipText;
     }
 }

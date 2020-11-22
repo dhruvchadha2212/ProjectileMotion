@@ -36,7 +36,7 @@ public class QuizPanelController : MonoBehaviour
             currentPanel.GetComponent<LeanWindow>().On = false;
             pauseButton.SetActive(false);
         }
-        currentPanelUIExposer.ShowSecondaryText(selectedOption.tip);
+        currentPanelUIExposer.ShowTipText(selectedOption.tip);
     }
 
     public void PauseCurrentQuestion()
@@ -57,6 +57,7 @@ public class QuizPanelController : MonoBehaviour
     {
         if (questionType == QuestionType.SIMPLE_MCQ) return simpleMCQPanel;
         else if (questionType == QuestionType.LONG_OPTION_MCQ) return longOptionMCQPanel;
+        else if (questionType == QuestionType.IMAGE_BASED_EXPLANATION) return imageExplanationPanel;
         else return simpleExplanationPanel;
     }
 
