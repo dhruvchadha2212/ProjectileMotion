@@ -12,11 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: horizontalComponentFormula
   m_EditorClassIdentifier: 
-  id: horizontalComponentFormula
+  questionName: 13
   type: 0
-  text: Again, if the ball is launched with an initial velocity of 'u' at an angle
-    'theta', what will be the horizontal component of its initial velocity ?
+  mainText: Again, if the ball is launched with an initial velocity of 'u' at an
+    angle 'theta', what will be the horizontal component of its initial velocity
+    ?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
-  options: []
+  options:
+  - text: F1
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F2
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F3
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F4
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 

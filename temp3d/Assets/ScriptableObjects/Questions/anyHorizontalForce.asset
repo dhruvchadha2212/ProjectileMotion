@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: anyHorizontalForce
   m_EditorClassIdentifier: 
-  id: anyHorizontalForce
+  questionName: 11
   type: 0
-  text: Assuming there is no air resistance, is there any other force affecting the
-    horizontal speed of the ball, while it is in the air?
+  mainText: Assuming there is no air resistance, is there any other force affecting
+    the horizontal speed of the ball, while it is in the air?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -36,4 +36,4 @@ MonoBehaviour:
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !

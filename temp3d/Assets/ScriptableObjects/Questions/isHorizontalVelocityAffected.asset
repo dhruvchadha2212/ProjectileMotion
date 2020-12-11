@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: isHorizontalVelocityAffected
   m_EditorClassIdentifier: 
-  id: isHorizontalVelocityAffected
+  questionName: 12
   type: 0
-  text: If there is no force on the ball in horizontal direction, what will happen
+  mainText: If there is no force on the ball in horizontal direction, what will happen
     to its initial velocity ?
   audio: {fileID: 0}
   explanation: 
@@ -26,7 +26,7 @@ MonoBehaviour:
     tip: Nope, no force on the ball. No change in speed (Newton's second law of motion)
   - text: It will maintain constant speed
     image: {fileID: 0}
-    isCorrect: 0
+    isCorrect: 1
     tip: Correct! No force on the ball. No change in speed (Newton's second law of
       motion)
   - text: It will accelerate due to gravity.
@@ -36,4 +36,4 @@ MonoBehaviour:
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !

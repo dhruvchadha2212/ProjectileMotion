@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: whyCurved
   m_EditorClassIdentifier: 
-  id: whyCurved
+  questionName: 2
   type: 0
-  text: Why do you think the trajectory was curved?
+  mainText: Why do you think the trajectory was curved?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -22,16 +22,16 @@ MonoBehaviour:
   - text: Ball's Elasticity
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !
   - text: Earth's Magnetic Force
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !
   - text: Earth's Gravity
     image: {fileID: 0}
     isCorrect: 1
-    tip: 
+    tip: Correct !
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: howManyAxes
   m_EditorClassIdentifier: 
-  id: howManyAxes
+  questionName: 3
   type: 0
-  text: So, if the path is curved, along how many (directions) axes is the ball moving
-    in?
+  mainText: So, if the path is curved, along how many (directions) axes is the ball
+    moving in?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -23,16 +23,16 @@ MonoBehaviour:
   - text: 1 (Horizontal Only)
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !
   - text: 2 (Horizontal and Vertical)
     image: {fileID: 0}
     isCorrect: 1
-    tip: 
+    tip: Correct !
   - text: 1 (Vertical Only)
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !

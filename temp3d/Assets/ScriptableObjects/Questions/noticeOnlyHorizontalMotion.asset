@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: noticeOnlyHorizontalMotion
   m_EditorClassIdentifier: 
-  id: noticeOnlyHorizontalMotion
+  questionName: 10
   type: 0
-  text: As you can see, only the horizontal motion of the ball is now observable.
+  mainText: As you can see, only the horizontal motion of the ball is now observable.
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}

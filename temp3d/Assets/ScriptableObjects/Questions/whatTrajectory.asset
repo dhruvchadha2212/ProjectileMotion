@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: whatTrajectory
   m_EditorClassIdentifier: 
-  id: whatTrajectory
+  questionName: 0
   type: 0
-  text: What was the trajectory of the ball (till the first bounce) ?
+  mainText: What was the trajectory of the ball (till the first bounce) ?
   audio: {fileID: 8300000, guid: 9ef51d283043bb14692f142e8df07c3d, type: 3}
   explanation: 
   image: {fileID: 0}
@@ -22,16 +22,16 @@ MonoBehaviour:
   - text: Straight Line
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !
   - text: Circular
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: Not exactly !
   - text: Curved but not circular
     image: {fileID: 0}
     isCorrect: 1
-    tip: 
+    tip: Correct !
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: 
+    tip: No !

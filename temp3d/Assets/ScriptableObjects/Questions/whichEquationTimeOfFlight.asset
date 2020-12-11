@@ -12,11 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: whichEquationTimeOfFlight
   m_EditorClassIdentifier: 
-  id: whichEquationTimeOfFlight
+  questionName: 8
   type: 0
-  text: Let's see if you remember. Which equation can be used to find the time of
-    flight of the ball? (remember Vx = VcosTheta)
+  mainText: Let's see if you remember. Which equation can be used to find the time
+    of flight of the ball? (remember Vx = VcosTheta)
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
-  options: []
+  options:
+  - text: F1
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F2
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F3
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F4
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 

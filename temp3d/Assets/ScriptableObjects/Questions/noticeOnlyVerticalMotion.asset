@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: noticeOnlyVerticalMotion
   m_EditorClassIdentifier: 
-  id: noticeOnlyVerticalMotion
+  questionName: 4
   type: 0
-  text: Since we are moving along with the ball sideways, can you notice that the
-    ball seems to be moving only vertically?
+  mainText: Since we are moving along with the ball sideways, can you notice that
+    the ball seems to be moving only vertically?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}

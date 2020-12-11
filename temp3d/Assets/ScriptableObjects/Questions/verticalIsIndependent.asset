@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: verticalIsIndependent
   m_EditorClassIdentifier: 
-  id: verticalIsIndependent
+  questionName: 5
   type: 1
-  text: If the ball seems to be moving only vertically, which of the following is
-    not true?
+  mainText: If the ball seems to be moving only vertically, which of the following
+    is not true?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -40,4 +40,4 @@ MonoBehaviour:
   - text: None of these
     image: {fileID: 0}
     isCorrect: 0
-    tip: Nope.
+    tip: No !

@@ -12,11 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: verticalComponentFormula
   m_EditorClassIdentifier: 
-  id: verticalComponentFormula
+  questionName: 6
   type: 0
-  text: Lets say that the ball was launched with an initial velocity of 'u' at an
-    angle 'theta'. What would have been the vertical component of its initial velocity?
+  mainText: Lets say that the ball was launched with an initial velocity of 'u' at
+    an angle 'theta'. What would have been the vertical component of its initial
+    velocity?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
-  options: []
+  options:
+  - text: F1
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F2
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F3
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
+  - text: F4
+    image: {fileID: 0}
+    isCorrect: 1
+    tip: 
