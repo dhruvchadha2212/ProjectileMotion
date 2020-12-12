@@ -1,5 +1,6 @@
 ﻿public enum QuestionType
 {
+    INTRODUCTION,
     SIMPLE_MCQ,
     LONG_OPTION_MCQ,
     IMAGE_BASED_MCQ,

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
-  m_Name: launchBall
+  m_Name: introduction
   m_EditorClassIdentifier: 
   questionName: 0
-  type: 6
-  mainText: 
-  audio: {fileID: 8300000, guid: 06eb5a1a82eef32498d2020e31c9ea3c, type: 3}
+  type: 0
+  mainText: Introduction
+  audio: {fileID: 8300000, guid: b00e2d082de486a45b7996c8ba6649ad, type: 3}
   explanation: 
   image: {fileID: 0}
   options: []

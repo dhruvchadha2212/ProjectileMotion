@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: verticalIsIndependent
   m_EditorClassIdentifier: 
-  questionName: 5
+  questionName: 6
   type: 1
   mainText: If the ball seems to be moving only vertically, which of the following
     is not true?

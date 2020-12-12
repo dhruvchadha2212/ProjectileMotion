@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: onlyHorizontalObservable
   m_EditorClassIdentifier: 
-  id: onlyHorizontalObservable
+  questionName: 19
   type: 2
-  text: Again, the ball is still actually moving in 2 dimensions. But since we move
-    vertically up and down along with the ball, it seems to be moving simply horizontally.
+  mainText: Again, the ball is still actually moving in 2 dimensions. But since we
+    move vertically up and down along with the ball, it seems to be moving simply
+    horizontally.
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}

@@ -1,5 +1,6 @@
 ﻿public enum QuestionName
 {
+    NONE,
     //Initial
     INTRODUCTION,
     WHAT_TRAJECTORY,
@@ -23,7 +24,7 @@
     //Explanations
     ONLY_VERTICAL_OBSERVABLE,
     ONLY_HORIZONTAL_OBSERVABLE,
-    //Misc
+    //Misc (handle seperately, maybe as a Task.wrapUp())
     NOW_WE_MOVE_SIDEWAYS,
     NOW_WE_MOVE_UPWARDS
 }

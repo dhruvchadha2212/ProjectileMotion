@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: isHorizontalVelocityAffected
   m_EditorClassIdentifier: 
-  questionName: 12
+  questionName: 13
   type: 0
   mainText: If there is no force on the ball in horizontal direction, what will happen
     to its initial velocity ?

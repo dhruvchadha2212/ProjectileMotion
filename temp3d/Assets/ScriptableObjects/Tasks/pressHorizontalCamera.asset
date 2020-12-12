@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: pressHorizontalCamera
   m_EditorClassIdentifier: 
-  id: Toggle Background
-  type: 5
-  text: Press the Horizontal Camera Button
+  questionName: 0
+  type: 6
+  mainText: 
   audio: {fileID: 8300000, guid: 1f21af49edb6cd642a55b87958c0c874, type: 3}
   explanation: 
   image: {fileID: 0}

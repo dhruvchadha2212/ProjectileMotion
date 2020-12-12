@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8728bc16f40544695863d437449ce1, type: 3}
   m_Name: onlyVerticalObservable
   m_EditorClassIdentifier: 
-  id: onlyVerticalObservable
+  questionName: 18
   type: 4
-  text: Actually the ball is still moving in 2 dimensions. But since we are moving
+  mainText: Actually the ball is still moving in 2 dimensions. But since we are moving
     at a horizontal velocity equal to that of the ball, it seems to be in a simple
     vertical motion.
   audio: {fileID: 0}
