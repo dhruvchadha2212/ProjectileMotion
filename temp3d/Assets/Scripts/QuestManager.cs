@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public IEnumerator BeginQuest(string questName)
+    public void BeginQuest(string questName)
     {
-        yield return StartCoroutine(QuestList.questNameToQuestMap[questName].BeginQuest());
+        Quest currentQuest = QuestList.questNameToQuestMap[questName];
+        foreach (ITask task in currentQuest.tasks)
+        {
+            StartCoroutine(TaskManager.WaitForTaskCompletion(task));
+        }
     }
 }

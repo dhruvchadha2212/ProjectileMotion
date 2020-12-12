@@ -17,20 +17,17 @@ public class Director : MonoBehaviour
     private IEnumerator StartGameNarrative()
     {
         //TODO replace with new menu scene
-        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(dialogues.GetMiscAudioClip("introduction")));
+        //yield return StartCoroutine(AudioManager.PlayAndWaitFor(Dialogues.GetQuestion(QuestionName.INTRODUCTION).audio));
         //launch the ball a couple of times to get comfortable
+        yield return StartCoroutine(TaskManager.WaitForTaskCompletion(new BallLaunchTask()));
         //yield return StartCoroutine(WaitForBallLaunch());
         //yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
-        //yield return StartCoroutine(AskQuestion(QuestionName.NOW_WE_MOVE_SIDEWAYS));
-        //yield return StartCoroutine(AskQuestion("whyCurved"));
-        //yield return StartCoroutine(AskQuestion("howManyAxes"));
+        //yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
+        yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
         //good job ! you are an intuitive person.
-        yield return StartCoroutine(questManager.BeginQuest("VisualiseVerticalComponentOfVelocity"));
+        questManager.BeginQuest("VisualiseVerticalComponentOfVelocity");
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
-
-
-        ////yield return StartCoroutine(ShowExplanation("onlyVerticalObservable")); //deprecated
-
+        //yield return StartCoroutine(AskQuestion(QuestionName.ONLY_VERTICAL_OBSERVABLE));
         ////now show explanation card instead of next question
         ////then let user save the card for later
         //yield return StartCoroutine(AskQuestion("conceptsOf1DApplicable"));

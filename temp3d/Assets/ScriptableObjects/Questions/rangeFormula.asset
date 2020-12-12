@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: rangeFormula
   m_EditorClassIdentifier: 
   questionName: 16
-  type: 0
+  type: 1
   mainText: Here's the final question. Performing which of the following operations
     will give you the range covered by the ball (up until the first bounce) ?
   audio: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: onlyHorizontalObservable
   m_EditorClassIdentifier: 
   questionName: 19
-  type: 2
+  type: 4
   mainText: Again, the ball is still actually moving in 2 dimensions. But since we
     move vertically up and down along with the ball, it seems to be moving simply
     horizontally.

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: rangeCanBeFound
   m_EditorClassIdentifier: 
   questionName: 15
-  type: 0
+  type: 1
   mainText: Which of the following can we calculate from analysing just the horizontal
     motion of the ball (given that we know the time of flight from analysing the
     vertical motion)?

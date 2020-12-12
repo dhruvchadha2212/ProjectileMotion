@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: whichEquationTimeOfFlight
   m_EditorClassIdentifier: 
   questionName: 9
-  type: 0
+  type: 1
   mainText: Let's see if you remember. Which equation can be used to find the time
     of flight of the ball? (remember Vx = VcosTheta)
   audio: {fileID: 0}

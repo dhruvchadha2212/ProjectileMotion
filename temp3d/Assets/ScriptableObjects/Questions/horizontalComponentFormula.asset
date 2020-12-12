@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: horizontalComponentFormula
   m_EditorClassIdentifier: 
   questionName: 14
-  type: 0
+  type: 1
   mainText: Again, if the ball is launched with an initial velocity of 'u' at an
     angle 'theta', what will be the horizontal component of its initial velocity
     ?

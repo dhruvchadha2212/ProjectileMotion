@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: noticeOnlyHorizontalMotion
   m_EditorClassIdentifier: 
   questionName: 11
-  type: 0
+  type: 1
   mainText: As you can see, only the horizontal motion of the ball is now observable.
   audio: {fileID: 0}
   explanation: 

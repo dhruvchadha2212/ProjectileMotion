@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: whatTrajectory
   m_EditorClassIdentifier: 
   questionName: 2
-  type: 0
+  type: 1
   mainText: What was the trajectory of the ball (till the first bounce) ?
   audio: {fileID: 8300000, guid: 9ef51d283043bb14692f142e8df07c3d, type: 3}
   explanation: 

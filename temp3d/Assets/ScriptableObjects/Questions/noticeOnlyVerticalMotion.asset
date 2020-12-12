@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: noticeOnlyVerticalMotion
   m_EditorClassIdentifier: 
   questionName: 5
-  type: 0
+  type: 1
   mainText: Since we are moving along with the ball sideways, can you notice that
     the ball seems to be moving only vertically?
   audio: {fileID: 0}
