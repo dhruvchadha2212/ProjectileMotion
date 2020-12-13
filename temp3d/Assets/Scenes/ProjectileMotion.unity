@@ -4835,12 +4835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5471db1844488534db7a9a87f654ef39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextContainer: {fileID: 0}
+  mainTextContainer: {fileID: 1986984451}
   option1Container: {fileID: 0}
   option2Container: {fileID: 0}
   option3Container: {fileID: 0}
   option4Container: {fileID: 0}
-  explanationTextContainer: {fileID: 0}
+  explanationTextContainer: {fileID: 1474972104}
   tipTextContainer: {fileID: 0}
   imageContainer: {fileID: 0}
 --- !u!114 &182258678
@@ -11790,7 +11790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -3e-45, y: 1e-45, z: -0.0000015822326, w: -1}
+  m_LocalRotation: {x: -3e-45, y: -1e-45, z: 0.0000015822326, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30005,7 +30005,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: -3e-45, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: 6e-45, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33941,14 +33941,15 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 11400000, guid: b080749145bb492418169db3687165d0, type: 2}
     - {fileID: 11400000, guid: 61b98362814801149b9d8d09bfdfba4e, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 8d7fc57946b2e01479515ff49dd6e662, type: 2}
     - {fileID: 0}
     - {fileID: 11400000, guid: b7f000a74ead80b4da3a68835e849217, type: 2}
   gameButtonToTaskInfoMap:
-    m_keys: 0200000003000000
+    m_keys: 020000000300000001000000
     m_values:
     - {fileID: 11400000, guid: a71147b783cb3d841b78427044c7bf6e, type: 2}
     - {fileID: 11400000, guid: f874b90d9af233e489b46752e2337336, type: 2}
+    - {fileID: 11400000, guid: d77645d5e42ebfd4db0f4b702a158b55, type: 2}
   ballLaunchTaskInfo: {fileID: 11400000, guid: 304825fa3c2be9c4783167e9b0ba266b, type: 2}
 --- !u!4 &1551177875
 Transform:

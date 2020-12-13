@@ -2,10 +2,10 @@
 
 public class QuestList
 {
-    public static Dictionary<string, Quest> questNameToQuestMap = new Dictionary<string, Quest>
+    public static Dictionary<QuestName, Quest> questNameToQuestMap = new Dictionary<QuestName, Quest>
     {
         {
-            "VisualiseVerticalComponentOfVelocity", new Quest
+            QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY, new Quest
             (
                 new ButtonPressTask(GameButton.HORIZONTAL_CAMERA),
                 new QuestionTask(QuestionName.NOW_WE_MOVE_SIDEWAYS),

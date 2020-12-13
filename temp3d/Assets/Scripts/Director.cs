@@ -19,13 +19,13 @@ public class Director : MonoBehaviour
         //TODO replace with new menu scene
         //yield return StartCoroutine(AudioManager.PlayAndWaitFor(Dialogues.GetQuestion(QuestionName.INTRODUCTION).audio));
         //launch the ball a couple of times to get comfortable
-        yield return StartCoroutine(TaskManager.WaitForTaskCompletion(new BallLaunchTask()));
+        //yield return StartCoroutine(TaskManager.WaitForTaskCompletion(new BallLaunchTask()));
         //yield return StartCoroutine(WaitForBallLaunch());
         //yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
         //yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
-        yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
+        //yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
         //good job ! you are an intuitive person.
-        questManager.BeginQuest("VisualiseVerticalComponentOfVelocity");
+        yield return StartCoroutine(questManager.BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
         //yield return StartCoroutine(VisualiseVerticalComponentOfVelocity());
         //yield return StartCoroutine(AskQuestion(QuestionName.ONLY_VERTICAL_OBSERVABLE));
         ////now show explanation card instead of next question
