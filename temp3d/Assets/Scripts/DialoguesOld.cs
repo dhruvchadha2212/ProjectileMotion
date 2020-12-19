@@ -245,7 +245,7 @@ public class DialoguesOld : MonoBehaviour
         };
 
         //    tasks = new Dictionary<string, Task>
-        //    {
+        //    { 
         //        { "coolPressHorizontalCam", new Task
         //            {
         //                TaskAudio = coolPressHorizontalCam,

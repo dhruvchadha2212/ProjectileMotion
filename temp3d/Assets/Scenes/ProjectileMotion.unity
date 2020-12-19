@@ -11790,7 +11790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -3e-45, y: -1e-45, z: 0.0000015822326, w: 1}
+  m_LocalRotation: {x: 3e-45, y: 1e-45, z: -0.0000015822326, w: -1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33942,7 +33942,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b080749145bb492418169db3687165d0, type: 2}
     - {fileID: 11400000, guid: 61b98362814801149b9d8d09bfdfba4e, type: 2}
     - {fileID: 11400000, guid: 8d7fc57946b2e01479515ff49dd6e662, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: bd4baf3e7dcd8984f8ac7ed6a4d86ea2, type: 2}
     - {fileID: 11400000, guid: b7f000a74ead80b4da3a68835e849217, type: 2}
   gameButtonToTaskInfoMap:
     m_keys: 020000000300000001000000
