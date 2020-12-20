@@ -24,7 +24,7 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
         //yield return StartCoroutine(AskQuestion(QuestionName.HOW_MANY_AXES));
         //      TODO good job ! you are an intuitive person.
-        //yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
+        yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_IS_INDEPENDENT));
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_COMPONENT_FORMULA));
         //yield return StartCoroutine(AskQuestion(QuestionName.TIME_OF_FLIGHT_CAN_BE_FOUND));
@@ -53,5 +53,6 @@ public class Director : MonoBehaviour
     private IEnumerator BeginQuest(QuestName questName)
     {
         yield return StartCoroutine(questManager.BeginQuest(questName));
+        UIManager.ShowAllButtons();
     }
 }

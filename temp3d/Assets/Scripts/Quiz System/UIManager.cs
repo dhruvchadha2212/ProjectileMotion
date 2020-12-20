@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using Lean.Gui;
 
 //remember to use cartoon figures with questions/explanations etc
@@ -12,26 +13,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private QuizPanelController quizPanelController;
     private static QuizPanelController quizPanelControllerStatic;
 
-    private static GameButtonToLeanButtonDictionary buttonMap = new GameButtonToLeanButtonDictionary();
+    [SerializeField] private GameButtonToLeanButtonDictionary buttonMap;
+    private static GameButtonToLeanButtonDictionary buttonMapStatic;
 
     private MetricsPanelController metricsPanelController;
-    private ExplanationPanelController explanationPanelController;
 
     private Question currentQuestion;
-    private Explanation currentExplanation;
     private Text notificationTextBox;
-
-    //Used by UI buttons on Start(), through the ButtonInfo object.
-    public static void InsertKeyValueToButtonMap(GameButton gameButton, LeanButton leanButton)
-    {
-        buttonMap.Add(gameButton, leanButton);
-    }
 
     private void Start()
     {
         quizPanelControllerStatic = quizPanelController;
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
         notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
+        buttonMapStatic = buttonMap;
     }
 
     /// <summary>
@@ -58,5 +53,28 @@ public class UIManager : MonoBehaviour
     {
         notificationTextBox.text = notificationText;
         notificationPanel.GetComponent<Lean.Gui.LeanPulse>().Pulse();
+    }
+
+    public static void HideAllButtonsExcept(GameButton gameButton)
+    {
+        foreach (KeyValuePair<GameButton, LeanButton> gameButtonAndLeanButton in buttonMapStatic)
+        {
+            if (gameButtonAndLeanButton.Key == gameButton)
+            {
+                gameButtonAndLeanButton.Value.gameObject.SetActive(true);
+            }
+            else
+            {
+                gameButtonAndLeanButton.Value.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public static void ShowAllButtons()
+    {
+        foreach (KeyValuePair<GameButton, LeanButton> gameButtonAndLeanButton in buttonMapStatic)
+        {
+            gameButtonAndLeanButton.Value.gameObject.SetActive(true);
+        }
     }
 }

@@ -37,7 +37,6 @@ public class DialoguesOld : MonoBehaviour
 
     private Dictionary<string, AudioClip> miscAudioClips;
     private Dictionary<string, Question> questions;
-    private Dictionary<string, Explanation> explanations;
     private Dictionary<string, ITask> tasks;
 
     [SerializeField] private AudioClip[] appreciations;
@@ -226,23 +225,23 @@ public class DialoguesOld : MonoBehaviour
             //}
         };
         //excellent, range of projectile is ->
-        explanations = new Dictionary<string, Explanation>
-        {
-            { "onlyVerticalObservable", new Explanation
-                {
-                    ExplanationText = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
-                    ExplanationImage = onlyVerticalObservable,
-                    IsUnderstood = false
-                }
-            },
-            { "onlyHorizontalObservable", new Explanation
-                {
-                    ExplanationText = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
-                    ExplanationImage = onlyHorizontalObservable,
-                    IsUnderstood = false
-                }
-            }
-        };
+        //explanations = new Dictionary<string, Explanation>
+        //{
+        //    { "onlyVerticalObservable", new Explanation
+        //        {
+        //            ExplanationText = "Actually the ball is still moving in 2 dimensions. But since we are moving at a horizontal velocity equal to that of the ball, it seems to be in a simple vertical motion.",
+        //            ExplanationImage = onlyVerticalObservable,
+        //            IsUnderstood = false
+        //        }
+        //    },
+        //    { "onlyHorizontalObservable", new Explanation
+        //        {
+        //            ExplanationText = "Again, the ball is still actually moving in 2 dimensions. But since we move vertically up and down along with the ball, it seems to be moving simply horizontally.",
+        //            ExplanationImage = onlyHorizontalObservable,
+        //            IsUnderstood = false
+        //        }
+        //    }
+        //};
 
         //    tasks = new Dictionary<string, Task>
         //    { 
@@ -285,11 +284,6 @@ public class DialoguesOld : MonoBehaviour
     public ITask GetTask(string taskKey)
     {
         return tasks[taskKey];
-    }
-
-    public Explanation GetExplanation(string explanationKey)
-    {
-        return explanations[explanationKey];
     }
 
     public AudioClip GetMiscAudioClip(string clipKey)

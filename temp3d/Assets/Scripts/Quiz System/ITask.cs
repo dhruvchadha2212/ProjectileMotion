@@ -17,10 +17,8 @@ public class ButtonPressTask : ITask
 
     public void SetUp()
     {
-        // GameState changes
         GameState.mostRecentlyClickedGameButton = GameButton.NONE;
-        // TODO add code to disable all other buttons
-        // Setup
+        UIManager.HideAllButtonsExcept(requiredButton);
         Question taskInfo = Dialogues.GetButtonPressTaskInfo(requiredButton);
         AudioManager.PlayInterruptible(taskInfo.audio);
     }

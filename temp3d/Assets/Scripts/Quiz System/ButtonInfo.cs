@@ -11,11 +11,6 @@ public class ButtonInfo : MonoBehaviour
 {
     [SerializeField] private GameButton gameButton;
 
-    private void Start()
-    {
-        UIManager.InsertKeyValueToButtonMap(gameButton, GetComponent<LeanButton>());
-    }
-
     public GameButton GetGameButton()
     {
         return gameButton;
