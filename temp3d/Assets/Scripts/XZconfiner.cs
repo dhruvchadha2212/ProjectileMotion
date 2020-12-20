@@ -3,8 +3,13 @@ using Cinemachine;
 
 public class XZconfiner : CinemachineExtension
 {
-    [Tooltip("Lock the camera's Y position to this value")]
-    private float fixedYPosition = 0.1f;
+    private float fixedYPosition;
+    [SerializeField] private Rigidbody sphere;
+
+    private void OnEnable()
+    {
+        fixedYPosition = sphere.transform.position.y;
+    }
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,
