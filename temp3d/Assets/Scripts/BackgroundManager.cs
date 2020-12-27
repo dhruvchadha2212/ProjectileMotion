@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Laboratory : MonoBehaviour
+public class BackgroundManager : MonoBehaviour
 {
     [SerializeField] private GameObject labSnaps;
 
     public void ToggleLabVisibility(bool isVisible)
     {
-        foreach (Transform snapsCategory in transform) //complete laboratory structure
+        foreach (Transform snapsCategory in labSnaps.transform) //complete laboratory structure
         {
             foreach (Transform snapSet in snapsCategory) //floor or wall or ceiling
             {
