@@ -18,7 +18,7 @@ public class ButtonPressTask : ITask
     public void SetUp()
     {
         GameState.mostRecentlyClickedGameButton = GameButton.NONE;
-        UIManager.HideAllButtonsExcept(requiredButton);
+        UIManager.HideAllButtonsExcept(requiredButton); //also reset buttons to required state
         Question taskInfo = Dialogues.GetButtonPressTaskInfo(requiredButton);
         AudioManager.PlayInterruptible(taskInfo.audio);
     }

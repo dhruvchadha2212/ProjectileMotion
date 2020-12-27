@@ -77,4 +77,9 @@ public class UIManager : MonoBehaviour
             gameButtonAndLeanButton.Value.gameObject.SetActive(true);
         }
     }
+
+    public static void ShowBackground()
+    {
+        buttonMapStatic[GameButton.TOGGLE_BACKGROUND].gameObject.GetComponent<LeanToggle>().On = true;
+    }
 }

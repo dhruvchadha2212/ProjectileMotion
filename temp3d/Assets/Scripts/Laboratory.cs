@@ -6,7 +6,7 @@ public class Laboratory : MonoBehaviour
 {
     [SerializeField] private GameObject labSnaps;
 
-    public void ToggleLabVisibility()
+    public void ToggleLabVisibility(bool isVisible)
     {
         foreach (Transform snapsCategory in transform) //complete laboratory structure
         {
@@ -17,7 +17,7 @@ public class Laboratory : MonoBehaviour
                     foreach (Transform snap in snapSet) //each individual snap unit
                     {
                         MeshRenderer meshRenderer = snap.gameObject.GetComponent<MeshRenderer>();
-                        meshRenderer.enabled = !meshRenderer.enabled;
+                        meshRenderer.enabled = isVisible;
                     }
                 }
             }

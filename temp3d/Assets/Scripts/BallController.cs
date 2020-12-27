@@ -43,7 +43,7 @@ public class BallController : MonoBehaviour
             lineController.RemoveLineEndPoints();
             if(initialVelocity.magnitude > velocityThreshold)
             {
-                GameState.ballIsJustLaunched = true;
+                GameState.ballWasJustLaunched = true;
                 rb.velocity = initialVelocity;
             }
         }
@@ -53,13 +53,14 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            if (GameState.ballIsJustLaunched)
+            if (GameState.ballWasJustLaunched)
             {
-                GameState.ballIsJustLaunched = false;
+                GameState.ballWasJustLaunched = false;
                 GameState.ballHasBouncedOnce = true;
                 double maxHeight = PhysicsUtil.GetProjectileMaxHeight(initialVelocity.magnitude, initialAngle);
                 double range = PhysicsUtil.GetProjectileRange(initialVelocity.magnitude, initialAngle);
                 uiManager.DisplayRangeAndMaxHeight(range, maxHeight);
+                UIManager.ShowBackground();
             }
             else
             {
