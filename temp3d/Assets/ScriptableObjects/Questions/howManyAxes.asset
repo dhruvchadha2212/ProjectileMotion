@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionName: 4
   type: 1
-  mainText: So, if the path is curved, along how many (directions) axes is the ball
+  mainText: So, if the path is curved, along how many axes (directions) is the ball
     moving in?
   audio: {fileID: 0}
   explanation: 

@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: whichEquationTimeOfFlight
   m_EditorClassIdentifier: 
   questionName: 9
-  type: 1
-  mainText: Let's see if you remember. Which equation can be used to find the time
-    of flight of the ball? (remember Vx = VcosTheta)
+  type: 2
+  mainText: So, which of the following do you think is the right approach to find
+    the time of flight of the ball?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
   options:
-  - text: F1
+  - text: Applying $v^2 = u^2 + 2as$ in Y direction
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: 
+  - text: Applying $s=ut+\frac{1}{2} a t^2$ in Y direction
     image: {fileID: 0}
     isCorrect: 1
     tip: 
-  - text: F2
+  - text: Applying $v = u + at$ in Y direction
     image: {fileID: 0}
-    isCorrect: 1
+    isCorrect: 0
     tip: 
-  - text: F3
+  - text: Applying $v = u + at$ in X direction
     image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: F4
-    image: {fileID: 0}
-    isCorrect: 1
+    isCorrect: 0
     tip: 

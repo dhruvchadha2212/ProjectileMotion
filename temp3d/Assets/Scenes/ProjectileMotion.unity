@@ -4642,7 +4642,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.097e-42, y: 1.01e-43, z: 8.42e-43, w: 0}
+  m_BoundingSphereOverride: {x: 8.42e-43, y: 7.1e-44, z: 0, w: -7.8318196e-10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10707,7 +10707,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Alignment: {x: 0.5, y: 0.5}
-  m_Text: sample
+  m_Text: $$TEXDraw$$
   m_Size: 50
   m_ScrollArea:
     serializedVersion: 2
@@ -10744,8 +10744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000067711, y: 15.799957}
-  m_SizeDelta: {x: 1300, y: 200}
+  m_AnchoredPosition: {x: 0.000032014, y: 100}
+  m_SizeDelta: {x: 1216.6743, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &471554326
 PrefabInstance:
@@ -12560,7 +12560,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 3e-45, y: 1e-45, z: 0, w: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31758,7 +31758,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382529253}
-  m_LocalRotation: {x: 6e-45, y: 3e-45, z: -0, w: -1}
+  m_LocalRotation: {x: -3e-45, y: -1e-45, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -49345,7 +49345,7 @@ RectTransform:
   m_GameObject: {fileID: 1592405529433565333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0.01, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469657058}
   - {fileID: 1592405529382412221}
@@ -49442,7 +49442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fd146527b61614a96da3a84e74ad78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  on: 1
   turnOffSiblings: 0
   onTransitions:
     speed: -1

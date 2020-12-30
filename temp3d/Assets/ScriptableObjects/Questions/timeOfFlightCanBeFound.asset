@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: timeOfFlightCanBeFound
   m_EditorClassIdentifier: 
   questionName: 8
-  type: 1
-  mainText: Which of the following can we calculate from analysing just the vertical
-    motion of the ball?
+  type: 2
+  mainText: Which of the following can we calculate from analysing just the {\bf
+    `vertical'} motion of the ball?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -24,7 +24,7 @@ MonoBehaviour:
     image: {fileID: 0}
     isCorrect: 0
     tip: 
-  - text: It's Rotational speed (Angular velocity).
+  - text: It's speed of rotation (Angular velocity).
     image: {fileID: 0}
     isCorrect: 0
     tip: 
