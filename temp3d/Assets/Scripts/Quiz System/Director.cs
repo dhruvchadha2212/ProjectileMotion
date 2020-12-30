@@ -26,7 +26,7 @@ public class Director : MonoBehaviour
         //      TODO good job ! you are an intuitive person.
         //yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_IS_INDEPENDENT));
-        //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_COMPONENT_FORMULA));
+        yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_COMPONENT_FORMULA));
         //yield return StartCoroutine(AskQuestion(QuestionName.TIME_OF_FLIGHT_CAN_BE_FOUND));
         //yield return StartCoroutine(AskQuestion(QuestionName.WHICH_EQUATION_TIME_OF_FLIGHT));
         //      TODO Quest 1 completed ! (use enum QUEST_1_COMPLETED). Show time of flight formula card

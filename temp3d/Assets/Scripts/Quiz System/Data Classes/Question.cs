@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Model object to hold all attributes related to a question
 [CreateAssetMenu(menuName = "Question", fileName = "New Question")]

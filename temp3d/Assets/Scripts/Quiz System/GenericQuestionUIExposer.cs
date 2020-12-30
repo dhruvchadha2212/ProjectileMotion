@@ -9,13 +9,13 @@ using Lean.Gui;
  */
 public class GenericQuestionUIExposer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI mainTextContainer;
-    [SerializeField] private TextMeshProUGUI option1Container;
-    [SerializeField] private TextMeshProUGUI option2Container;
-    [SerializeField] private TextMeshProUGUI option3Container;
-    [SerializeField] private TextMeshProUGUI option4Container;
-    [SerializeField] private TextMeshProUGUI explanationTextContainer;
-    [SerializeField] private TextMeshProUGUI tipTextContainer;
+    [SerializeField] private TEXDraw mainTextContainer;
+    [SerializeField] private TEXDraw option1Container;
+    [SerializeField] private TEXDraw option2Container;
+    [SerializeField] private TEXDraw option3Container;
+    [SerializeField] private TEXDraw option4Container;
+    [SerializeField] private TEXDraw explanationTextContainer;
+    [SerializeField] private TEXDraw tipTextContainer;
     [SerializeField] private GameObject imageContainer;
 
     public void ShowCurrentQuestion()

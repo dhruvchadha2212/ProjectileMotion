@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionName: 7
   type: 1
-  mainText: Lets say that the ball was launched with an initial velocity of 'u' at
-    an angle 'theta'. What would have been the vertical component of its initial
-    velocity?
+  mainText: \sf Lets say that the ball was launched with an initial velocity of $\bf
+    `u'$ at an angle $\bf `\theta'$. What would have been the vertical component
+    of its initial velocity?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
