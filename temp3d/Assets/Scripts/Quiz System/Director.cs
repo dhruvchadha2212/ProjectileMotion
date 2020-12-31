@@ -20,8 +20,8 @@ public class Director : MonoBehaviour
         //      TODO replace with new menu scene
         //yield return StartCoroutine(AudioManager.PlayAndWaitFor(Dialogues.GetQuestion(QuestionName.INTRODUCTION).audio));
         //      TODO launch the ball a couple of times to get comfortable, pause
-        //yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
-        //yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
+        yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
+        yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
         //yield return StartCoroutine(AskQuestion(QuestionName.HOW_MANY_AXES));
         //      TODO good job ! you are an intuitive person.
         //yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
@@ -35,7 +35,7 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(AskQuestion(QuestionName.IS_HORIZONTAL_VELOCITY_AFFECTED));
         //yield return StartCoroutine(AskQuestion(QuestionName.HORIZONTAL_COMPONENT_FORMULA));
         //yield return StartCoroutine(AskQuestion(QuestionName.RANGE_CAN_BE_FOUND));
-        yield return StartCoroutine(AskQuestion(QuestionName.RANGE_FORMULA));
+        //yield return StartCoroutine(AskQuestion(QuestionName.RANGE_FORMULA));
         //      TODO Quest 2 completed ! (use enum QUEST_2_COMPLETED). Show range of flight formula card
         //      TODO all formulae revision card at the end
     }

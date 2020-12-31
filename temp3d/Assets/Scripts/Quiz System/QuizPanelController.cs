@@ -13,6 +13,7 @@ public class QuizPanelController : MonoBehaviour
     [SerializeField] private GameObject imageExplanationPanel;
     [SerializeField] private GameObject simpleExplanationPanel;
     [SerializeField] private GameObject resumeButton;
+    [SerializeField] private GameObject nextButton;
 
     //private Question currentQuestion; //remove to use gamestate, currently uses Question class, need to use QuestionName class
     private GameObject currentPanel;
@@ -32,11 +33,17 @@ public class QuizPanelController : MonoBehaviour
         Option selectedOption = Dialogues.GetQuestion(GameState.currentQuestionName).options[optionNumber - 1];
         if (selectedOption.isCorrect)
         {
-            GameState.currentQuestionHasBeenAnsweredCorrectly = true;
-            currentPanel.GetComponent<LeanWindow>().On = false;
-            pauseButton.SetActive(false);
+            nextButton.SetActive(true);
         }
         currentPanelUIExposer.ShowTipText(selectedOption.tip);
+    }
+
+    public void CloseAnsweredQuestion()
+    {
+        GameState.currentQuestionHasBeenAnsweredCorrectly = true;
+        currentPanel.GetComponent<LeanWindow>().On = false;
+        pauseButton.SetActive(false);
+        currentPanelUIExposer.ClearPanel();
     }
 
     public void PauseCurrentQuestion()

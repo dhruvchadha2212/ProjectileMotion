@@ -21,6 +21,7 @@ public class GenericQuestionUIExposer : MonoBehaviour
     public void ShowCurrentQuestion()
     {
         Question question = Dialogues.GetQuestion(GameState.currentQuestionName);
+
         mainTextContainer.text = question.mainText;
         if (option1Container != null)
         {
@@ -38,6 +39,37 @@ public class GenericQuestionUIExposer : MonoBehaviour
         {
             explanationTextContainer.text = question.explanation;
         }
+    }
+
+    public void ClearPanel()
+    {
+        if (mainTextContainer != null)
+        {
+            mainTextContainer.text = string.Empty;
+        }
+        if (option1Container != null)
+        {
+            option1Container.text = string.Empty;
+            option2Container.text = string.Empty;
+            option3Container.text = string.Empty;
+            option4Container.text = string.Empty;
+        }
+        if (imageContainer != null)
+        {
+            foreach (Transform child in imageContainer.transform)
+            {
+                Destroy(child.transform);
+            }
+        }
+        if (explanationTextContainer != null)
+        {
+            explanationTextContainer.text = string.Empty;
+        }
+        if (tipTextContainer != null)
+        {
+            tipTextContainer.text = string.Empty;
+        }
+
     }
 
     public void ShowTipText(string tipText)
