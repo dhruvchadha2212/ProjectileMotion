@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: isHorizontalVelocityAffected
   m_EditorClassIdentifier: 
   questionName: 13
-  type: 1
+  type: 2
   mainText: If there is no force on the ball in horizontal direction, what will happen
-    to its initial velocity ?
+    to its horizontal speed eventually?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
   options:
-  - text: It will decelerate naturally.
+  - text: It will decrease naturally (deceleration)
     image: {fileID: 0}
     isCorrect: 0
     tip: Nope, no force on the ball. No change in speed (Newton's second law of motion)
-  - text: It will maintain constant speed
+  - text: It will remain constant
     image: {fileID: 0}
     isCorrect: 1
     tip: Correct! No force on the ball. No change in speed (Newton's second law of
       motion)
-  - text: It will accelerate due to gravity.
+  - text: It will increase due to gravity (acceleration)
     image: {fileID: 0}
     isCorrect: 0
     tip: Nope, no force on the ball. No change in speed (Newton's second law of motion)

@@ -29,12 +29,12 @@ MonoBehaviour:
     isCorrect: 0
     tip: No, we need range of the ball. Above equation only deals with time, velocity
       and acceleration.
-  - text: Apllying $Speed = \frac{Distance}{Time}$ in X direction.
+  - text: Applying $Speed = \frac{Distance}{Time}$ in X direction.
     image: {fileID: 0}
     isCorrect: 1
     tip: Perfect ! Since the motion in horizontal direction is not accelerated, we
       can use this simple equation.
-  - text: Applying $s=ut+\frac{1}{2} a t^2$ in Y direction
+  - text: Applying $s=ut+\frac{1}{2} a t^2$ in X direction
     image: {fileID: 0}
     isCorrect: 0
     tip: Theoretically you can. But since the horizontal motion is not accelerated,
