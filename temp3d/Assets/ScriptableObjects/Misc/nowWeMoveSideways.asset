@@ -13,25 +13,9 @@ MonoBehaviour:
   m_Name: nowWeMoveSideways
   m_EditorClassIdentifier: 
   questionName: 0
-  type: 1
-  mainText: Now we move sideways.
+  type: 4
+  mainText: 
   audio: {fileID: 8300000, guid: 626166d9c3df02047ac473178cce1d79, type: 3}
-  explanation: 
+  explanation: Now we move sideways.
   image: {fileID: 0}
-  options:
-  - text: 1
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 2
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 3
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 4
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
+  options: []

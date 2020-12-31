@@ -13,26 +13,11 @@ MonoBehaviour:
   m_Name: noticeOnlyHorizontalMotion
   m_EditorClassIdentifier: 
   questionName: 11
-  type: 1
-  mainText: As you can see, only the horizontal motion of the ball is now observable.
+  type: 4
+  mainText: 'As you can see, only the horizontal motion of the ball is now observable. '
   audio: {fileID: 0}
-  explanation: 
+  explanation: The ball moves in X and Y direction. But since our Y velocity is same
+    as ball's Y velocity, we can only observe the X velocity of the ball. (You can
+    check before proceeeding, by clicking outside this white box)
   image: {fileID: 0}
-  options:
-  - text: Got it!
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: Correct !
-  - text: What?
-    image: {fileID: 0}
-    isCorrect: 0
-    tip: The ball moves in X and Y direction. But since our Y velocity is same as
-      ball's Y velocity, we can only observe the X velocity of the ball.
-  - text: 
-    image: {fileID: 0}
-    isCorrect: 0
-    tip: 
-  - text: 
-    image: {fileID: 0}
-    isCorrect: 0
-    tip: 
+  options: []

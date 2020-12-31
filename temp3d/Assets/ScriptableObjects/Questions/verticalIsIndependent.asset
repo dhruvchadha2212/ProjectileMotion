@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: verticalIsIndependent
   m_EditorClassIdentifier: 
   questionName: 6
-  type: 1
+  type: 2
   mainText: If the ball seems to be moving only vertically, which of the following
-    is not true?
+    is false?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
@@ -35,9 +35,9 @@ MonoBehaviour:
       ball (that is, on the vertical speed and vertical acceleration).
     image: {fileID: 0}
     isCorrect: 0
-    tip: No, this statement is true. The 3 equations of motion can be applied of
-      the vertical motion of the ball.
-  - text: None of these
+    tip: No, this statement is true. All 3 equations of 1-D motion can be applied,
+      if we are applying them to only the vertical motion.
+  - text: All seem true
     image: {fileID: 0}
     isCorrect: 0
     tip: No !

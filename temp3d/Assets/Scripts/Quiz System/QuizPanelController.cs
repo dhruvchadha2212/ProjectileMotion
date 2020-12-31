@@ -21,9 +21,14 @@ public class QuizPanelController : MonoBehaviour
 
     public void DisplayCurrentQuestion()
     {
-        currentPanel = GetPanelForQuestionType(Dialogues.GetQuestion(GameState.currentQuestionName).type);
+        QuestionType questionType = Dialogues.GetQuestion(GameState.currentQuestionName).type;
+        currentPanel = GetPanelForQuestionType(questionType);
         currentPanel.GetComponent<LeanWindow>().TurnOn();
         pauseButton.SetActive(true);
+        if (questionType == QuestionType.IMAGE_BASED_EXPLANATION || questionType == QuestionType.SIMPLE_EXPLANATION)
+        {
+            nextButton.SetActive(true);
+        }
         currentPanelUIExposer = currentPanel.GetComponent<GenericQuestionUIExposer>();
         currentPanelUIExposer.ShowCurrentQuestion();
     }
@@ -43,6 +48,7 @@ public class QuizPanelController : MonoBehaviour
         GameState.currentQuestionHasBeenAnsweredCorrectly = true;
         currentPanel.GetComponent<LeanWindow>().On = false;
         pauseButton.SetActive(false);
+        resumeButton.SetActive(false);
         currentPanelUIExposer.ClearPanel();
     }
 

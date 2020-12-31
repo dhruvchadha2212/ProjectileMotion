@@ -11,9 +11,12 @@ public class QuestList
                 new QuestionTask(QuestionName.NOW_WE_MOVE_SIDEWAYS),
                 new WaitTask(1f),
                 new BallLaunchTask(),
+                new WaitTask(2f),
                 new ButtonPressTask(GameButton.TOGGLE_BACKGROUND),
                 new BallLaunchTask(),
-                new QuestionTask(QuestionName.NOTICE_ONLY_VERTICAL_MOTION) //pausable, if user is unable to visualise
+                new WaitTask(2f),
+                new QuestionTask(QuestionName.NOTICE_ONLY_VERTICAL_MOTION), //pausable, if user is unable to visualise
+                new WaitTask(2f)
             )
         },
         {
@@ -23,9 +26,12 @@ public class QuestList
                 //new QuestionTask(QuestionName.NOW_WE_MOVE_UPWARDS),
                 //new WaitTask(1f),
                 //new BallLaunchTask(),
-                new ButtonPressTask(GameButton.TOGGLE_BACKGROUND), //handle if user didnt listen/forgot what to do.
+                //new WaitTask(2f),
+                //new ButtonPressTask(GameButton.TOGGLE_BACKGROUND), //handle if user didnt listen/forgot what to do.
                 new BallLaunchTask(),
-                new QuestionTask(QuestionName.NOTICE_ONLY_HORIZONTAL_MOTION)
+                new WaitTask(2f),
+                new QuestionTask(QuestionName.NOTICE_ONLY_HORIZONTAL_MOTION),
+                new WaitTask(2f)
             )
         }
     };

@@ -18,8 +18,11 @@ public class BallController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (rb.velocity == new Vector3(0, 0, 0))
+        //TODO temporarily stopping ball on velocity < 1 and mouse click. Check line rendering issue having fixed 
+        //constant start point
+        if (rb.velocity.magnitude <= 1)
         {
+            rb.velocity = new Vector3(0, 0, 0);
             lineController.InitiliseLine(rb.transform.position);
             lineBeingRendered = true;
         }
@@ -27,8 +30,9 @@ public class BallController : MonoBehaviour
 
     void OnMouseDrag() 
     {
-        if (rb.velocity == new Vector3(0, 0, 0) && lineBeingRendered)
+        if (rb.velocity.magnitude <= 1 && lineBeingRendered)
         {
+            rb.velocity = new Vector3(0, 0, 0);
             lineController.UpdateEndPoint(Input.mousePosition, rb.transform.position);
             initialVelocity = lineController.GetInitialVelocity();
             initialAngle = lineController.GetInitialAngle();
@@ -38,7 +42,7 @@ public class BallController : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (rb.velocity == new Vector3(0, 0, 0) && lineBeingRendered)
+        if (rb.velocity.magnitude <= 1 && lineBeingRendered)
         {
             lineController.RemoveLineEndPoints();
             if(initialVelocity.magnitude > velocityThreshold)

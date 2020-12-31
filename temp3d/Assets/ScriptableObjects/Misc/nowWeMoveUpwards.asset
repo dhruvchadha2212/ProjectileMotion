@@ -13,25 +13,9 @@ MonoBehaviour:
   m_Name: nowWeMoveUpwards
   m_EditorClassIdentifier: 
   questionName: 0
-  type: 1
-  mainText: Now we move upwards.
+  type: 4
+  mainText: 
   audio: {fileID: 8300000, guid: b0e7e2fca0f0d7949ac5ce03f0cd0aca, type: 3}
-  explanation: 
+  explanation: Now we move upwards.
   image: {fileID: 0}
-  options:
-  - text: 1
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 2
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 3
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: 4
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
+  options: []

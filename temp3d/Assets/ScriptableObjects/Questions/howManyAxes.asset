@@ -20,15 +20,15 @@ MonoBehaviour:
   explanation: 
   image: {fileID: 0}
   options:
-  - text: 1 (Horizontal Only)
+  - text: Horizontal Only
     image: {fileID: 0}
     isCorrect: 0
     tip: No !
-  - text: 2 (Horizontal and Vertical)
+  - text: Horizontal and Vertical
     image: {fileID: 0}
     isCorrect: 1
     tip: Correct !
-  - text: 1 (Vertical Only)
+  - text: Vertical Only
     image: {fileID: 0}
     isCorrect: 0
     tip: No !
