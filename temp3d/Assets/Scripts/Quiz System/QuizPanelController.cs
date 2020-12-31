@@ -56,6 +56,7 @@ public class QuizPanelController : MonoBehaviour
     private GameObject GetPanelForQuestionType(QuestionType questionType)
     {
         if (questionType == QuestionType.SIMPLE_MCQ) return simpleMCQPanel;
+        else if (questionType == QuestionType.IMAGE_BASED_MCQ) return imageMCQPanel;
         else if (questionType == QuestionType.LONG_OPTION_MCQ) return longOptionMCQPanel;
         else if (questionType == QuestionType.IMAGE_BASED_EXPLANATION) return imageExplanationPanel;
         else return simpleExplanationPanel;

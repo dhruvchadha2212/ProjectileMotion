@@ -15,7 +15,7 @@ MonoBehaviour:
   questionName: 15
   type: 1
   mainText: Which of the following can we calculate from analysing just the horizontal
-    motion of the ball (given that we know the time of flight from analysing the
+    motion of the ball (remember that we know the time of flight from analysing the
     vertical motion)?
   audio: {fileID: 0}
   explanation: 

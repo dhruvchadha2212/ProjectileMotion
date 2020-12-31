@@ -28,14 +28,14 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_IS_INDEPENDENT));
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_COMPONENT_FORMULA));
         //yield return StartCoroutine(AskQuestion(QuestionName.TIME_OF_FLIGHT_CAN_BE_FOUND));
-        yield return StartCoroutine(AskQuestion(QuestionName.WHICH_EQUATION_TIME_OF_FLIGHT));
+        //yield return StartCoroutine(AskQuestion(QuestionName.WHICH_EQUATION_TIME_OF_FLIGHT));
         //      TODO Quest 1 completed ! (use enum QUEST_1_COMPLETED). Show time of flight formula card
         //yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_HORIZONTAL_COMPONENT_OF_VELOCITY));
         //yield return StartCoroutine(AskQuestion(QuestionName.ANY_HORIZONTAL_FORCE));
         //yield return StartCoroutine(AskQuestion(QuestionName.IS_HORIZONTAL_VELOCITY_AFFECTED));
         //yield return StartCoroutine(AskQuestion(QuestionName.HORIZONTAL_COMPONENT_FORMULA));
         //yield return StartCoroutine(AskQuestion(QuestionName.RANGE_CAN_BE_FOUND));
-        //yield return StartCoroutine(AskQuestion(QuestionName.RANGE_FORMULA));
+        yield return StartCoroutine(AskQuestion(QuestionName.RANGE_FORMULA));
         //      TODO Quest 2 completed ! (use enum QUEST_2_COMPLETED). Show range of flight formula card
         //      TODO all formulae revision card at the end
     }

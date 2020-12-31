@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionName: 14
   type: 1
-  mainText: Again, if the ball is launched with an initial velocity of 'u' at an
-    angle 'theta', what will be the horizontal component of its initial velocity
-    ?
+  mainText: Again, if the ball is launched with an initial velocity of {\bf `$\bf
+    u$'} at an angle {\bf `$\bf \theta$'}, what will be the horizontal component
+    of its initial velocity ?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
   options:
-  - text: F1
+  - text: $u\tan (\theta)$
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: 
+  - text: $u\cos (\theta)$
     image: {fileID: 0}
     isCorrect: 1
     tip: 
-  - text: F2
+  - text: $u\sin (\theta)$
     image: {fileID: 0}
-    isCorrect: 1
+    isCorrect: 0
     tip: 
-  - text: F3
+  - text: None of these
     image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: F4
-    image: {fileID: 0}
-    isCorrect: 1
+    isCorrect: 0
     tip: 

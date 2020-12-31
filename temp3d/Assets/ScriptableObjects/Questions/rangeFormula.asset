@@ -13,26 +13,29 @@ MonoBehaviour:
   m_Name: rangeFormula
   m_EditorClassIdentifier: 
   questionName: 16
-  type: 1
-  mainText: Here's the final question. Performing which of the following operations
-    will give you the range covered by the ball (up until the first bounce) ?
+  type: 2
+  mainText: Here's the final question. Which of the following approaches will easily
+    give you the range covered by the ball (up until the first bounce) ?
   audio: {fileID: 0}
   explanation: 
   image: {fileID: 0}
   options:
-  - text: F1
+  - text: Applying $v^2 = u^2 + 2as$ in X direction
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: No, think simple. Horizontal motion of the ball doesn't involve any acceleration.
+  - text: Applying $v = u + at$ in Y direction
+    image: {fileID: 0}
+    isCorrect: 0
+    tip: No, we need range of the ball. Above equation only deals with time, velocity
+      and acceleration.
+  - text: Apllying $Speed = \frac{Distance}{Time}$ in X direction.
     image: {fileID: 0}
     isCorrect: 1
-    tip: 
-  - text: F2
+    tip: Perfect ! Since the motion in horizontal direction is not accelerated, we
+      can use this simple equation.
+  - text: Applying $s=ut+\frac{1}{2} a t^2$ in Y direction
     image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: F3
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
-  - text: F4
-    image: {fileID: 0}
-    isCorrect: 1
-    tip: 
+    isCorrect: 0
+    tip: Theoretically you can. But since the horizontal motion is not accelerated,
+      there is a simpler approach.
