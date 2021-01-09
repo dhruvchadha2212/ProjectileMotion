@@ -9,6 +9,14 @@ public class Director : MonoBehaviour
     [SerializeField] private Dialogues dialogues;
     [SerializeField] private QuestManager questManager;
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     void Start()
     {
         StartCoroutine("StartGameNarrative");
