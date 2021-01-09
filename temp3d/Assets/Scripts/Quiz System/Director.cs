@@ -28,12 +28,12 @@ public class Director : MonoBehaviour
         //yield return StartCoroutine(AudioManager.PlayAndWaitFor(Dialogues.GetQuestion(QuestionName.INTRODUCTION).audio));
         ////      TODO solve the "question without panel/audio only" issue
         yield return new WaitForSeconds(2f);
-        //yield return StartCoroutine(TaskManager.WaitForTaskCompletion(new BallLaunchTask()));
-        //yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(TaskManager.WaitForTaskCompletion(new BallLaunchTask()));
+        yield return new WaitForSeconds(2f);
         //////      TODO launch the ball a couple of times to get comfortable, pause
         yield return StartCoroutine(AskQuestion(QuestionName.WHAT_TRAJECTORY));
-        //yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
-        //yield return StartCoroutine(AskQuestion(QuestionName.HOW_MANY_AXES));
+        yield return StartCoroutine(AskQuestion(QuestionName.WHY_CURVED));
+        yield return StartCoroutine(AskQuestion(QuestionName.HOW_MANY_AXES));
         ////      TODO good job ! you are an intuitive person.
         yield return StartCoroutine(BeginQuest(QuestName.VISUALISE_VERTICAL_COMPONENT_OF_VELOCITY));
         //yield return StartCoroutine(AskQuestion(QuestionName.VERTICAL_IS_INDEPENDENT));
