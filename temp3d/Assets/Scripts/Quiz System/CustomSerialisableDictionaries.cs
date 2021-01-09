@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using Lean.Gui;
+﻿using Lean.Gui;
 using System;
 
 //GameButton enum to LeanButton
@@ -13,8 +12,3 @@ public class GameButtonToQuestionDictionary : SerializableDictionary<GameButton,
 //QuestionName to Question
 [Serializable]
 public class QuestionNameToQuestionDictionary : SerializableDictionary<QuestionName, Question> {}
-
-[CustomPropertyDrawer(typeof(GameButtonToLeanButtonDictionary))]
-[CustomPropertyDrawer(typeof(GameButtonToQuestionDictionary))]
-[CustomPropertyDrawer(typeof(QuestionNameToQuestionDictionary))]
-public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}

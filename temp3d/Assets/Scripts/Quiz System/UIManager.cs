@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject metricsPanel;
     [SerializeField] private GameObject bottomPanel;
-    [SerializeField] private GameObject notificationPanel;
     [SerializeField] private QuizPanelController quizPanelController;
     private static QuizPanelController quizPanelControllerStatic;
 
@@ -25,7 +24,6 @@ public class UIManager : MonoBehaviour
     {
         quizPanelControllerStatic = quizPanelController;
         metricsPanelController = metricsPanel.GetComponent<MetricsPanelController>();
-        notificationTextBox = notificationPanel.transform.Find("NotificationBar").Find("Text").GetComponent<Text>();
         buttonMapStatic = buttonMap;
     }
 
@@ -47,12 +45,6 @@ public class UIManager : MonoBehaviour
     {
         metricsPanelController.DisplayRange("Range: " + range.ToString("F1") + " m");
         metricsPanelController.DisplayMaxHeight("MaxHeight: " + maxHeight.ToString("F1") + " m");
-    }
-
-    public void ShowNotification(string notificationText)
-    {
-        notificationTextBox.text = notificationText;
-        notificationPanel.GetComponent<Lean.Gui.LeanPulse>().Pulse();
     }
 
     public static void HideAllButtonsExcept(GameButton gameButton)

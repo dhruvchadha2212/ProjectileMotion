@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ProjectileMotion.unity
+    guid: d4be3c02b6170f94584b2271e57cb784
   m_configObjects: {}
